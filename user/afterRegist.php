@@ -53,10 +53,10 @@
 		$lastComment = html_entity_decode($lastComment);
 		
 		if(username_in_nqo($userName, $con)){
-			$error = "You have given your level in nko <br>";
-			$error .= "You can update this in your profile <br>";
-			echo $userName;
-			/* header("Refresh: 2; URL= profile.php");// Redirection après 2 secondes */
+			$error = trad_lang('you_have_given_your_level').'<br>';
+			$error .= trad_lang('you_can_update_in_profile').'<br>';
+			//echo $userName;
+			//header("Refresh: 2; URL= profile.php");// Redirection après 2 secondes 
 		}else{
 			$insertQuery = "INSERT INTO nqo_level (userName, email, nko_level, last_nko_student, dontRemenber,
 				lastCountry, lastCity, lastSchool, lastTeacher, lastDate, lastDuration, lastComment)

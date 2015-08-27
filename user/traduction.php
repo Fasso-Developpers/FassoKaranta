@@ -6,11 +6,11 @@
 	if (!empty($_POST['lang'])){
 		$show_lang = $_POST['lang'];
 		//setcookie('lang', $show_lang, time()+5, '/', '', false, true);
-		setcookie('lang', $show_lang, time()+0, '/', '', false, true);
+		setcookie('lang', $show_lang, time()+50, '/', '', false, true);
 	}
 	elseif (isset($_COOKIE['lang'])) {
 		$show_lang = $_COOKIE['lang'];
-		setcookie('lang', $show_lang, time()+0, '/', '', false, true);
+		setcookie('lang', $show_lang, time()+5, '/', '', false, true);
 	}
 	elseif (isset($_GET['lang'])) {
 		$show_lang = $_GET['lang'];
@@ -51,7 +51,7 @@
 				
 				// Confirmation message after registration
 				'active_account' => 'ߌ ߟߊ߫ ߞߏ߲߬ߘߏ ߘߟߊߞߊ߬',
-				'hello_registered' => 'ߊߟߎ߫ ߣߌ߫ ߕߎ߬ߡߊ߬',
+				'hello_registered' => 'ߊߟߎ߫ ߣߌ߫ ߕߎ߬ߡߊ߬ ߛߟߊߕߌ߯',
 				'confirm_message_body_1' => "ߌ ߟߊ߫ ߞߏ߲߬ߘߏ ߓߘߊ߫ ߟߊߓߊ߯ߙߊ߫ ߘߏ߫ ߓߟߏ߫ ߞߵߌ ߕߐ߮ ߛߓߍ߫ ߝߊ߬ߛߏ ߞߊ߬ߙߊ߲߬ߕߊ ߟߊ߫",
 				'confirm_message_body_2' => "ߊ߲ ߡߊ߫ ߊ߬ ߟߐ߲߫ ߣߵߌ ߣߐ߭ ߟߋ߬ ߥߟߊ߫ ߡߐ߰ ߜߘߍ߫ ߟߋ߫ ߣߐ߬",
 				'confirm_message_body_3' => 
@@ -121,7 +121,11 @@
 				'please_write_your_comment' => "ߌ ߟߊ߫ ߞߊ߲߬ߛߓߍ ߟߎ߬ ߛߓߍ߫ ߘߎ߰ߟߊ߫ ߦߊ߲߬",
 				'submit_level' => "ߊ߬ ߟߊߕߊ߯",
 
-				'succes_give_your_level' => "ߌ ߓߘߊ߫ ߓߊ߲߫ ߝߋߎ߫߸ ߌ ߣߌ߫ ߛߍ߰"
+				'succes_give_your_level' => "ߌ ߓߘߊ߫ ߓߊ߲߫ ߝߋߎ߫߸ ߌ ߣߌ߫ ߛߍ߰",
+				
+				// you can't give your level again
+				'you_have_given_your_level' => "ߌ ߓߘߴߌ ߟߊ߫ ߞߊߓߋ ߦߌ߬ߘߊ߬ ߞߊ߬ߓߊ߲߫",
+				'you_can_update_in_profile' => "ߌ ߘߌ߫ ߛߴߊ߬ ߡߊߝߊ߬ߟߋ߲߬ ߠߊ߫ ߌ ߟߊ߫ ߢߊߞߙߍ ߘߐ߫"
 
 				);
 	$en = array('direction'=>"ltr",
@@ -151,9 +155,9 @@
 				
 				// Confirmation message after registration
 				'active_account' => 'Active your account',
-				'hello_registered' => 'Hello',
+				'hello_registered' => 'Hello M.',
 				'confirm_message_body_1' => "Your email is used to register on karanta.fasso.org courses",
-				'confirm_message_body_2' => "we don't know if it is you or onother one.",
+				'confirm_message_body_2' => "we don't know if it is you or another one.",
 				'confirm_message_body_3' => 
 							"If it is yourself, please click on this below link to activate your account",
 				'forget_this_email' => "If it isn't you forget this email, and don't click the link", 
@@ -213,9 +217,11 @@
 				'another_information' => "Another information",
 				'please_write_your_comment' => "Please write your comment bellow",
 				'submit_level' => "Save",
-
-				'succes_give_your_level' => "You are given your level, very well"
-
+				'succes_give_your_level' => "You have given your level, very well",
+				
+				// you can't give your level again
+				'you_have_given_your_level' => "You have alredy given your level in nko",
+				'you_can_update_in_profile' => "You can update this in your profile"
 				);
 	$fr = array('direction'=>"ltr",
 				'language'=>"Langues",
@@ -308,7 +314,10 @@
 				'please_write_your_comment' => "Veillez saisir vos commentaire en bas",
 				'submit_level' => "Enregistrer",
 
-				'succes_give_your_level' => "Vous avez donné votre niveau, Très bien!"
-
+				'succes_give_your_level' => "Vous avez donné votre niveau, Très bien!",
+				
+				// you can't give your level again
+				'you_have_given_your_level' => "Vous avez déjà fourni votre niveau",
+				'you_can_update_in_profile' => "Vous pouvez le mettre à jour sur votre profile"
 				);
 ?>
