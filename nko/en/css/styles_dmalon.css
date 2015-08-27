@@ -1,0 +1,133 @@
+/* --------------- STYLE CSS FASSO BARABA ---------------- */
+html{font-size:100%; font-family: Ebrima;}
+body{margin:0px; 
+	padding:0px; background:#e2e2e2; 
+	font-family: Ebrima; font-size:13; color: #la1718; line-height:1;}
+header, nav, aside, footer, figure, section, article{display: block;}
+#mainMenu{width: 80%; max-width: 80%; min-width: 640px; margin: 0 auto;}
+#mainMenu a{color:#ef3f50; text-decoration:none;}
+#mainMenu a:hover{color:#d53948;}
+
+/* ---- HEADER ------------- */
+header{height:70px; position:fixed; margin: 0 auto; top:0; right: 2%; left: 2%; border:1px solid #000; border-radius:10px 10px 0px 0px; 
+		webkit-border-radius:10px 10px 0px 0px; moz-border-radius:10px 10px 0px 0px; o-border-radius:10px 10px 0px 0px; 
+		z-index: 100; background: rgb(125,125,125);}
+	/*#logo{position:absolute; top:0px; left:0px; display:block; width:1000px; height:200px;
+		background:url(../images/Lepharaon.png) top left no-repeat;}*/
+	#menu{position:absolute; list-style-type:none; margin:0px; padding:0px;
+		background-color:#231f20; width:100%; height:35px; text-align:center; border-radius:10px 10px 0px 0px; 
+		webkit-border-radius:10px 10px 0px 0px; moz-border-radius:10px 10px 0px 0px; o-border-radius:10px 10px 0px 0px;}
+	#menu li {display:inline-block;}
+	#menu li a {display:block; padding:0px 10px; height:28px; line-height:20px; font-size:20px;
+		color:#c6cec6; margin:5px 5px 5px 5px; border-radius:50px; webkit-border-radius:50px; moz-border-radius:50px; o-border-radius:50px;
+		box-shadow:0px 1px 0px rgb(100,100,100);}
+	#menu li a:hover {color:#47ca50; box-shadow:0px 1px 0px #47ca50;}
+	#menu li.active a{background-color:#1b1819; color:#ef3f50; box-shadow:0px 1px 0px #4f4dd4;}
+		
+	#recherche{position:absolute; top:37.5px; right:4% ;}
+	#recherche input[type="text"] {padding:5px; font-family: Georgia; font-size:14px; font-style:italic; text-align:center;
+		color:#848484; border:1px solid #dedede; 
+		width:80px; border-radius:5px; webkit-border-radius:5px; moz-border-radius:5px; 
+		background:rgb(200,200,200); -webkit-transition:0.5s; -moz-transition:0.5s;}
+	#recherche input[type="text"]:focus {border:1px solid #ccc; width:150px;background:rgb(225,225,225);text-align:right;}
+	
+/* Menu Lonko  */
+	#menuContenu{position: absolute; width: 50%; max-width: 50%; min-width: 370px; height:35px; top:35px; left:0;
+	//border:1px solid #000; 
+	margin: 0 auto; display: block;
+		}
+	#menuContenu a{color:#ef3f50; text-decoration:none;}
+	#menuContenu a:hover{color:#d53948;}
+	
+	#menuLonko{position:absolute; list-style-type:none; margin:0 auto; padding:0px; 
+		//border:1px solid #000; 
+		width:100%; height:34px; text-align:center; 
+		//border-radius:0 0 10px 10px; 
+		//webkit-border-radius:0 0 10px 10px; moz-border-radius:0 0 10px 10px;}
+	#menuLonko li {display:inline-block;}
+	#menuLonko li a {display:block; padding:0px 7%; height:25px; line-height:20px; font-size:18px;
+		color:rgb(200,200,200); margin:5px 5px 5px 5px; 
+		border-radius:50px; webkit-border-radius:50px; moz-border-radius:50px; o-border-radius:50px;
+		box-shadow:0px 1px 0px rgb(50,50,50);}
+	#menuLonko li a:hover {color:rgb(125,200,125); box-shadow:0px 1px 0px rgb(5,50,5); 
+		font-weight: bold; -moz-transition:0.5s; -webkit-transition:0.5s; -o-transition:0.5s;
+		font-style: italic;}
+	#menuLonko li.active a{background-color:rgb(100,100,100); color:rgb(150,200,150); box-shadow:0px 1px 0px #4f4dd4; font-weight: bold;}
+
+/* -------------------- CONTENU ---------------------- */
+
+#contenu{position: absolute; top:75px; right: 10%; width: 80%; max-width: 80%; min-width: 640px; margin: 0 auto; 
+	box-shadow: 0px 0px 1px #000;
+	//border:1px solid #000;
+	height:150%; 
+	} 
+
+	.rectangle{border-radius: 10px;}
+	#titre{position: fixed; top: 80px; right: 10%; left: 75%; width: 200px; 
+		height: 490px; box-shadow: 0 0 10px #999;}
+
+/* Les titres du contenu */
+	#titre h1{
+		color: rgb(200,200,200);
+		font-size: 24px;
+		text-align: center;
+		padding: 0;
+		font-style: inherit;
+	}
+	#titre ul{
+		position: absolute;
+	}
+	#titre li{
+		list-style-type: none;
+		top: 20px;
+		text-align: right;
+		text-align: justify;
+		line-height: 200%;
+		font-size: 20px;
+	}
+	#titre a{text-decoration: none; color: rgb(150,150,150);}
+	#titre a:hover{color: rgb(20,20,20);}
+	#titre li.active a{color: rgb(200,40,40);}
+
+/* Les paragraphes */
+	#paraTitre{}
+	#paraTitre h1{position: absolute; right: 50%; top: 0;
+		font-size: 20px; color: rgb(220,50,50);
+		box-shadow: 0 0 10px #ccd;
+		padding: 10px; text-align: center;
+	}
+
+	#paraTexte{position: absolute; top: 60px; right: 20%; width: 80%; max-width: 82%; min-width: 470px; 
+		height: 85%;
+		box-shadow: 0 0 5px #999;}
+		#listDmalon li{list-style-type: disc;}
+		#listDmalon a{text-decoration: none;}
+
+		#intro{
+
+			width: 400px;
+			margin: 0 right; padding: 0px 20px 5px 5px;
+			line-height: 160%;
+			font-family: Ebrima, dejaVu;
+			font-size: 18px;
+			text-indent: inherit;
+			//border:1px solid #000;
+			text-align: justify;
+
+		}
+		.def{
+			font-family: Ebrima;
+			font-size: 14px;
+			line-height: 100%;
+			font-style: italic; 
+		}
+
+	footer{position:absolute; width: 95%; bottom: 5px; left:2%; right: 2%; text-align: center; font-style: italic;
+		padding: 8px; }
+		.rondBas{box-shadow: 0 0 10px #999; border-radius: 50px 50px 0 0;
+		webkit-border-radius:50px; moz-border-radius:50px; o-border-radius:50px 50px 0 0;}
+
+/* --- SLIDER --- */
+#slider{width:1000px; height:250px; overflow: hidden;}
+
+		

@@ -1,0 +1,42 @@
+
+.infoPerson{
+	//position: relative;
+	width: 70%; min-width: 450px;
+	height: 20%; min-height: 250px;
+	padding: 10px;
+	display: block;
+	//margin-left: 20%;
+	margin: 0 auto;
+}
+
+fieldset p{
+	font-size: 18px;
+	line-height: 100%;	
+}
+.lang{
+	margin: 0;
+	padding: 5px;
+	font-size: 14px;
+
+}
+.video{position: relative;
+	width: 90%; margin: 0 auto;}
+.demo{//position: absolute;
+	top:0;
+	display: inline-block;
+	border:1px solid #333;
+	width: 300px;
+	height: 250px;
+	text-align: center;
+}
+
+.textBox{
+	width: 150px;
+	margin: 5px;
+	padding: 5px;
+}
+
+#soumettre{
+	font-size: 16px;
+	
+}

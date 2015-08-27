@@ -1,0 +1,27 @@
+
+.infoPerson{position: absolute;
+	width: 80%; min-width: 450px;
+	height: 50%; min-height: 300px;
+	padding: 10px;
+	display: inline-block;
+	margin: 0 auto;
+}
+
+.table{
+	width: 60%;
+	margin: 10px;
+	padding: 10px;
+	line-height: 160%;
+}
+.table td{text-align: right;}
+
+.textBox{
+	width: 150px;
+	margin: 5px;
+	padding: 5px;
+}
+
+#soumettre{
+	font-size: 16px;
+	
+}

@@ -1,0 +1,172 @@
+/* --------------- STYLE CSS FASSO BARABA ---------------- */
+html{font-size:100%; font-family: Ebrima;}
+body{margin:0px; 
+	padding:0px; background:#e2e2e2; 
+	font-family: Ebrima; font-size:13; 
+	color: #la1718;
+	 line-height:1;}
+header, nav, aside, footer, figure, section, article{display: block;}
+
+#mainMenu{width: 100%; max-width: 100%; min-width: 640px; margin: 0 auto;}
+#mainMenu a{color:#eee; text-decoration:none;}
+#mainMenu a:hover{color:#555;}
+
+	.loged_in{position: absolute; 
+		font-size: 18px; font-weight: bold;
+		font-family: Ebrima; Tahoma; 
+		background: rgb(150,150,150); 
+		font-size: 18px; padding: 9px; 
+		margin:-1px 0 9px 0; right: 0;
+	}
+	#log_statut{position: absolute;
+		top: 15px; right: 0;
+		padding: 5px; font-size: 14px;
+		color: #eee;
+		cursor: default;
+	}
+
+
+/* ---- HEADER ------------- */
+header{height:70px; position:fixed; margin: 0 auto; top:0; 
+		border:1px solid rgb(150,150,150);
+		z-index: 100; background: rgb(150,150,150);}
+
+	#menu{position:absolute; list-style-type:none; margin:-1px; padding:0px;
+		background-color:rgb(65,70,65); width:100%; height:36px; text-align:center;}
+	#menu li {display:inline-block;}
+	#menu li a {display:block; 
+		height:30px; line-height:30px; font-size:20px; margin: 1px 1px 0 1px;
+		color:rgb(150,150,150); padding: 5px 10px 0 10px; background: rgb(80,90,80);
+		}
+	#menu li a:hover {color:rgb(200,200,200); background: rgb(90,95,90)}
+	#menu li.active a{background-color:rgb(150,150,150); color:rgb(200,200,200);
+			font-weight: bold;}
+	
+	
+	#recherche{position:absolute; top:37px; right:0; width: 25%; display: inline;}
+	
+	#recherche input[type="text"] {position: absolute; padding:5px; font-family: Ebrima; 
+		font-size:14px; font-style:italic; text-align:center;
+		color:#848484; border:1px solid #dedede; left: 0;
+		width:80px; height: 24px; margin: -2px 0 4px 0;
+		 border-radius:5px; webkit-border-radius:5px; moz-border-radius:5px; 
+		background:rgb(200,200,200); -webkit-transition:0.5s; -moz-transition:0.5s;}
+	#recherche input[type="text"]:focus {border:1px solid #ccc; width:150px; 
+		background:rgb(225,225,225); text-align:right; height: 24px;}
+	
+/* Menu Lonko  */
+	
+	#menuContenu{position: absolute; 
+		width: 70%; max-width: 70%; min-width: 360px; height:40px; 
+		top:30px; left:0; padding: 5px;
+		//border:1px solid #000; 
+		margin: 0 auto; display: block;
+		}
+	#menuContenu a{color:#ef3f50; text-decoration:none;}
+	#menuContenu a:hover{color:rgb(100,255,100);}
+
+	#subMenu{position:absolute; 
+		list-style-type:none; 
+		margin:0 auto; padding: 6px 5px 0 5px; right: 5%;
+		//border:1px solid #000; 
+		width:100%; max-width: 100%; min-width: 380px; 
+		height:34px; text-align:center; 
+		font-weight: bold;
+		}
+	#subMenu li {display:inline-block;}
+	
+	#subMenu li a {display:block; padding:0 5px; height:25px; line-height:20px; font-size:18px;
+		color:rgb(200,200,200); margin:5px;}
+	#subMenu li a:hover {background-color:#ccc; color:rgb(200,255,200);
+		border-radius:10px 0; padding:0 5px;}
+	
+	#subMenu li.active a{background-color:#e2e2e2; 
+		color:rgb(100,200,150); 
+		font-weight: bold;
+		padding: 6px 5px 0 5px; border-radius:10px 0; 
+	}
+	
+/* -------------------- CONTENU ---------------------- */
+
+#contenu{position: absolute; top:70px; width: 85%; right:0; max-width: 85%; min-width: 640px; margin: 0 auto; 
+	//box-shadow: 0px 0px 1px #000;
+	//border:1px solid #000;
+	height:100%; 
+	} 
+	.rectangle{border-radius: 0 10px 0 10px;}
+
+	#titre{position: fixed; top: 75px; left: 0; width: 15%;  max-width: 15%; min-width: 150px; 
+		height: 100%; box-shadow: 0 0 5px #999;}
+
+/* Les titres du contenu */
+	#titre h1{
+		color: rgb(200,200,200);
+		font-size: 24px;
+		text-align: center;
+		padding: 0;
+		font-style: inherit;
+	}
+	#titre ul{
+		position: absolute;
+	}
+	#titre li{
+		list-style-type: none;
+		top: 20px;
+		text-align: right;
+		text-align: justify;
+		line-height: 200%;
+		font-size: 24px;
+	}
+	#titre a{text-decoration: none; color: rgb(150,150,150);}
+	#titre a:hover{color: rgb(20,20,20);}
+	#titre li.active a{color: rgb(200,40,40);}
+
+/* Les paragraphes */
+	#paraTitre{top: 0;}
+	#paraTitre h1{position: absolute; right: 50%; top: -5px;
+		font-size: 20px; color: rgb(220,50,50);
+		
+		padding: 0; text-align: center;
+	}
+
+	#paraTexte{position: absolute; top: 40px; width: 100%; max-width:100%; min-width: 470px; 
+		height: 90%;
+		box-shadow: 0 0 2px #999;}
+		#listDmalon li{list-style-type: disc;}
+		#listDmalon a{text-decoration: none;}
+
+		#intro{
+			position: absolute;
+			width: 95%;
+			line-height: 120%;
+			font-family: Geneva, Ebrima, dejaVu;
+			font-size: 18px;
+			text-indent: inherit;
+			//border:1px solid #000;
+			text-align: justify;
+			margin: 5px; padding: 5px; 
+
+		}
+
+		#intro li{margin: 5px; padding: 0;}
+		#intro a{margin: 0; padding: 0;}
+		#intro p:nth-child(1){text-align: center;}
+
+		.def{
+			font-family: Geneva;
+			font-size: 20px;
+			line-height: 100%;
+			font-style: italic; 
+		}
+
+		.contact_us{text-align: right;}
+		.souhait{text-align: center;}
+
+	footer{position:absolute; width: 99%; bottom: 0; height: 2%;
+		text-align: center; font-style: italic; padding: 0.5%; vertical-align: 3px;}
+		.rondBas{box-shadow: 0 0 3px #999;}
+
+/* --- SLIDER --- */
+#slider{width:1000px; height:250px; overflow: hidden;}
+
+		

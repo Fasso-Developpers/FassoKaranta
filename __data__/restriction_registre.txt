@@ -1,0 +1,20 @@
+restriction lors de l'enregistrement:
+	UserName: différent 
+		si non: echo(Ce user name est déjà prit)
+	Email:	différent 
+		si non: echo(Ce adresse email exite déjà)
+
+	if(user=row(user)){
+	user exit
+	forumlaire.php // on rechargement
+	}
+	else{
+		if(email=row(email){
+		cet email exit
+		forumlaire.php
+		}
+		else{
+		connect(database)
+		afterRegist.php
+		}
+	}

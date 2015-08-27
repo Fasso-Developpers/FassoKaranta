@@ -1,0 +1,36 @@
+/* --- Fasso Karanta --- */
+
+Creation de Compte
+	Prenom; 
+	Nom;
+	User name (Nom d'utilisateur); 
+	email;
+	Mot da pass;
+
+/* Edition posterieur */
+	Age;
+	Sexe;
+	Tel.
+	Prénom et Nom de la Mère;
+	Nom du Père;
+	Djamun; Sanankun;
+	Pays; ville; village // plus d'info si une campagne;
+	Manden Djamana (comme Tron, Amana; Sankaran; Batè; ...)
+
+Juste après sign up:
+
+/* ----	Niveau en N'ko ---- */
+Niveau 0: je connais rien;
+Niveau 1: je connais l'alphabet N'ko;
+Niveau 2: je connais les accents;
+Niveau 3: je connais la grammaire;
+Niveau 4: je connais l'orthographe;
+
+/* Ancien etudiant */
+Dans quelle pays; 
+ville; village
+Dans quelle écoles
+Enseignant (Nom et Prénom);
+Durée d'étude;
+Debut d'étude; Fin d'étude;
+
