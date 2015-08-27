@@ -14,9 +14,9 @@
 	{	
 		$userName = $_COOKIE['userName'];
 		$email = $_COOKIE['email'];
+		//echo $_COOKIE['userName'];
+		//echo $_COOKIE['email'];
 		
-		echo $_COOKIE['userName'];
-		echo $_COOKIE['email'];
 		$nko_level = htmlentities($_POST['nko_level']);
 		
 		if (isset($_POST['last_nko_student'])){
