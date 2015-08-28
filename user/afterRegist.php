@@ -56,7 +56,7 @@
 			$error = trad_lang('you_have_given_your_level').'<br>';
 			$error .= trad_lang('you_can_update_in_profile').'<br>';
 			//echo $userName;
-			//header("Refresh: 2; URL= profile.php");// Redirection après 2 secondes 
+			header("Refresh: 2; URL= profile.php");// Redirection après 2 secondes 
 		}else{
 			$insertQuery = "INSERT INTO nqo_level (userName, email, nko_level, last_nko_student, dontRemenber,
 				lastCountry, lastCity, lastSchool, lastTeacher, lastDate, lastDuration, lastComment)
@@ -69,7 +69,7 @@
 				$succes  = trad_lang('succes_give_your_level');
 				//setcookie('email', $email, time()-3600);
 				//setcookie('userName', $userName, time()-3600);
-				//header("Refresh: 2; URL=../index.php");// Redirection après 2 secondes
+				header("Refresh: 2; URL=../index.php");// Redirection après 2 secondes
 			}
 			else{
 				echo "error !";
