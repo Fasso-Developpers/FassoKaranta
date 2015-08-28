@@ -84,7 +84,7 @@
 							trad_lang('confirm_message_body_1')."\n\n".
 							trad_lang('confirm_message_body_2')."\n\n".
 							trad_lang('confirm_message_body_3')."\n\n".
-							"\n\n link: http://localthost/karanta/user/active.php?username=".$userName."&active_code".$active_code
+							"\n\n http://fasso.org/karanta/user/active.php?username=".$userName."&active_code".$active_code
 						 	."\n\n"."\n\n".trad_lang('forget_this_email')."\n\n"
 						 );
 	
