@@ -80,7 +80,7 @@
 						echo $_COOKIE['userName'];
 						echo $_COOKIE['email'];
 						send_email($email, trad_lang('active_account'),
-							trad_lang('hello_registered').$firstName." ".$lastName."\n\n".
+							trad_lang('hello_registered')." ".$firstName." ".$lastName."\n\n".
 							trad_lang('confirm_message_body_1')."\n\n".
 							trad_lang('confirm_message_body_2')."\n\n".
 							trad_lang('confirm_message_body_3')."\n\n".
