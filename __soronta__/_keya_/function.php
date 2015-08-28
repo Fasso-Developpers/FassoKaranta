@@ -60,8 +60,11 @@
 		}
 	}
 // ------------  SEND A CONFIRMATION MAIL -----------
-	$header_mail = "From: karanta@fasso.org"."\r\n";
-	$header_mail .= "Reply-To: karanta@fasso.org";
+	$header_mail 	= "From: karanta@fasso.org"."\r\n";
+	$header_mail 	.= "Reply-To: karanta@fasso.org"."\r\n";
+	$headers 		.= 'Content-type: text/html; charset=utf-8'."\r\n";
+	$headers 		.= "\r\n";
+	
 	function send_email($to, $subject, $body){
 		global $header_mail;
 		mail($to, $subject, $body, $header_mail);
