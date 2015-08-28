@@ -41,12 +41,12 @@
 		{
 			echo "You are login";
 			echo('
-				<a class="loged_in" href="//localhost/karanta/user/logout.php" >Logout<a>
+				<a class="loged_in" href="http://fasso.org/karanta/user/logout.php" >Logout<a>
 				<p id="log_statut">You are login</p>
 			');
 		}else{
 			echo "You are not login";
-			header("location: //localhost/karanta/user/login.php");
+			header("location: http://fasso.org/karanta/user/login.php");
 		}
 	}
 	
