@@ -51,11 +51,13 @@
 				
 				// Confirmation message after registration
 				'active_account' => 'ߌ ߟߊ߫ ߞߏ߲߬ߘߏ ߘߟߊߞߊ߬',
-				'hello_registered' => 'ߊߟߎ߫ ߣߌ߫ ߕߎ߬ߡߊ߬ ߛߟߊߕߌ߯',
+				'hello_registered1' => '',
+				'hello_registered2' => 'ߊߟߎ߫ ߣߌ߫ ߕߎ߬ߡߊ߬ ߛߟߊߕߌ߯',
 				'confirm_message_body_1' => "ߌ ߟߊ߫ ߞߏ߲߬ߘߏ ߓߘߊ߫ ߟߊߓߊ߯ߙߊ߫ ߘߏ߫ ߓߟߏ߫ ߞߵߌ ߕߐ߮ ߛߓߍ߫ ߝߊ߬ߛߏ ߞߊ߬ߙߊ߲߬ߕߊ ߟߊ߫",
 				'confirm_message_body_2' => "ߊ߲ ߡߴߊ߬ ߟߐ߲߫ ߣߵߌ ߣߐ߭ ߟߋ߬ ߥߟߊ߫ ߡߐ߰ ߜߘߍ߫ ߟߋ߫ ߣߐ߬ ߦߋ߫",
 				'confirm_message_body_3' => 
 							"ߒ߬ߓߊ߬ ߣߴߌ ߖߍ߬ߘߍ ߟߋ߬ ߣߐ߬ ߦߋ߫߸ ߘߎ߰ߟߊ߬ ߛߘߌߜߋ߲ ߣߌ߲߫ ߛߐ߲߬ߞߌ߲߬ ߞߵߌ ߟߊ߫ ߞߏ߲߬ߘߏ ߘߟߊߞߊ߬",
+				'this_link' => "ߛߘߌ߬ߜߋ߲ ߣߌ߲߬",
 				'forget_this_email' => "ߣߴߌ ߣߐ߬ ߕߍ߫߸ ߊ߬ ߞߍ߫ ߕߋ߲߬ ߦߴߌ ߡߊ߬ ߞߋߛߓߍ ߣߌ߲߬ ߦߋ߫߸ ߌ ߞߣߊ߫ ߊ߬ ߛߐ߲߬ߞߌ߲߫ ߛߘߌ߬ߜߋ߲ ߝߣߊ߫ ߞߊ߲߬",
 				'please_check_your_email' => "ߕߊ߯ ߌ ߟߊ߫ ߢߎߡߍߙߋ߲ߞߏ߲ߘߏ ߟߊ߫ ߞߵߌ ߟߊ߫ ߞߏ߲߬ߘߏ߬ ߞߎߘߊ ߟߊߞߊ߬", 
 
@@ -155,11 +157,13 @@
 				
 				// Confirmation message after registration
 				'active_account' => 'Active your account',
-				'hello_registered' => 'Hello M.',
+				'hello_registered1' => 'Hello',
+				'hello_registered2' => '', // this part is not necessary in english
 				'confirm_message_body_1' => "Your email is used to register on karanta.fasso.org courses",
 				'confirm_message_body_2' => "we don't know if it is you or another one.",
 				'confirm_message_body_3' => 
 							"If it is yourself, please click on this below link to activate your account",
+				'this_link' => "This link",
 				'forget_this_email' => "If it isn't you forget this email, and don't click the link", 
 				'please_check_your_email' => "Plaese check your email to activate your account", 
 
@@ -250,12 +254,14 @@
 				
 				// Confirmation message after registration
 				'active_account' => 'Activer votre compte',
-				'hello_registered' => 'Bonjour',
+				'hello_registered1' => 'Bonjour',
+				'hello_registered2' => '', // this part is not necessary in french
 				'confirm_message_body_1' => 
 						"Votre email fut utilisé pour vous enregistrer aux cours de karanta.fasso.org",
 				'confirm_message_body_2' => "Nous ne savons si c'est vous ou une autre personne",
 				'confirm_message_body_3' => 
 						"Si c'est vraiment vous même, cliquez sur ce lien ci-dessous pour activer votre compte",
+				'this_link' => "Ce lien",
 				'forget_this_email' => "Si ce n'est pas vous, ignorez cet email, et ne cliquez pas sur le lien.",
 				'please_check_your_email' => "Veillez verifiez votre email fourni pour activer votre compte", 
 

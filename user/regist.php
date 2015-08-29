@@ -80,13 +80,16 @@
 						//echo $_COOKIE['userName'];
 						//echo $_COOKIE['email'];
 						send_email($email, trad_lang('active_account'),
-							'Content-type: text/html; charset=utf-8'."\r\n".
-							trad_lang('hello_registered')." ".$firstName." ".$lastName."\n\n".
-							trad_lang('confirm_message_body_1')."\n\n".
-							trad_lang('confirm_message_body_2')."\n\n".
-							trad_lang('confirm_message_body_3')."\n\n".
-							"\n\n http://fasso.org/karanta/user/active.php?username=".$userName."&active_code".$active_code
-						 	."\n\n"."\n\n".trad_lang('forget_this_email')."\n\n"
+							trad_lang('hello_registered1')." ".$firstName." ".$lastName." ".
+							trad_lang('hello_registered2')."<br>".
+							trad_lang('confirm_message_body_1')."<br>".
+							trad_lang('confirm_message_body_2')."<br>".
+							trad_lang('confirm_message_body_3')."<br>"."<br>".
+							'<a href="'.'http://fasso.org/karanta/user/activate.php?userName='.$userName.'&active_code='.$active_code.'">
+								'.trad_lang("this_link").'
+							</a>'."<br>".
+							"<br> http://fasso.org/karanta/user/activate.php?userName=".$userName."&active_code=".$active_code
+						 	."<br>"."<br>".trad_lang('forget_this_email')."<br>"
 						 );
 	
 						$succes = trad_lang('succes_registred').'<br>'.trad_lang('please_check_your_email');
