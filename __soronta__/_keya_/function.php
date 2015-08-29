@@ -35,7 +35,38 @@
 		}
 	}
 	
+	// ----- Theses function activate user account -----------
+	function user_is_activated($userName, $con){
+		//return (mysqli_result(mysqli_query($con, "SELECT COUNT(`Id_registred`) FROM `registred` WHERE userName = '$userName' AND `active` = 1"), 0) ==1)? true: false;
+		$result = mysqli_query($con, "SELECT Id_registred FROM registred WHERE userName = '$userName' AND active = '1'"); 
+		
+		//return mysqli_num_rows($result);
+		if (mysqli_num_rows($result) == 1)
+		{
+			return true; 
+		}else{
+			return false;
+		}
+	}
 	
+	/*
+	function activate($userName, $active_code){
+		$userName 			= mysql_real_escape_string($userName);
+		$active_code	= mysql_real_escape_string($active_code);
+		if (mysqli_result(mysqli_query($con, "SELECT COUNT(`Id_registred`) FROM `registred` WHERE userName = '$userName' AND active_code = '$active_code' AND active = '0' "), 0) == 1) {
+			// query update account of user to active this
+			mysqli_query($con, "UPDATE `registred` SET `active` = 1 WHERE `userName` = $userName");
+			return true;
+			
+		} else {
+			return false;
+			
+		}
+		
+	}
+	*/
+	
+	// -------------- Verify if login or logout ------------------
 	function verif_login(){
 		if(logged_in())
 		{
@@ -62,8 +93,8 @@
 // ------------  SEND A CONFIRMATION MAIL -----------
 	$header_mail 	= "From: karanta@fasso.org"."\r\n";
 	$header_mail 	.= "Reply-To: karanta@fasso.org"."\r\n";
-	$headers 		.= 'Content-type: text/html; charset=utf-8'."\r\n";
-	$headers 		.= "\r\n";
+	$header_mail 	.= 'Content-type: text/html; charset=utf-8'."\r\n";
+	$header_mail 	.= "\r\n";
 	
 	function send_email($to, $subject, $body){
 		global $header_mail;

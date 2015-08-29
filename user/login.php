@@ -29,13 +29,16 @@
 		$userName = html_entity_decode($userName);
 		$password = html_entity_decode($password);
 		
-		if (username_exists($userName, $con, RTABLE))
+		if (username_exists($userName, $con))
 		{
 			$result = mysqli_query($con, "SELECT password FROM registred WHERE userName='$userName' ");
 			$retrievepassword = mysqli_fetch_assoc($result);
 
 			$retrievepassword['password'];
-			if(md5($password) !== $retrievepassword['password'] )
+			if (user_is_activated($userName, $con) === false) {
+				$error = "Your account is not activated";
+			}
+			elseif(md5($password) !== $retrievepassword['password'] )
 			{
 				if (LABEL_LANG == 'en'){
 					$error = $en['password_incorrect']; 
@@ -46,7 +49,8 @@
 				}else{
 					$error = $en['password_incorrect']; 
 				}
-				echo md5($password).' and '.$retrievepassword['password'];
+				//print_r(user_is_activated($userName, $con));
+				//echo md5($password).' and '.$retrievepassword['password'];
 			}
 			else 
 			{
