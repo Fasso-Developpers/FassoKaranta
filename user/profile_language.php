@@ -11,15 +11,14 @@
 	<meta charset="utf-8" />
 	<title>Fasso | Profile</title>
 	<link rel="icon" href="images/fassoIcone.ico" type="image/x-icon">
-	<link rel="stylesheet" href="../css/styles_header.css" />
-	<link rel="stylesheet" href="../css/styles_contenu_full.css" />
-	<link rel="stylesheet" href="../css/styles_header.css" />
-	<link rel="stylesheet" href="../css/styles_contenu_titre.css" />
+	<link rel="stylesheet" href="../_css_/styles_header.css" />
+	<link rel="stylesheet" href="../_css_/styles_contenu_full.css" />
+	<link rel="stylesheet" href="../_css_/styles_contenu_titre.css" />
 	<link rel="stylesheet" href="css/styles_profile.css" />
 	<link rel="stylesheet" href="css/editable_language.css" />
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-	<script src="js/site.js"></script>
+	<script src="../_js_/site.js"></script>
 </head>
 
 <body dir="auto">
