@@ -77,9 +77,10 @@
 					if (mysqli_query($con, $insertQuery)) {
 						setcookie('email', $email, 0, '/', '', false, true);
 						setcookie('userName', $userName, 0, '/', '', false, true);
-						echo $_COOKIE['userName'];
-						echo $_COOKIE['email'];
+						//echo $_COOKIE['userName'];
+						//echo $_COOKIE['email'];
 						send_email($email, trad_lang('active_account'),
+							'Content-type: text/html; charset=utf-8'."\r\n".
 							trad_lang('hello_registered')." ".$firstName." ".$lastName."\n\n".
 							trad_lang('confirm_message_body_1')."\n\n".
 							trad_lang('confirm_message_body_2')."\n\n".

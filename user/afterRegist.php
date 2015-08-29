@@ -9,9 +9,11 @@
 	$error = "";
 	$succes = "";
 	
-
-	if(isset($_POST['submit_level']))
-	{	
+	if(empty($_COOKIE['userName']) && empty($_COOKIE['email'])){
+		$error = "Your cookies are empty, we don't who are you, <br>";
+		$error .= "Go to your profile to update your level <br>";
+	}elseif(isset($_POST['submit_level'])){
+		
 		$userName = $_COOKIE['userName'];
 		$email = $_COOKIE['email'];
 		//echo $_COOKIE['userName'];
