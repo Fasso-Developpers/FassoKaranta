@@ -4,11 +4,11 @@
 	<nav>
 		<ul dir="auto" id="menu">
 			<li><a href="http://www.fasso.org/">Fasso</a>
-			<li <?php if(MAIN_PAGE == "main_index") echo' class="active"'; ?> ><a href="//localhost/karanta/index.php">Home</a>
-			<li <?php if(MAIN_PAGE == "nko_index") echo' class="active"'; ?> ><a href="//localhost/karanta/nko/index.php">N'ko</a>
-			<li <?php if(MAIN_PAGE == "computer_index") echo' class="active"'; ?> ><a href="//localhost/karanta/computer/index.php">Computer</a>
-			<li <?php if(MAIN_PAGE == "game_index") echo' class="active"'; ?> ><a href="//localhost/karanta/game/index.php">Games</a>
-			<li <?php if(MAIN_PAGE == "reading_index") echo' class="active"'; ?> ><a href="//localhost/karanta/reading/index.php">Reading</a>
+			<li <?php if(MAIN_PAGE == "main_index") echo' class="active"'; ?> ><a href="http://www.fasso.org/karanta/index.php">Home</a>
+			<li <?php if(MAIN_PAGE == "nko_index") echo' class="active"'; ?> ><a href="http://www.fasso.org/karanta/nko/index.php">N'ko</a>
+			<li <?php if(MAIN_PAGE == "computer_index") echo' class="active"'; ?> ><a href="http://www.fasso.org/karanta/computer/index.php">Computer</a>
+			<li <?php if(MAIN_PAGE == "game_index") echo' class="active"'; ?> ><a href="http://www.fasso.org/karanta/game/index.php">Games</a>
+			<li <?php if(MAIN_PAGE == "reading_index") echo' class="active"'; ?> ><a href="http://www.fasso.org/karanta/reading/index.php">Reading</a>
 		</ul>
 	</nav>
 	
@@ -33,13 +33,13 @@
 					</nav>
 				</div>
 				');
-			//verif_login("//localhost/karanta/user/logout.php");
+				//verif_login();
 		}elseif (MAIN_PAGE == "nko_index"){
 			echo('
 				<div id="menuContenu" class="ombre">
 					<nav>
 						<ul dir="auto" id="subMenu">
-							<li><a href="//localhost/karanta/user/profile.php">Profile</a>
+							<li><a href="http://www.fasso.org/karanta/user/profile.php">Profile</a>
 							<li><a href="#">Alphabet</a>
 							<li><a href="#">Accents</a>
 							<li><a href="#">Grammar</a>
@@ -48,7 +48,6 @@
 					</nav>
 				</div>
 			');
-			//verif_login("//localhost/karanta/user/logout.php");
 		}elseif (MAIN_PAGE == "profile"){
 			echo('
 				<div id="menuContenu" class="ombre">
@@ -62,10 +61,8 @@
 					</nav>
 				</div>
 				');
-			//verif_login("//localhost/karanta/user/logout.php");
+				//verif_login();
 		}
-		
 		verif_login();
-		
 	?>
 </header>

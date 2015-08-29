@@ -3,88 +3,85 @@
 	include("../__soronta__/flo.php");
 	include("traduction.php");
 
-	/*if(isset($_COOKIE)){
-		echo $_COOKIE['userName'];
-	}*/
-	
 	// this page contstant
 	define('THIS_PAGE', "login");
 
 // Verifiy if you are login
+	
 	if(logged_in())
 	{
-		header("location: ../index.php");
+		header("Location: profile.php");
 		exit();
-	}
-
-	$error = "";
-	$succes = "";
-	if(isset($_POST['submit_login']))
-	{
-		$userName = htmlentities($_POST['username']);
-		$password = htmlentities($_POST['password']);
-		$checkbox = isset($_POST['keep']);
-
-		$userName = html_entity_decode($userName);
-		$password = html_entity_decode($password);
-		
-		if (username_exists($userName, $con))
+	}else{
+		$error = "";
+		$succes = "";
+		if(isset($_POST['submit_login']))
 		{
-			$result = mysqli_query($con, "SELECT password FROM registred WHERE userName='$userName' ");
-			$retrievepassword = mysqli_fetch_assoc($result);
-
-			$retrievepassword['password'];
-			if (user_is_activated($userName, $con) === false) {
-				$error = "Your account is not activated";
+			$userName = htmlentities($_POST['username']);
+			$password = htmlentities($_POST['password']);
+			$checkbox = isset($_POST['keep']);
+	
+			$userName = html_entity_decode($userName);
+			$password = html_entity_decode($password);
+			
+			if (username_exists($userName, $con))
+			{
+				$result = mysqli_query($con, "SELECT password FROM registred WHERE userName='$userName' ");
+				$retrievepassword = mysqli_fetch_assoc($result);
+	
+				$retrievepassword['password'];
+				if (user_is_activated($userName, $con) === false) {
+					$error = "Your account is not activated";
+				}
+				elseif(md5($password) !== $retrievepassword['password'] )
+				{
+					if (LABEL_LANG == 'en'){
+						$error = $en['password_incorrect']; 
+					}elseif (LABEL_LANG == 'fr') {
+						$error = $fr['password_incorrect']; 
+					}elseif (LABEL_LANG == 'nko') {
+						$error = $nko['password_incorrect']; 
+					}else{
+						$error = $en['password_incorrect']; 
+					}
+					//print_r(user_is_activated($userName, $con));
+					//echo md5($password).' and '.$retrievepassword['password'];
+				}
+				else 
+				{
+					//$succes = "You are connected now !";
+					echo "You are connected now !";
+					
+					$_SESSION['userName'] = $userName;
+					$_COOKIE['userName'] = $userName;
+	
+					echo $_SESSION['userName'].' '.$_COOKIE['userName'];
+					
+					if($checkbox == "on")
+					{
+						setcookie("userName",$userName, time()+3600);
+					}
+					
+					header("Location: ../index.php");
+					exit();
+					/*  */
+				}
+	
 			}
-			elseif(md5($password) !== $retrievepassword['password'] )
+			else
 			{
 				if (LABEL_LANG == 'en'){
-					$error = $en['password_incorrect']; 
+					$error = $en['error_username_not_exist']; 
 				}elseif (LABEL_LANG == 'fr') {
-					$error = $fr['password_incorrect']; 
+					$error = $fr['error_username_not_exist']; 
 				}elseif (LABEL_LANG == 'nko') {
-					$error = $nko['password_incorrect']; 
-				}else{
-					$error = $en['password_incorrect']; 
+					$error = $nko['error_username_not_exist']; 
 				}
-				//print_r(user_is_activated($userName, $con));
-				//echo md5($password).' and '.$retrievepassword['password'];
+				//echo "not matche !";
 			}
-			else 
-			{
-				//$succes = "You are connected now !";
-				echo "You are connected now !";
-				
-				$_SESSION['userName'] = $userName;
-				$_COOKIE['userName'] = $userName;
-
-				echo $_SESSION['userName'].' '.$_COOKIE['userName'];
-				
-				if($checkbox == "on")
-				{
-					setcookie("userName",$userName, time()+3600);
-				}
-				
-				header("Location: ../index.php");
-				/*  */
-			}
-
+	
 		}
-		else
-		{
-			if (LABEL_LANG == 'en'){
-				$error = $en['error_username_not_exist']; 
-			}elseif (LABEL_LANG == 'fr') {
-				$error = $fr['error_username_not_exist']; 
-			}elseif (LABEL_LANG == 'nko') {
-				$error = $nko['error_username_not_exist']; 
-			}
-			//echo "not matche !";
-		}
-
 	}
-
 ?>
 
 <!doctype html>

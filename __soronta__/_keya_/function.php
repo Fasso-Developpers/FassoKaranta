@@ -81,16 +81,18 @@
 	
 	// -------------- Verify if login or logout ------------------
 	function verif_login(){
-		if(logged_in())
+		if(logged_in() === true)
 		{
-			echo "You are login";
+			//echo "You are login";
 			echo('
 				<a class="loged_in" href="http://fasso.org/karanta/user/logout.php" >Logout<a>
 				<p id="log_statut">You are login</p>
-			');
-		}else{
+				');
+		}
+		elseif(logged_in() === false){
 			echo "You are not login";
-			header("location: http://fasso.org/karanta/user/login.php");
+			header("Location: http://fasso.org/karanta/user/login.php");
+			exit();
 		}
 	}
 	
@@ -107,7 +109,7 @@
 	$header_mail 	= "From: karanta@fasso.org"."\r\n";
 	$header_mail 	.= "Reply-To: karanta@fasso.org"."\r\n";
 	$header_mail 	.= 'Content-type: text/html; charset=utf-8'."\r\n";
-	$header_mail 	.= 'Content-type: text/html; charset=utf-8';
+	$header_mail 	.= "\r\n";
 	
 	function send_email($to, $subject, $body){
 		global $header_mail;
