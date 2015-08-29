@@ -19,7 +19,6 @@
 
 	$error = "";
 	$succes = "";
-	$feedback = "";
 	if(isset($_POST['submit_login']))
 	{
 		$userName = htmlentities($_POST['username']);

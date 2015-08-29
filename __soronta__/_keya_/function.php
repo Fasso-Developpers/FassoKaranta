@@ -35,7 +35,9 @@
 		}
 	}
 	
-	// ----- Theses function activate user account -----------
+	// ******************* Theses function activate user account *******************
+	
+	// ------- This function verify if user account is activate or not -------
 	function user_is_activated($userName, $con){
 		//return (mysqli_result(mysqli_query($con, "SELECT COUNT(`Id_registred`) FROM `registred` WHERE userName = '$userName' AND `active` = 1"), 0) ==1)? true: false;
 		$result = mysqli_query($con, "SELECT Id_registred FROM registred WHERE userName = '$userName' AND active = '1'"); 
@@ -49,22 +51,33 @@
 		}
 	}
 	
-	/*
-	function activate($userName, $active_code){
-		$userName 			= mysql_real_escape_string($userName);
-		$active_code	= mysql_real_escape_string($active_code);
-		if (mysqli_result(mysqli_query($con, "SELECT COUNT(`Id_registred`) FROM `registred` WHERE userName = '$userName' AND active_code = '$active_code' AND active = '0' "), 0) == 1) {
-			// query update account of user to active this
-			mysqli_query($con, "UPDATE `registred` SET `active` = 1 WHERE `userName` = $userName");
+	function active_code_exists($userName, $active_code, $con){
+		$result = mysqli_query($con, "SELECT Id_registred FROM registred WHERE userName = '$userName' AND active_code = '$active_code'"); 
+		
+		//return mysqli_num_rows($result);
+		if (mysqli_num_rows($result) == 1)
+		{
+			return true; 
+		}else{
+			return false;
+		}
+	}
+	// ------- This function upada user account if the arguments are good -------
+	function activate($userName, $active_code, $con){
+		$result = mysqli_query($con, "SELECT `Id_registred` FROM `registred` WHERE userName = '$userName' AND active_code = '$active_code' AND active = '0' ");
+		if (mysqli_num_rows($result) == 1)
+		{	
 			return true;
-			
 		} else {
 			return false;
-			
 		}
-		
 	}
-	*/
+	// Make user account active if arguments are ok
+	function active_account($userName, $con){
+		// query update account of user to active this
+		mysqli_query($con, "UPDATE `registred` SET `active` = 1 WHERE `userName` = '$userName'");
+	}
+	
 	
 	// -------------- Verify if login or logout ------------------
 	function verif_login(){
@@ -94,7 +107,7 @@
 	$header_mail 	= "From: karanta@fasso.org"."\r\n";
 	$header_mail 	.= "Reply-To: karanta@fasso.org"."\r\n";
 	$header_mail 	.= 'Content-type: text/html; charset=utf-8'."\r\n";
-	$header_mail 	.= "\r\n";
+	$header_mail 	.= 'Content-type: text/html; charset=utf-8';
 	
 	function send_email($to, $subject, $body){
 		global $header_mail;
