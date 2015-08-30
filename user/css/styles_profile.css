@@ -9,6 +9,19 @@
 	} 
 	.rectangle{border-radius: 0 10px 0 10px;}
 
+	.titre_contenu{
+		//border: 1px solid #fff;
+		display: inline-block;
+	}
+	.lesTitres{
+		//border: 1px solid #111;
+		position: absolute;
+		top: 220px;
+	}
+	.image_profile{
+		margin: 0 auto;
+	}
+
 /* Les paragraphes */
 	#paraTitre{top: 0;}
 	#paraTitre h1{position: absolute; right: 50%; top: -5px;

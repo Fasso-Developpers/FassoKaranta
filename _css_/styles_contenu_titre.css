@@ -1,6 +1,6 @@
 
 #titre{position: fixed; top: 70px; left: 0; 
-	width: 15%;  max-width: 15%; min-width: 150px; 
+	width: 200px;  /*max-width: 200px; min-width: 200px;*/ 
 	height: 100%; box-shadow: 0 0 5px #999;
 	background: rgb(70,70,70);
 }
@@ -13,18 +13,18 @@
 	padding: 0;
 }
 #titre ul{
-	//border: 1px solid #000;
-	position: absolute;
+	//border: 1px solid #fff;
+	//position: absolute;
 	margin: 0 auto;
 	padding: 10px;
 }
 #titre li{
 	list-style-type: none;
 	margin: 5px;
-	top: 0;
+	//top: 0;
 	text-align: center;
 	line-height: 180%;
-	font-size: 24px;
+	font-size: 23px;
 	//border: 1px solid #000;
 }
 #titre a{text-decoration: none; color: rgb(150,150,150);}
