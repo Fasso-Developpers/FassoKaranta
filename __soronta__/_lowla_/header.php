@@ -63,6 +63,17 @@
 				');
 				//verif_login();
 		}
-		verif_login();
+
+		//verif_login();
+		
+		if(logged_in() === true)
+		{
+		//echo "You are login";
+		echo('
+			<a class="loged_in" href="http://fasso.org/karanta/user/logout.php" >Logout<a>
+			<p id="log_statut">You are login</p>
+			');
+		}
+
 	?>
 </header>
