@@ -10,6 +10,12 @@
 		header("Location: login.php");
 		exit();
 	}else{
+		$userName = $_SESSION['userName'];
+		//$image_name = $_FILES['avatar']['name'];
+		$user_id = user_id_from_username($userName, $con);
+		$profile_image = get_djiya_name($userName, $con);
+		$image_name = $profile_image['djiya'];
+		$_SESSION['image'] = './user_image/'.$image_name;
 		
 		if(isset($_POST['submit']) && !$_FILES['avatar']['error']) {
 			$firstName = htmlentities($_POST['firstname']);
@@ -31,9 +37,9 @@
 				$error = trad_lang('please_valide_email');
 			} elseif (FILE_SIZE > '3145728') {
 				 // we dont want to upload the image grather than 3 MO.
-				$error = "This image is greather than maximum size: 3 Mo."."<br>";
+				$error = "This image is greather than maximum size: 3 Mo"."<br>";
 				$error .= "Please choose another image"."<br>";
-				$error .= "Before that, your old image will be use for your profile";
+				$error .= "Before that, your old image will be use for your profile".'<br>';
 			}else{
 							
 				//$password = md5($password);
@@ -47,13 +53,18 @@
 					$verif_imag = getimagesize($_FILES['avatar']['tmp_name']);
 					if($verif_imag && $verif_imag[2] < 4){
 						//move_uploaded_file($_FILES['avatar']['tmp_name'], $_SERVER['DOCUMENT_ROOT'].'test/img/'.basename($_FILES['avatar']['name']));
-						if(move_uploaded_file($image['tmp_name'], './user_image/'.$_FILES['avatar']['name'])){
-							$error_image = 'image uploaded successfully !';
-							$_SESSION['image'] = './user_image/'.$_FILES['avatar']['name'];
+						$image_name = date("Y_m_d_h_i_sa").$_FILES['avatar']['name'];
+						//move_uploaded_file($image['tmp_name'], './user_image/'.$_FILES['avatar']['name']);
+						if(move_uploaded_file($image['tmp_name'], './user_image/'.$image_name)){
+							$error = 'image uploaded successfully !'.'<br>';
+							$userName = $_SESSION['userName'];
+							//$user_id = user_id_from_username($userName, $con);
+							update_djiya($userName, $con, $image_name);
+							$_SESSION['image'] = './user_image/'.$image_name;			
 						}
 					}else{
 						$error = 'This file is not a image'.'<br>';
-						$error .= 'Please choose a image to your profile';
+						$error .= 'Please choose a image to your profile'.'<br>';
 						unlink($_FILES['avatar']['tmp_name']);
 						unset($_FILES['avatar']);
 					}	
@@ -93,7 +104,9 @@
 				<h1>Profile info</h1>
 				<div class="titre_contenu">
 					<div><?php
-						echo '<img class="image_profile" src="'.$_SESSION["image"].'" />';
+						if(isset($_SESSION['image'])){
+							echo '<img class="image_profile" src="'.$_SESSION["image"].'" />';
+						}
 					?></div>
 					<ul id="lesTitres">
 						<li class="active"><a href="profile.php">Infos</a>
@@ -162,7 +175,11 @@
 							var_dump($_FILES['avatar']);
 							echo $error;
 						}
+						//print_r($user_id) ;
+						//echo $user_id['Id_registred'];
+						//echo $userName;
 						echo $error;
+						echo $image_name;
 						if(isset($taille)){
 							echo $taille;
 						}

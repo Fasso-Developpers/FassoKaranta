@@ -105,6 +105,31 @@
 			return false;
 		}
 	}
+
+
+//  ----- ----- user_id_from_username ---- -----
+function user_id_from_username($userName, $con){
+	$query = "SELECT `Id_registred` FROM `registred` WHERE `userName` = '$userName' ";
+	$result = mysqli_query($con, $query);
+	$resultat = mysqli_fetch_assoc($result);
+	return $resultat;
+}
+
+// update djiya
+//$query = ""; mysqli_query($con, "UPDATE `registred` SET `djiya` = '$image_name' WHERE `userName` = '$userName' ");
+function update_djiya($userName, $con, $image_name){
+	mysqli_query($con, "UPDATE `registred` SET `djiya` = '$image_name' WHERE `userName` = '$userName' ");
+}
+
+function get_djiya_name($userName, $con){
+	$query = "SELECT `djiya` FROM `registred` WHERE `userName` = '$userName' ";
+	$result = mysqli_query($con, $query);
+	$resultat = mysqli_fetch_assoc($result);
+	return $resultat;
+}
+
+
+
 // ------------  SEND A CONFIRMATION MAIL -----------
 	$header_mail 	= "From: karanta@fasso.org"."\r\n";
 	$header_mail 	.= "Reply-To: karanta@fasso.org"."\r\n";
