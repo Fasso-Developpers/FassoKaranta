@@ -69,7 +69,7 @@
 				if (username_exists($userName, $con)) {
 					$error = trad_double_lang('sorry_username_exists_1', $userName, 'sorry_username_exists_2');
 				} else {
-					$insertQuery = "INSERT INTO registred (firstName, lastName, userName, email, language, password, active_code)
+					$insertQuery = "INSERT INTO registred (firstName, lastName, userName, email, kan, password, active_code)
 						VALUE('$firstName', '$lastName', '$userName', '$email', '$lang','$password', '$active_code') ";
 	
 					//print_r($insertQuery);
