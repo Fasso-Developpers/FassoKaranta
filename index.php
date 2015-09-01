@@ -1,9 +1,10 @@
 <?php
 	
-	define("MAIN_PAGE", "main_index");
 	include("__soronta__/flo.php");
+	is_not_login();
 	$error = "";
 	$succes = "";
+	define("MAIN_PAGE", "main_index");
 ?>
 
 <!doctype html >

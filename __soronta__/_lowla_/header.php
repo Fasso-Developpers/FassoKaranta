@@ -33,7 +33,7 @@
 					</nav>
 				</div>
 				');
-				//verif_login();
+
 		}elseif (MAIN_PAGE == "nko_index"){
 			echo('
 				<div id="menuContenu" class="ombre">
@@ -61,19 +61,14 @@
 					</nav>
 				</div>
 				');
-				//verif_login();
+
 		}
 
-		//verif_login();
-		
-		if(logged_in() === true)
-		{
-		//echo "You are login";
 		echo('
 			<a class="loged_in" href="http://fasso.org/karanta/user/logout.php" >Logout<a>
 			<p id="log_statut">You are login</p>
 			');
-		}
+		//}
 
 	?>
 </header>

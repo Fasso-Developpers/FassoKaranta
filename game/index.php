@@ -1,10 +1,11 @@
 <?php
 	
-	define("MAIN_PAGE", "game_index");
 	include("../__soronta__/flo.php");
+	is_not_login();
 	$error = "";
 	$succes = "";
-
+	define("MAIN_PAGE", "game_index");
+	
 ?>
 
 <!doctype html >
@@ -12,15 +13,7 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Fasso | N'ko school</title>
-	<link rel="icon" href="images/fassoIcone.ico" type="image/x-icon">
-	<!-- styles css -->
-	<link rel="stylesheet" href="../css/styles_header.css" />
-	<link rel="stylesheet" href="../css/styles_contenu.css" />
-	<link rel="stylesheet" href="../css/styles_contenu_titre.css" />
-
-	<!-- script javascript -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-	<script src="js/site.js"></script>
+	<?php include('../__soronta__/_lowla_/head_sm.php'); ?>
 </head>
 
 <body dir="auto">

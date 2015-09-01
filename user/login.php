@@ -6,13 +6,12 @@
 	// this page contstant
 	define('THIS_PAGE', "login");
 
-// Verifiy if you are login
-	
-	if(logged_in())
-	{
-		header("Location: profile.php");
-		exit();
-	}else{
+// if you are login redirect to profile.php
+		echo $_SESSION['userName'];
+		
+		
+		is_login("user/profile.php");
+
 		$error = "";
 		$succes = "";
 		if(isset($_POST['submit_login']))
@@ -81,7 +80,7 @@
 			}
 	
 		}
-	}
+
 ?>
 
 <!doctype html>

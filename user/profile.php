@@ -5,11 +5,12 @@
 	include ("traduction.php");
 	$error = "";
 	$succes = "";
-	if(!logged_in())
+	
+	/*if(!logged_in())
 	{
 		header("Location: login.php");
 		exit();
-	}else{
+	}else{*/
 		$userName = $_SESSION['userName'];
 		//$image_name = $_FILES['avatar']['name'];
 		$user_id = user_id_from_username($userName, $con);
@@ -71,7 +72,7 @@
 				}	
 			}
 		}
-	}
+	//}
 	
 ?>
 
