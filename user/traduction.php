@@ -63,7 +63,7 @@
 
 
 				'firstname'=>"ߌ ߕߐ߮",
-				'lastname'=>"ߌ ߛߌ߫",
+				'lastname'=>"ߌ ߛߌ",
 				'username'=>"ߌ ߜߊ߲߬ߞߎ߲߬ߕߐ߮",
 				'adressemail'=>"ߢߎߡߍߙߋ߲ߞߏ߲ߘߏ",
 				'password'=>"ߕߊ߬ߡߌ߲߬ߞߊ߲",
