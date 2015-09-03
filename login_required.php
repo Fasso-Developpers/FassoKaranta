@@ -2,7 +2,11 @@
 
 	include("__soronta__/flo.php");
 	
+	//echo logged_in();
 	is_login("index.php");
+	if(!is_login){
+		
+	
 ?>
 
 <!DOCTYPE html>
@@ -20,3 +24,6 @@
 	</body>
 	
 </html>
+<?php 
+	}
+?>

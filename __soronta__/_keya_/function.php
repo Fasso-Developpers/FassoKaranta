@@ -81,7 +81,7 @@
 	
 	// -------------- Verify if login or logout ----is_not_login()--------------
 	function is_not_login(){
-		if(logged_in() === false){
+		if(logged_in() === FALSE){
 			// if not login redirect to login.php
 			echo "You are not login";
 			header("Location: http://fasso.org/karanta/login_required.php");
@@ -90,11 +90,13 @@
 	}
 	
 	function is_login(){
-		if(logged_in() === true){
+		if(logged_in() === TRUE){
 			// ------ if login redirect to profile.php
 			//echo "You are login";
+			
 			header("Location: http://fasso.org/karanta/".$to);
 			exit();
+			return logged_in();
 		}
 	}
 	

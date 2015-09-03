@@ -10,15 +10,15 @@
 	}
 
 	#paraTexte{position: absolute; top: 40px; 
-		width: 100%; max-width:100%; min-width: 470px; 
-		height: 98%;
+		width: 95%; max-width:100%; //min-width: 470px; 
+		height: 100%;
 		//box-shadow: 0 0 2px #999;background: rgb(220,220,220);}
 		#listDmalon li{list-style-type: disc;}
 		#listDmalon a{text-decoration: none;}
 
 		#intro{
 			position: absolute;
-			width: 95%;
+			width: 100%;
 			line-height: 80%;
 			font-family: Geneva, Ebrima, dejaVu;
 			font-size: 18px;

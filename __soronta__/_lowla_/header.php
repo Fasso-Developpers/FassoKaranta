@@ -8,7 +8,7 @@
 			<li <?php if(MAIN_PAGE == "nko_index") echo' class="active"'; ?> ><a href="http://www.fasso.org/karanta/nko/index.php">N'ko</a>
 			<li <?php if(MAIN_PAGE == "computer_index") echo' class="active"'; ?> ><a href="http://www.fasso.org/karanta/computer/index.php">Computer</a>
 			<li <?php if(MAIN_PAGE == "game_index") echo' class="active"'; ?> ><a href="http://www.fasso.org/karanta/game/index.php">Games</a>
-			<li <?php if(MAIN_PAGE == "reading_index") echo' class="active"'; ?> ><a href="http://www.fasso.org/karanta/reading/index.php">Reading</a>
+			<li <?php if(MAIN_PAGE == "culture_index") echo' class="active"'; ?> ><a href="http://www.fasso.org/karanta/culture/index.php">Culture</a>
 		</ul>
 	</nav>
 	
@@ -39,7 +39,6 @@
 				<div id="menuContenu" class="ombre">
 					<nav>
 						<ul dir="auto" id="subMenu">
-							<li><a href="http://www.fasso.org/karanta/user/profile.php">Profile</a>
 							<li><a href="#">Alphabet</a>
 							<li><a href="#">Accents</a>
 							<li><a href="#">Grammar</a>
@@ -63,12 +62,16 @@
 				');
 
 		}
-
+		/*if(is_login()){
 		echo('
 			<a class="loged_in" href="http://fasso.org/karanta/user/logout.php" >Logout<a>
 			<p id="log_statut">You are login</p>
 			');
-		//}
+		}else{
+		echo('
+			<a class="loged_in" href="http://fasso.org/karanta/user/login.php" >Login<a>
+			');
+		}*/
 
 	?>
 </header>

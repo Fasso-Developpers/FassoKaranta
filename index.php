@@ -1,7 +1,6 @@
 <?php
 	
 	include("__soronta__/flo.php");
-	is_not_login();
 	$error = "";
 	$succes = "";
 	define("MAIN_PAGE", "main_index");
@@ -58,7 +57,7 @@
 							<p class="def">(How many game do you know in Manden, if you don't know anyone, 
 								this section will learn very much.)</p>
 						</li>
-						<li> <a href="//localhost/karanta/reading/index.php">Reading</a> 
+						<li> <a href="//localhost/karanta/culture/index.php">Reading</a> 
 							<p class="def">(After know the basic notion in N'ko, you must pratice to anderstand,
 								in this section, you will be the excellent reader I hope.</p>
 						</li>

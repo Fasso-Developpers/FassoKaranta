@@ -4,8 +4,7 @@
 	include("../__soronta__/flo.php");
 	$error = "";
 	$succes = "";
-	is_not_login();
-	define("MAIN_PAGE", "reading_index");
+	define("MAIN_PAGE", "culture_index");
 ?>
 
 <!doctype html >

@@ -1,7 +1,6 @@
 <?php
 	
 	include("../__soronta__/flo.php");
-	is_not_login();
 	$error = "";
 	$succes = "";
 	define("MAIN_PAGE", "computer_index");
