@@ -1,6 +1,6 @@
 <?php
 	
-	include("../__soronta__/flo.php");
+	include_once("../__soronta__/flo.php");
 	include("../user/index.php");
 	$error = "";
 	$succes = "";
