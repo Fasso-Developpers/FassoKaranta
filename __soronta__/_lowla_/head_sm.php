@@ -1,6 +1,6 @@
 <?php
 	echo('
-	<link rel="icon" href="images/fassoIcone.ico" type="image/x-icon">
+	<link rel="icon" href="../_djiya_/fassoIcone.ico" type="image/x-icon">
 	<!-- styles css -->
 	<link rel="stylesheet" href="../_css_/styles_header.css" />
 	<link rel="stylesheet" href="../_css_/styles_subtitle.css" />

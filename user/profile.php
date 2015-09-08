@@ -12,9 +12,25 @@
 		exit();
 	}else{*/
 
-		//$image_name = $_FILES['avatar']['name'];
-		$user_id = user_id_from_username($userName, $con);
-		$profile_image = get_djiya_name($userName, $con);
+	//$image_name = $_FILES['avatar']['name'];
+	if(!isset($_SESSION['user_id'])){ // If not connected, say you must login
+		
+		echo '<html>';
+		echo '<head><meta charset="utf-8>"';
+		echo '<title>Profile</title>';
+		echo '<link rel="stylesheet" href="css/regist.css" />';
+		echo '<head>';
+		
+		echo '<body">';
+			echo '<h1 center>You are not connected</h1>';
+			echo '<p>You must be connected to see your profile</p>';
+			echo '<p>Please connect here <a href="login.php">Login</a></p>';
+		echo "</body>";
+		echo "</html>";
+	}else{
+		$user_id = $_SESSION['user_id'];
+	
+		$profile_image = get_djiya_name($user_id, $con);
 		$image_name = $profile_image['djiya'];
 		$_SESSION['image'] = './user_image/'.$image_name;
 		
@@ -52,7 +68,7 @@
 				if(isset($_FILES['avatar'])){
 					$image = $_FILES['avatar'];
 					$verif_imag = getimagesize($_FILES['avatar']['tmp_name']);
-					if($verif_imag && $verif_imag[2] < 4){
+					if($verif_imag && $verif_imag[2] < 4){ //The image format is ok
 						//move_uploaded_file($_FILES['avatar']['tmp_name'], $_SERVER['DOCUMENT_ROOT'].'test/img/'.basename($_FILES['avatar']['name']));
 						$image_name = date("Y_m_d_h_i_sa").$_FILES['avatar']['name'];
 						//move_uploaded_file($image['tmp_name'], './user_image/'.$_FILES['avatar']['name']);
@@ -72,7 +88,7 @@
 				}	
 			}
 		}
-	//}
+	
 	
 ?>
 
@@ -85,15 +101,13 @@
 	<?php include('../__soronta__/_lowla_/head_sm.php'); ?>
 	<link rel="stylesheet" href="css/styles_profile.css" />
 	<link rel="stylesheet" href="css/editable.css" />
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-	<script src="js/site.js"></script>
+	
 </head>
 
 <body dir="auto">
 <!-- Entête -->
 	<?php include("../__soronta__/_lowla_/header.php"); ?>
-
+	<?php include_once("../__soronta__/logout_button.php"); ?>
 <!-- Cette partie contient le contenu de la page -->
 		<div dir="ltr" id="contenu" class="ombre">
 					
@@ -177,7 +191,7 @@
 						//echo $user_id['Id_registred'];
 						//echo $userName;
 						echo $error;
-						echo $image_name;
+						//echo $image_name;
 						if(isset($taille)){
 							echo $taille;
 						}
@@ -194,3 +208,5 @@
 		</div>
 </body>
 </html>
+
+<?php } ?>

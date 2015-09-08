@@ -152,8 +152,8 @@ function update_djiya($userName, $con, $image_name){
 	mysqli_query($con, "UPDATE `registred` SET `djiya` = '$image_name' WHERE `userName` = '$userName' ");
 }
 
-function get_djiya_name($userName, $con){
-	$query = "SELECT `djiya` FROM `registred` WHERE `userName` = '$userName' ";
+function get_djiya_name($user_id, $con){
+	$query = "SELECT `djiya` FROM `registred` WHERE `Id_registred` = '$user_id' ";
 	$result = mysqli_query($con, $query);
 	$resultat = mysqli_fetch_assoc($result);
 	return $resultat;

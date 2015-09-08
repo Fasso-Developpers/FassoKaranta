@@ -1,7 +1,7 @@
 <?php
 	
 	include_once("../__soronta__/flo.php");
-	include("../user/index.php");
+	include_once("../user/index.php");
 	$error = "";
 	$succes = "";
 	define("MAIN_PAGE", "nko_index");
@@ -21,7 +21,10 @@
 <body dir="auto">
 
 <!-- Entête -->
+	<?php include_once("../__soronta__/logout_button.php"); ?>
+	
 	<?php include("../__soronta__/_lowla_/header.php"); ?>
+	
 	<?php include("subtitle_nko.php"); ?>
 <!-- Cette partie contient le contenu de la page -->
 		<div dir="ltr" class="contenu" class="ombre">
@@ -92,7 +95,7 @@
 					<h3>Bienvenue aux cours N'ko</h3>
 					<p>
 						 Vous voulez surment apprendre le N'ko, félicitation, nous sommes à votre disposition.
-						 Ici vous pouvez apprendre N'ko en 3 langues: N'ko, Anglais et Français.<br>
+						 Ici vous pouvez apprendre N'ko en 3 langues: N'ko, Anglais et Français.
 						 Choisisez une de ces langues dans votre profile pour commenter vos cours.
 					</p>
 

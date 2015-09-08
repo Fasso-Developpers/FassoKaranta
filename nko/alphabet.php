@@ -18,7 +18,9 @@
 <body dir="auto">
 
 	<!-- Entête -->
+	<?php include_once("../__soronta__/logout_button.php"); ?>
 	<?php include("../__soronta__/_lowla_/header.php"); ?>
+	
 	<?php include("subtitle_nko.php"); ?>
 	<!-- Cette partie contient le contenu de la page -->
 	<div dir="ltr" class="contenu" class="ombre">

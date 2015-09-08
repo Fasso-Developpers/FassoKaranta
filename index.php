@@ -1,6 +1,6 @@
 <?php
-	include("__soronta__/flo.php");
-	include("user/index.php");
+	include_once("__soronta__/flo.php");
+	include_once("user/index.php");
 	$error = "";
 	$succes = "";
 	define("MAIN_PAGE", "main_index");
@@ -15,7 +15,7 @@
 	<link rel="icon" href="http://www.fasso.org/karanta/_djiya_/fassoIcone.ico" type="image/x-icon">
 	<!--[if IE]><link rel="shortcut icon" type="image/x-icon" 
 		href="http://www.fasso.org/karanta/_djiya_/fassoIcone.ico" /><![endif]-->
-
+	
 	<link rel="stylesheet" href="_css_/styles_header.css" />
 	<link rel="stylesheet" href="_css_/styles_subtitle.css" />
 	<link rel="stylesheet" href="_css_/styles_contenu_full.css" />
@@ -25,13 +25,19 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<script src="_js_/site.js"></script>
+	
 </head>
 
 <body dir="auto">
 
 <!-- Entête -->
+	
+		<?php include_once("__soronta__/logout_button.php"); ?>
+		
 		<?php include("__soronta__/_lowla_/header.php"); ?>
+			
 		<?php include("subtitle.php"); ?>
+		
 
 <!-- Cette partie contient le contenu de la page -->
 		<div dir="ltr" class="contenu" class="ombre">

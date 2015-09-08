@@ -11,22 +11,26 @@ header, nav, aside, footer, figure, section, article{display: block;}
 #mainMenu a{color:#eee; text-decoration:none;}
 #mainMenu a:hover{color:#555;}
 
-	.loged_in{position: absolute; 
+	.loged_in{position: fixed; 
+		text-decoration:none;
 		font-size: 18px; font-weight: bold;
+		color: #eee;
 		font-family: Ebrima; Tahoma; 
 		background: rgb(150,150,150); 
-		padding-top: 0;  padding-bottom: 21.5px; 
+		padding-top: 0;  padding-bottom: 23px; 
 		padding-left: 15px; padding-right: 15px;
 		margin-top:-1px; margin-bottom:5px; margin-left: 5px;
 		right: 0;
+		z-index: 2;
 	}
-	#log_statut{position: absolute;
+	#log_statut{position: fixed;
 		top: 15px; right: 0;
 		margin: 0; padding: 5px; 
 		font-size: 14px;
 		color: #eee;
 		cursor: default;
 		//background: rgb(150,150,150); 
+		z-index: 2;
 	}
 
 
