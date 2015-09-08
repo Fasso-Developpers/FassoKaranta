@@ -69,12 +69,14 @@
 				if (username_exists($userName, $con)) {
 					$error = trad_double_lang('sorry_username_exists_1', $userName, 'sorry_username_exists_2');
 				} else {
-					$insertQuery = "INSERT INTO registred (firstName, lastName, userName, email, kan, password, active_code)
-						VALUE('$firstName', '$lastName', '$userName', '$email', '$lang','$password', '$active_code') ";
+					$registerQuery = "INSERT INTO registred (firstName, lastName, userName, email, kan)
+									VALUE('$firstName', '$lastName', '$userName', '$email', '$lang')";
+					$userQuery = "INSERT INTO user (userName, password, active_code)
+										VALUE('$userName', '$password', '$active_code')";
+					print_r($registerQuery);
+					print_r($userQuery);
 	
-					//print_r($insertQuery);
-	
-					if (mysqli_query($con, $insertQuery)) {
+					if (mysqli_query($con, $registerQuery) && mysqli_query($con, $userQuery)) {
 						setcookie('email', $email, 0, '/', '', false, true);
 						setcookie('userName', $userName, 0, '/', '', false, true);
 						//echo $_COOKIE['userName'];

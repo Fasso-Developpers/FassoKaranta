@@ -1,11 +1,10 @@
 ﻿<?php
-	include("../__soronta__/flo.php");
 	if(logged_in())
 	{
-		header("location: profile.php");
-		exit();
+	/*	header("location: profile.php");
+		exit();*/
 	}else{
-		header("location: login.php");
+		header("location: //localhost/karanta/user/login.php");
 		exit();
 	}
 

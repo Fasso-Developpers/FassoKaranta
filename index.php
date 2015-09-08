@@ -1,9 +1,10 @@
 <?php
-	
 	include("__soronta__/flo.php");
+	include("user/index.php");
 	$error = "";
 	$succes = "";
 	define("MAIN_PAGE", "main_index");
+	define("CHAPITRE", "");
 ?>
 
 <!doctype html >
@@ -16,6 +17,7 @@
 		href="http://www.fasso.org/karanta/_djiya_/fassoIcone.ico" /><![endif]-->
 
 	<link rel="stylesheet" href="_css_/styles_header.css" />
+	<link rel="stylesheet" href="_css_/styles_subtitle.css" />
 	<link rel="stylesheet" href="_css_/styles_contenu_full.css" />
 	<link rel="stylesheet" href="_css_/styles_contenu_titre.css" />
 	<link rel="stylesheet" href="_css_/styles_contenu_para.css" />
@@ -29,6 +31,7 @@
 
 <!-- Entête -->
 		<?php include("__soronta__/_lowla_/header.php"); ?>
+		<?php include("subtitle.php"); ?>
 
 <!-- Cette partie contient le contenu de la page -->
 		<div dir="ltr" class="contenu" class="ombre">

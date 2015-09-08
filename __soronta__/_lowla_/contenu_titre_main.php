@@ -1,5 +1,5 @@
 <div id="titre" class="rectangle ombre">
-	<h1>Contents Menu</h1>
+	<h1 id="hautTitreH1">Contents Menu</h1>
 	<ul id="lesTitres">
 		<li><a href="#">Nouveaux cours</a>
 		<li><a href="#">Meilleurs cours</a>

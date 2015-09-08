@@ -19,6 +19,7 @@
 	-->
 
 	<?php
+	
 		// Le MENU de lonko 'MENU LONKO'
 		if (MAIN_PAGE == "main_index"){
 			echo('
@@ -34,19 +35,6 @@
 				</div>
 				');
 
-		}elseif (MAIN_PAGE == "nko_index"){
-			echo('
-				<div id="menuContenu" class="ombre">
-					<nav>
-						<ul dir="auto" id="subMenu">
-							<li><a href="#">Alphabet</a>
-							<li><a href="#">Accents</a>
-							<li><a href="#">Grammar</a>
-							<li><a href="#">Orthograph</a>
-						</ul>
-					</nav>
-				</div>
-			');
 		}elseif (MAIN_PAGE == "profile"){
 			echo('
 				<div id="menuContenu" class="ombre">
@@ -72,6 +60,5 @@
 			<a class="loged_in" href="http://fasso.org/karanta/user/login.php" >Login<a>
 			');
 		}*/
-
 	?>
-</header>
+

@@ -1,9 +1,11 @@
 <?php
 	
 	include("../__soronta__/flo.php");
+	include("../user/index.php");
 	$error = "";
 	$succes = "";
 	define("MAIN_PAGE", "nko_index");
+	define("CHAPITRE", "");
 	
 ?>
 
@@ -11,27 +13,66 @@
 <html dir="auto">
 <head>
 	<meta charset="utf-8" />
-	<title>Fasso|N'ko school</title>
+	<title>Fasso - N'ko school</title>
 	<?php include('../__soronta__/_lowla_/head_sm.php'); ?>
+	<link rel="stylesheet" href="css/titre_lesson.css" />
 </head>
 
 <body dir="auto">
 
 <!-- Entête -->
 	<?php include("../__soronta__/_lowla_/header.php"); ?>
-
+	<?php include("subtitle_nko.php"); ?>
 <!-- Cette partie contient le contenu de la page -->
 		<div dir="ltr" class="contenu" class="ombre">
 
 		<!-- Titre -->
 			<div id="titre" class="rectangle ombre">
-				<h1>Contents Menu</h1>
-				<ul id="lesTitres">
-					<li><a href="#">Alphabet</a>
-					<li><a href="#">Diphtone</a>
-					<li><a href="#">Vowels</a>
-					<li><a href="#">Consonant</a>
-					<li><a href="#">Revison</a>
+				<h1 id="hautTitreH1">Menu contenu</h1>
+				<h1 class="titreH1"><a class="h1Liens" href="alphabet.php">Alphabet</a></h1>
+				<ul class="lesTitres lesTitres1">
+					<li>Lecture</li>
+					<li>Ecriture</li>
+					<li>Ecrire son nom</li>
+					<li>Ressemblance</li>
+					<li>Exercices</li>
+					<li>Controles</li>
+				</ul>
+				<h1 class="titreH1"><a class="h1Liens" href="#">Syllabe</a></h1>
+				<ul class="lesTitres lesTitres2">
+					<li>Introduction</li>
+					<li>Monosyllabe</li>
+					<li>Disyllabe</li>
+					<li>Plurisillabe</li>
+					<li>Syllabe et Mot</li>
+					<li>Ecrire les mots</li>
+				</ul>
+				<h1 class="titreH1"><a class="h1Liens" href="#">Accent</a></h1>
+				<ul class="lesTitres lesTitres2">
+					<li>Introduction</li>
+					<li>Diphtone</li>
+					<li>Voyelles</li>
+					<li>Consonnes</li>
+					<li>Chiffres</li>
+					<li>Conclusion</li>
+				</ul>
+				<h1 class="titreH1"><a class="h1Liens" href="#">Grammaire</a></h1>
+				<ul class="lesTitres lesTitres2">
+					<li>Introduction</li>
+					<li>Diphtone</li>
+					<li>Voyelles</li>
+					<li>Consonnes</li>
+					<li>Chiffres</li>
+					<li>Conclusion</li>
+				</ul>
+				<h1 class="titreH1"><a class="h1Liens" href="#">Orthographe</a></h1>
+				<ul class="lesTitres lesTitres2">
+					<li>Introduction</li>
+					<li>Diphtone</li>
+					<li>Voyelles</li>
+					<li>Consonnes</li>
+					<li>Chiffres</li>
+					<li>Conclusion</li>
 				</ul>
 			</div>
 
@@ -66,7 +107,7 @@
 						See below a video for "Introduction to N'ko"
 					</p>
 					<p class="souhait">Good reading !</p>
-					<video controls="controls" class="videoIntro">
+					<video controls="controls" class="videoIntro" type="video/mp4">
 						<source src="//localhost/karanta/nko/sbeisun/sbeisun.mp4" type="video/mp4" /> 
 					</video>
 				</section>

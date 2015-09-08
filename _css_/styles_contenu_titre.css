@@ -1,19 +1,26 @@
 
-#titre{position: fixed; top: 70px; left: 0; 
+#titre{position: fixed; top: 72px; left: 0; 
 	width: 200px;  /*max-width: 200px; min-width: 200px;*/ 
 	height: 100%; box-shadow: 0 0 5px #999;
 	background: rgb(70,70,70);
 }
 
 /* Les titres du contenu */
+
 #titre h1{
-	color: rgb(200,200,200);
 	font-size: 20px;
 	text-align: center;
-	padding: 0;
+	//padding: 10px;
+	margin: 5px 0 0 0;
 }
+
+#hautTitreH1{
+	color: rgb(100,100,100);
+	cursor: default;
+	}
+.h1Liens{color: rgb(220,220,220);}
 #titre ul{
-	//border: 1px solid #fff;
+	//border: 3px solid rgb(50,100,150);
 	//position: absolute;
 	margin: 0 auto;
 	padding: 10px;
@@ -23,10 +30,10 @@
 	margin: 5px;
 	//top: 0;
 	text-align: center;
-	line-height: 180%;
+	line-height: 140%;
 	font-size: 23px;
 	//border: 1px solid #000;
 }
-#titre a{text-decoration: none; color: rgb(150,150,150);}
+#titre a{text-decoration: none; color: rgb(180,180,180);}
 #titre a:hover{color: rgb(20,20,20);}
 #titre li.active a{color: rgb(200,40,40);}

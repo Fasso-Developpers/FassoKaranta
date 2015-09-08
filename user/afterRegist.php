@@ -201,16 +201,19 @@
 						<label><?php echo trad_lang('choise_your_level_in_nko') ?> : </label>
 						<select id="levels" name="nko_level">
 							<OPTGROUP class="descLevel" <?php echo 'label="'.trad_lang('description_of_level_1').'"' ?>>
-							<option value="nko_level1"><?php echo trad_lang('nko_level_1') ?></option>
+							<option value="level_1"><?php echo trad_lang('nko_level_1') ?></option>
 							</OPTGROUP>
 							<OPTGROUP class="descLevel" <?php echo 'label="'.trad_lang('description_of_level_2').'"' ?>>
-							<option value="nko_level2"><?php echo trad_lang('nko_level_2') ?></option>
+							<option value="level_2"><?php echo trad_lang('nko_level_2') ?></option>
 							</OPTGROUP>
 							<OPTGROUP class="descLevel" <?php echo 'label="'.trad_lang('description_of_level_3').'"'?>>
-							<option value="nko_level3"><?php echo trad_lang('nko_level_3') ?></option>
+							<option value="level_3"><?php echo trad_lang('nko_level_3') ?></option>
 							</OPTGROUP>
 							<OPTGROUP class="descLevel" <?php echo 'label="'.trad_lang('description_of_level_4').'"'?>>
-							<option value="nko_level4"><?php echo trad_lang('nko_level_4') ?></option>
+							<option value="level_4"><?php echo trad_lang('nko_level_4') ?></option>
+							</OPTGROUP>
+							<OPTGROUP class="descLevel" <?php echo 'label="'.trad_lang('description_of_level_5').'"'?>>
+							<option value="level_5"><?php echo trad_lang('nko_level_5') ?></option>
 							</OPTGROUP>
 						</select>
 					</li>

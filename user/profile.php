@@ -6,12 +6,13 @@
 	$error = "";
 	$succes = "";
 	
+	include("index.php");
 	/*if(!logged_in())
 	{
 		header("Location: login.php");
 		exit();
 	}else{*/
-		$userName = $_SESSION['userName'];
+		
 		//$image_name = $_FILES['avatar']['name'];
 		$user_id = user_id_from_username($userName, $con);
 		$profile_image = get_djiya_name($userName, $con);
@@ -83,11 +84,11 @@
 	<meta charset="utf-8" />
 	<title>Fasso | Profile </title>
 	<link rel="icon" href="images/fassoIcone.ico" type="image/x-icon">
-	<link rel="stylesheet" href="../_css_/styles_contenu_full.css" />
+	<!--<link rel="stylesheet" href="../_css_/styles_contenu_full.css" />
 	<link rel="stylesheet" href="../_css_/styles_header.css" />
 	<link rel="stylesheet" href="../_css_/styles_contenu_titre.css" />
 	<link rel="stylesheet" href="css/styles_profile.css" />
-	<link rel="stylesheet" href="css/editable.css" />
+	<link rel="stylesheet" href="css/editable.css" />-->
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<script src="js/site.js"></script>

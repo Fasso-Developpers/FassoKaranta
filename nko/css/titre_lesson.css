@@ -1,0 +1,53 @@
+html{
+	font-family : Ebrima;
+}
+body{
+	font-family : Ebrima;
+}
+
+/* Les titres du contenu */
+#hautTitreH1{margin:5px;}
+#titre ul{
+	border: 3px solid rgb(50,100,150);
+}
+.titreH1{
+	color: rgb(200,200,200);
+	border: 3px solid rgb(50,100,150);
+	position: relative;
+	cursor: cell;
+	background: rgb(50,100,150);
+	color: rgb(220,220,220);
+	font-size: 18px;
+	margin: 0 auto;
+	text-align: center;
+	padding: 5px;
+	//font-style: inherit;
+}
+.titreH1>a{color: rgb(220,220,220);}
+/* ----- lesTitres ----- */
+.lesTitres li{
+	padding: 3px;
+	list-style-type: none;
+	line-height: 100%;
+	font-size: 18px;
+	color: rgb(150,150,150);
+	cursor: default;
+}
+.lesTitres li.active a{color: rgb(250,250,100);}
+.lesTitres  a{text-decoration: none; color: rgb(220,220,220);}
+.lesTitres a:hover{color: rgb(20,20,20);}
+
+
+
+/* ----- lesTitres ----- */
+.lesLiens{padding: 10px;}
+.lesLiens li{
+	list-style-type: none;
+	line-height: 100%;
+	font-size: 18px;
+}
+.lesLiens li.active a{color: rgb(250,250,100);}
+.lesLiens a{text-decoration: none; color: rgb(220,220,220);}
+.lesLiens a:hover{color: rgb(20,20,20);}
+
+

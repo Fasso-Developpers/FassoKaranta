@@ -34,7 +34,7 @@ header, nav, aside, footer, figure, section, article{display: block;}
 header{height:70px; position:fixed; margin: 0 auto; top:0; 
 		border:1px solid rgb(150,150,150);
 		background: rgb(150,150,150);
-		z-index: 50;
+		z-index: 1;
 	}
 
 	#menu{position:absolute; list-style-type:none; margin:-1px; padding:0px;
@@ -60,34 +60,3 @@ header{height:70px; position:fixed; margin: 0 auto; top:0;
 	#recherche input[type="text"]:focus {border:1px solid #ccc; width:150px; 
 		background:rgb(225,225,225); text-align:right; height: 20px;}
 	
-/* Menu Lonko  */
-	
-	#menuContenu{position: absolute; 
-		width: 80%; max-width: 80%; min-width: 420px; height:40px; 
-		top:30px; left:0; padding: 5px;
-		//border:1px solid #000; 
-		margin: 0 auto; display: block;
-		}
-	#menuContenu a{color:#ef3f50; text-decoration:none;}
-	#menuContenu a:hover{color:rgb(100,255,100);}
-
-	#subMenu{position:absolute; 
-		list-style-type:none; 
-		margin:0 auto; padding: 6px 5px 0 5px; right: 5%;
-		//border:1px solid #000; 
-		width:100%; max-width: 100%; min-width: 380px; 
-		height:34px; text-align:center; 
-		font-weight: bold;
-		}
-	#subMenu li {display:inline-block;}
-	
-	#subMenu li a {display:block; padding:0 5px; height:25px; line-height:20px; font-size:18px;
-		color:rgb(200,200,200); margin:5px;}
-	#subMenu li a:hover {background-color:#ccc; color:rgb(100,100,100);
-		border-radius:10px 0; padding:0 5px;}
-	
-	#subMenu li.active a{background-color:#e2e2e2; 
-		color:rgb(100,100,100); 
-		font-weight: bold;
-		border-radius:10px 0; padding:0 5px;
-	}

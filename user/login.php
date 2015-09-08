@@ -6,8 +6,9 @@
 	// this page contstant
 	define('THIS_PAGE', "login");
 
-// if you are login redirect to profile.php
-		echo $_SESSION['userName'];
+	// if you are login redirect to profile.php
+		//echo $_SESSION['userName'];
+		//echo$_SESSION['user_id'];
 		
 		
 		is_login("user/profile.php");
@@ -25,14 +26,17 @@
 			
 			if (username_exists($userName, $con))
 			{
-				$result = mysqli_query($con, "SELECT password FROM registred WHERE userName='$userName' ");
+				//$result = mysqli_query($con, "SELECT password FROM registred WHERE userName='$userName' ");
+				$result = mysqli_query($con, "SELECT password FROM user WHERE username='$userName' ");
 				$retrievepassword = mysqli_fetch_assoc($result);
 	
 				$retrievepassword['password'];
-				if (user_is_activated($userName, $con) === false) {
+				/*if (user_is_activated($userName, $con) === false) {
 					$error = "Your account is not activated";
 				}
-				elseif(md5($password) !== $retrievepassword['password'] )
+				else
+				 */
+				 if(md5($password) !== $retrievepassword['password'] )
 				{
 					if (LABEL_LANG == 'en'){
 						$error = $en['password_incorrect']; 
@@ -47,23 +51,44 @@
 					//echo md5($password).' and '.$retrievepassword['password'];
 				}
 				else 
-				{
-					//$succes = "You are connected now !";
-					echo "You are connected now !";
+				{	//$succes = "You are connected now !";
+					$result1 = mysqli_query($con, "SELECT user_id FROM user WHERE username='$userName' ");
+					$user_id_array = mysqli_fetch_assoc($result1);
+					$user_id = $user_id_array['user_id'];
+					//print_r($user_id_array);
+					//echo '<br>'.$user_id;
 					
-					$_SESSION['userName'] = $userName;
-					$_COOKIE['userName'] = $userName;
-	
-					echo $_SESSION['userName'].' '.$_COOKIE['userName'];
-					
-					if($checkbox == "on")
-					{
-						setcookie("userName",$userName, time()+3600);
-					}
-					
-					header("Location: ../index.php");
-					exit();
-					/*  */
+					$level_in_array = get_nko_level($user_id, $con);
+					$level_in = $level_in_array['nko_level'];
+					//echo $level_in;
+					 
+					$lang_array = get_kan($user_id, $con);
+					$lang = $lang_array['kan'];
+					//echo '<br>'.$lang;
+					connect_user($user_id, $level_in, $lang , $con);
+					//echo '<br>'.$lang, '<br>'.$level_in, '<br>'.$user_id;
+					//if(connect_user($user_id, $level_in, $lang , $con)){
+						$error = 'You are connected';
+						echo "You are connected now !";
+						
+						$_SESSION['user_id'] = $user_id;
+						$_COOKIE['user_id'] = $user_id;
+						
+						$_SESSION['userName'] = $userName;
+						$_COOKIE['userName'] = $userName;
+		
+						echo $_SESSION['userName'].' '.$_COOKIE['userName'];
+						
+						if($checkbox == "on")
+						{
+							setcookie("userName",$userName, time()+3600);
+						}
+						header("Location: ../index.php");
+						exit();
+					/*}else{
+						echo "Error !";
+					}*/
+
 				}
 	
 			}

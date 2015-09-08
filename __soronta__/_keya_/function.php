@@ -78,6 +78,15 @@
 		mysqli_query($con, "UPDATE `registred` SET `active` = 1 WHERE `userName` = '$userName'");
 	}
 	
+	// Connect user account active if arguments are ok
+	function connect_user($user_id, $level_in, $lang , $con){
+		// query update account of user to active this
+		$connectQuery = "INSERT INTO session (user_id, level_in, kan, login)
+										VALUE('$user_id', '$level_in', '$lang', 1)";
+		mysqli_query($con, $connectQuery);
+		//mysqli_query($con, "UPDATE `session` SET `login` = 1 WHERE `user_id` = '$user_id'");
+	}	
+	
 	
 	// -------------- Verify if login or logout ----is_not_login()--------------
 	function is_not_login(){
@@ -94,13 +103,13 @@
 			// ------ if login redirect to profile.php
 			//echo "You are login";
 			
-			header("Location: http://fasso.org/karanta/".$to);
+			header("Location: http://fasso.org/karanta/user/profile.php");
 			exit();
 			return logged_in();
 		}
 	}
 	
-	function logged_in()
+/*	function logged_in()
 	{
 		if(isset($_SESSION['userName']))
 		{
@@ -109,8 +118,16 @@
 			return false;
 		}
 	}
-
-
+*/
+	function logged_in()
+	{
+		if(isset($_SESSION['user_id']))
+		{
+			return true;
+		}else{
+			return false;
+		}
+	}
 //  ----- ----- user_id_from_username ---- -----
 function user_id_from_username($userName, $con){
 	$query = "SELECT `Id_registred` FROM `registred` WHERE `userName` = '$userName' ";
@@ -118,6 +135,16 @@ function user_id_from_username($userName, $con){
 	$resultat = mysqli_fetch_assoc($result);
 	return $resultat;
 }
+
+//  ----- ----- user_id_from_username ---- -----
+function level_of_user($user_id, $con){
+	$query = "SELECT `nko_level` FROM `nqo_level` WHERE `id` = '$user_id' ";
+	$result = mysqli_query($con, $query);
+	$resultat = mysqli_fetch_assoc($result);
+	return $resultat;
+}
+
+
 
 // update djiya
 //$query = ""; mysqli_query($con, "UPDATE `registred` SET `djiya` = '$image_name' WHERE `userName` = '$userName' ");
@@ -132,7 +159,19 @@ function get_djiya_name($userName, $con){
 	return $resultat;
 }
 
+function get_nko_level($user_id, $con){
+	$query = "SELECT `nko_level` FROM `nqo_level` WHERE `id` = '$user_id' ";
+	$result = mysqli_query($con, $query);
+	$resultat = mysqli_fetch_assoc($result);
+	return $resultat;
+}
 
+function get_kan($user_id, $con){
+	$query = "SELECT `kan` FROM `registred` WHERE `Id_registred` = '$user_id' ";
+	$result = mysqli_query($con, $query);
+	$resultat = mysqli_fetch_assoc($result);
+	return $resultat;
+}
 
 // ------------  SEND A CONFIRMATION MAIL -----------
 	$header_mail 	= "From: karanta@fasso.org"."\r\n";
