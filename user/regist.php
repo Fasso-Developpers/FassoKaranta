@@ -73,8 +73,8 @@
 									VALUE('$firstName', '$lastName', '$userName', '$email', '$lang')";
 					$userQuery = "INSERT INTO user (userName, password, active_code)
 										VALUE('$userName', '$password', '$active_code')";
-					print_r($registerQuery);
-					print_r($userQuery);
+					//print_r($registerQuery);
+					//print_r($userQuery);
 	
 					if (mysqli_query($con, $registerQuery) && mysqli_query($con, $userQuery)) {
 						setcookie('email', $email, 0, '/', '', false, true);

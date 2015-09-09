@@ -8,10 +8,10 @@
 
 	// if you are login redirect to profile.php
 		//echo $_SESSION['userName'];
-		//echo$_SESSION['user_id'];
+		echo $_SESSION['user_id'];
 		
 		
-		is_login("user/profile.php");
+		is_login();
 
 		$error = "";
 		$succes = "";
@@ -72,12 +72,12 @@
 						echo "You are connected now !";
 						
 						$_SESSION['user_id'] = $user_id;
-						$_COOKIE['user_id'] = $user_id;
+						//$_COOKIE['user_id'] = $user_id;
 						
 						$_SESSION['userName'] = $userName;
-						$_COOKIE['userName'] = $userName;
+						//$_COOKIE['userName'] = $userName;
 		
-						echo $_SESSION['userName'].' '.$_COOKIE['userName'];
+						//echo $_SESSION['userName'].' '.$_COOKIE['userName'];
 						
 						if($checkbox == "on")
 						{

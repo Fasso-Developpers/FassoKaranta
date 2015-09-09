@@ -93,19 +93,18 @@
 		if(logged_in() === FALSE){
 			// if not login redirect to login.php
 			echo "You are not login";
-			header("Location: http://fasso.org/karanta/login_required.php");
+			header("Location: http://www.fasso.org/karanta/user/login.php");
 			exit();
 		}
 	}
 	
 	function is_login(){
-		if(logged_in() === TRUE){
+		if(logged_in()){
 			// ------ if login redirect to profile.php
 			//echo "You are login";
 			
 			header("Location: http://fasso.org/karanta/user/profile.php");
 			exit();
-			return logged_in();
 		}
 	}
 	
@@ -121,7 +120,7 @@
 */
 	function logged_in()
 	{
-		if(isset($_SESSION['user_id']))
+		if(isset($_SESSION['user_id']) && $_SESSION['user_id'] > 0)
 		{
 			return true;
 		}else{

@@ -65,17 +65,22 @@
 			VALUE('$userName', '$email', '$nko_level', '$last_nko_student', '$dontRemenber',
 				'$lastCountry', '$lastCity', '$lastSchool', '$lastTeacher', '$lastDate', '$lastDuration', '$lastComment') ";
 			
+			$coursQuery = "INSERT INTO nqo_cours (user_id, level_in)
+							VALUE('$user_id', '$nko_level') ";
+							
+			$statusQuery = "INSERT INTO nqo_status (user_id, level_in)
+							VALUE('$user_id', '$nko_level') ";
 			//echo $insertQuery;
-			if(mysqli_query($con, $insertQuery))
+			if(mysqli_query($con, $insertQuery) && mysqli_query($con, $coursQuery) && mysqli_query($con, $statusQuery))
 			{
 				$succes  = trad_lang('succes_give_your_level');
 				//setcookie('email', $email, time()-3600);
 				//setcookie('userName', $userName, time()-3600);
 				header("Refresh: 2; URL=../index.php");// Redirection après 2 secondes
 			}
-			else{
+			/*else{
 				echo "error !";
-			}
+			}*/
 		}
 	}
 ?>
