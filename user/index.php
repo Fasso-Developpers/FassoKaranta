@@ -4,6 +4,8 @@
 	{
 		header("location: http://www.fasso.org/karanta/user/login.php");
 		exit();
+	}else{
+		header("location: http://www.fasso.org/karanta/user/profile.php");
 	}
 
 ?>

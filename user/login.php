@@ -8,7 +8,7 @@
 
 	// if you are login redirect to profile.php
 		//echo $_SESSION['userName'];
-		echo $_SESSION['user_id'];
+		//echo $_SESSION['user_id'];
 		
 		
 		is_login();

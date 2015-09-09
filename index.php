@@ -1,6 +1,7 @@
 <?php
 	include_once("__soronta__/flo.php");
 	include_once("user/index.php");
+	is_not_login();
 	$error = "";
 	$succes = "";
 	define("MAIN_PAGE", "main_index");

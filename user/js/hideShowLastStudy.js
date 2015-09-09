@@ -8,4 +8,4 @@ $(document).ready(function etatChexbox(){
 		$("#checkbox").value='false';
    		$("#LastStudy").css({"display":"visible"});
    		}
-})
+});
