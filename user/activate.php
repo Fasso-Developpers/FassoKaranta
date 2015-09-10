@@ -17,11 +17,11 @@
 		$active_code = trim($_GET['active_code']);	
 		//echo 'set';
 		if(!username_exists($userName, $con) ){
-			$error = "<h1>Your email is not registered</h1>";
+			$error = "<h1>Usernamen given is not registered</h1>";
 			$message = '<p>Please go to registration page to <a href="regist.php">Sign up</a> </p>';
 		}elseif(!active_code_exists($userName, $active_code, $con)){
 			$error = "<h1>Your activation code is incorrect</h1>";
-			$message = '<p>Please check it in on your email !</p>';
+			$message = '<p>Please check it in your email !</p>';
 		}elseif(active_code_exists($userName, $active_code, $con)){
 			//$succes = "<h1>Your activation code is correct</h1>";
 			
@@ -31,7 +31,9 @@
 				header("Refresh: 5; URL=login.php");
 			}elseif(activate($userName, $active_code, $con)){
 				active_account($userName, $con);
-				$succes = "<h1>You are activated your account successfelly !</h1>";
+				$succes = "<h1>ߌ ߓߘߴߌ ߟߊ߫ ߞߏ߲߬ߘߏ ߘߟߊߞߊ߬ ߞߏߢߊ߬ ߹ ߺ</h1>";
+				$succes .= "<h1>You are activated your account successfelly !</h1>";
+				$succes .= "<h1>Vous avez activez votre compte avec succes!</h1>";
 				$message = '<p>Please go to <a href="login.php">Login</a> page </p>';
 				echo '
 					<meta charset="UTF-8" />

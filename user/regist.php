@@ -70,32 +70,35 @@
 					$error = trad_double_lang('sorry_username_exists_1', $userName, 'sorry_username_exists_2');
 				} else {
 					$registerQuery = "INSERT INTO registred (firstName, lastName, userName, email, kan)
-									VALUE('$firstName', '$lastName', '$userName', '$email', '$lang')";
-					$userQuery = "INSERT INTO user (userName, password, active_code)
-										VALUE('$userName', '$password', '$active_code')";
-					//print_r($registerQuery);
-					//print_r($userQuery);
-	
-					if (mysqli_query($con, $registerQuery) && mysqli_query($con, $userQuery)) {
-						setcookie('email', $email, 0, '/', '', false, true);
-						setcookie('userName', $userName, 0, '/', '', false, true);
-						//echo $_COOKIE['userName'];
-						//echo $_COOKIE['email'];
-						send_email($email, trad_lang('active_account'),
-							trad_lang('hello_registered1')." ".$firstName." ".$lastName." ".
-							trad_lang('hello_registered2')."<br>".
-							trad_lang('confirm_message_body_1')."<br>".
-							trad_lang('confirm_message_body_2')."<br>".
-							trad_lang('confirm_message_body_3')."<br>"."<br>".
-							'<a href="'.'http://fasso.org/karanta/user/activate.php?userName='.$userName.'&active_code='.$active_code.'">
-								'.trad_lang("this_link").'
-							</a>'."<br>".
-							"<br> http://fasso.org/karanta/user/activate.php?userName=".$userName."&active_code=".$active_code
-						 	."<br>"."<br>".trad_lang('forget_this_email')."<br>"
-						 );
-	
-						$succes = trad_lang('succes_registred').'<br>'.trad_lang('please_check_your_email');
-						header("Refresh: 2;URL=afterRegist.php");// Redirection à près 2 secondes
+										VALUE('$firstName', '$lastName', '$userName', '$email', '$lang')";
+
+					if (mysqli_query($con, $registerQuery)) {
+						// Get user_id by $userName
+						$user_id_table = user_id_from_username($userName, $con);
+						$user_id = $user_id_table['Id_registred'];
+
+						$userQuery = "INSERT INTO user (user_id, userName, password, active_code)
+										VALUE('$user_id', '$userName', '$password', '$active_code')";
+						if(mysqli_query($con, $userQuery)){
+							setcookie('user_id', $user_id, 0, '/', '', false, true);
+							//echo $_COOKIE['userName'];
+							//echo $_COOKIE['email'];
+							send_email($email, trad_lang('active_account'),
+								trad_lang('hello_registered1')." ".$firstName." ".$lastName." ".
+								trad_lang('hello_registered2')."<br>".
+								trad_lang('confirm_message_body_1')."<br>".
+								trad_lang('confirm_message_body_2')."<br>".
+								trad_lang('confirm_message_body_3')."<br>"."<br>".
+								'<a href="'.'http://fasso.org/karanta/user/activate.php?userName='.$userName.'&active_code='.$active_code.'">
+									'.trad_lang("this_link").'
+								</a>'."<br>".
+								"<br> http://fasso.org/karanta/user/activate.php?userName=".$userName."&active_code=".$active_code
+							 	."<br>"."<br>".trad_lang('forget_this_email')."<br>"
+							 );
+		
+							$succes = trad_lang('succes_registred').'<br>'.trad_lang('please_check_your_email');
+							header("Refresh: 2;URL=afterRegist.php");// Redirection à près 2 secondes
+						}
 					}
 				}
 			}
