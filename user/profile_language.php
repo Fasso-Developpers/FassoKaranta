@@ -1,5 +1,6 @@
 <?php
 	define("MAIN_PAGE", "profile");
+	define("PAGE", "profile_lang");
 	include("../__soronta__/flo.php");
 	$error = "";
 	$succes = "";
@@ -10,15 +11,8 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Fasso | Profile</title>
-	<link rel="icon" href="images/fassoIcone.ico" type="image/x-icon">
-	<link rel="stylesheet" href="../_css_/styles_header.css" />
-	<link rel="stylesheet" href="../_css_/styles_contenu_full.css" />
-	<link rel="stylesheet" href="../_css_/styles_contenu_titre.css" />
-	<link rel="stylesheet" href="css/styles_profile.css" />
-	<link rel="stylesheet" href="css/editable_language.css" />
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-	<script src="../_js_/site.js"></script>
+	<?php include('../__soronta__/_lowla_/head_sm.php'); ?>
+	 <link rel="stylesheet" href="css/styles_profile.css" /> 
 </head>
 
 <body dir="auto">
@@ -27,26 +21,28 @@
 	<?php include("../__soronta__/_lowla_/header.php"); ?>
 
 <!-- Cette partie contient le contenu de la page -->
-		<div dir="ltr" id="contenu" class="ombre">
+		<div dir="ltr" class="contenu" class="ombre">
 
 		<!-- Titre -->
-			<div id="titre" class="rectangle ombre">
-				<h1>Profile info</h1>
-				<ul id="lesTitres">
-					<li><a href="profile.php">Infos</a>
-					<li class="active"><a href="language.php">Language</a>
-					<li><a href="profile_moreInfo.php">More</a>
-					<li><a href="profile_parent.php">Parents</a>
-				</ul>
+			<div id="titre" class="ombre">
+				<h1 id="hautTitreH1">Profile info</h1>
+				<div class="titre_contenu">
+					<div><?php
+						if(isset($_SESSION['image'])){
+							echo '<img class="image_profile" src="'.$_SESSION["image"].'" />';
+						}
+					?></div>
+					<ul id="lesTitres">
+						<?php include('_profile_pages_.php') ?>
+					</ul>
+				</div>
 			</div>
 
 		<!-- Paragraphe texte -->
-				<div id="paraTitre" class="rectangle ombre">
+				<div id="paraTitre" >
 					<h1 class="rectangle">My profile</h1>
 				</div>
-				<div id="paraTexte" class="rectangle ombre">
 				
-
 				<!-- Update more information -->
 				<form class="infoPerson" action="#" method="post">
 					<fieldset >
@@ -65,14 +61,13 @@
 						<p>This language will be your explanation language for N'ko courses and for your profile</p>
 						<p>If your will pas to high level in courses, can change that to N'ko language to pratice N'ko courses.</p>
 						<p>See the demonstration below!</p>
+						
+						<div class="video">
+							
+						</div>
 					</fieldset>
 				</form>
-				<div class="video">
-					<div class="demo"></div>
-					<div class="demo"></div>
-					<div class="demo"></div>
-				</div>
-			</div>
+
 			<!--
 			<footer dir="auto" id="copyrigth" class="rondBas ombre">&copy; ߝߊ߬ߛߏ ߞߍߦߙߐ | ߞߟߊߓߎ ߣߌ߫ ߣߊ߲߬ߝߏ߬ߦߊ &copy;</footer>
 			-->

@@ -1,32 +1,28 @@
 <?php
 	
 	define("MAIN_PAGE", "profile");
+	define("PAGE", "profile");
 	include("../__soronta__/flo.php");
 	include ("traduction.php");
 	$error = "";
 	$succes = "";
-	
-	/*if(!logged_in())
-	{
-		header("Location: login.php");
-		exit();
-	}else{*/
 
 	//$image_name = $_FILES['avatar']['name'];
-	if(!isset($_SESSION['user_id'])){ // If not connected, say you must login
-		
+	if(is_not_login()){ // If not connected, say you must login
+		echo '<!doctype html>';
 		echo '<html>';
-		echo '<head><meta charset="utf-8>"';
-		echo '<title>Profile</title>';
-		echo '<link rel="stylesheet" href="css/regist.css" />';
 		echo '<head>';
-		
-		echo '<body">';
-			echo '<h1 center>You are not connected</h1>';
-			echo '<p>You must be connected to see your profile</p>';
-			echo '<p>Please connect here <a href="login.php">Login</a></p>';
-		echo "</body>";
-		echo "</html>";
+		echo '<meta charset="utf-8">';
+		echo '<title>Profile</title>';
+		include("../__soronta__/_lowla_/header.php");
+		echo '<body>';
+		echo '<h1>You are not connected</h1>';
+		echo '<p>You must be connected to access your profile</p>';
+		echo '<p>Please go to <a href="login.php">connexion page</a> to login</p>';
+		echo '</body>';
+		echo '</head>';
+		echo '</html>';
+	
 	}else{
 		$user_id = $_SESSION['user_id'];
 	
@@ -99,9 +95,7 @@
 	<meta charset="utf-8" />
 	<title>Fasso | Profile </title>
 	<?php include('../__soronta__/_lowla_/head_sm.php'); ?>
-	<link rel="stylesheet" href="css/styles_profile.css" />
-	<link rel="stylesheet" href="css/editable.css" />
-	
+	 <link rel="stylesheet" href="css/styles_profile.css" /> 
 </head>
 
 <body dir="auto">
@@ -109,11 +103,11 @@
 	<?php include("../__soronta__/_lowla_/header.php"); ?>
 	<?php include_once("../__soronta__/logout_button.php"); ?>
 <!-- Cette partie contient le contenu de la page -->
-		<div dir="ltr" id="contenu" class="ombre">
+		<div dir="ltr" class="contenu" >
 					
 		<!-- Titre -->
 			<div id="titre" class="ombre">
-				<h1>Profile info</h1>
+				<h1 id="hautTitreH1">Profile info</h1>
 				<div class="titre_contenu">
 					<div><?php
 						if(isset($_SESSION['image'])){
@@ -121,66 +115,62 @@
 						}
 					?></div>
 					<ul id="lesTitres">
-						<li class="active"><a href="profile.php">Infos</a>
-						<li><a href="profile_language.php">Language</a>
-						<li><a href="profile_moreInfo.php">More</a>
-						<li><a href="profile_parent.php">Parents</a>
+						<?php include('_profile_pages_.php') ?>
 					</ul>
 				</div>
 			</div>
 
 		<!-- Paragraphe texte -->
 			<div id="para">
-				<div id="paraTitre" class="rectangle ombre">
+				<div id="paraTitre" >
 					<h1 class="rectangle">My profile</h1>
 				</div>
-				<div id="paraTexte" class="rectangle ombre">
 				
-				<table class="table"><tr>
-				<td class="infoPerson"><fieldset >
-					<legend>Registred Information</legend>
-
+				<div class="infoPerson">
+				<fieldset >
+					<legend>Registration Infos</legend>
 					<!-- Update information -->
-					<table class="table">
-						<tr><td>Firstname: </td><td>
-							<label class="labaleTable" name="firstname">Firstname</label></td></tr>
-						<tr><td>Lastname: </td><td>
-							<label class="labaleTable" name="lastname">Lastname</label></td></tr>
-						<tr><td>Username: </td><td>
-							<label class="labaleTable" name="username">Username</label></td></tr>
-						<tr><td>Adressemail: </td><td>
-							<label class="labaleTable" name="email">Adressemail</label></td></tr>
-					</table>
-					<p>Date of my registration on Fasso: <?php ?> </p>
-					<p>Date of last edition: <?php ?> </p>
-				</fieldset></td>
-
-				<!-- Update information ---Form --- -->
-				<td class="infoPerson">
-				<form action="profile.php" method="post" enctype="multipart/form-data">
-					<fieldset >
-					<legend>Edit my Information</legend>
-					<table class="table">
-						<tr><td>Firstname: </td><td>
+					<table class="table"  cellspacing=0>
+						<tr>
+							<td>Firstname: </td><td>
+							<label class="labaleTable" name="firstname">Firstname</label></td><td>
 							<input class="textBox" type="text" name="firstname" maxlength="30" autofocus 
-							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required /></td></tr>
-						<tr><td>Lastname: </td><td>
+							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required /></td>
+						</tr>
+						<tr>
+							<td>Lastname: </td><td>
+							<label name="lastname">Lastname</label></td><td>
 							<input class="textBox" type="text" name="lastname" maxlength="30" 
-							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required /></td></tr>
+							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required /></td>
+						</tr>
 						<tr><td>Username: </td><td>
+							<label name="username">Username</label></td><td>
 							<input class="textBox" type="text" name="username" maxlength="20" 
 							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required /></td></tr>
 						<tr><td>Adressemail: </td><td>
+							<label  name="email">Adressemail</label></td><td>
 							<input class="textBox" type="text" name="email" maxlength="60" 
-							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required /></td></tr>
-						<tr><td>Profile picture: </td><td>
-							<input class="file" type="file" name="avatar" title="upload image" value="Upload"
-							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required /></td></tr>
+							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required /></td>
+						</tr>
+						<tr><td>Profile picture: </td><td>photo actuelle</td><td>
+							<input class="file" type="file" name="avatar" title="upload image" value="Upload your image"
+							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required /></td>
+						</tr>
+						<tr><td</td><td</td>
+							<td<input id="soumettre" name="submit" type="submit" value="Save edite" /></td>
+						</tr>
+						<tr><td colspan=2>Registration date: </td>
+							<td><?php ?></td>
+							</tr>
+						<tr>
+						<tr><td colspan=2>Last update: </td>
+							<td><?php ?></td>
+							</tr>
+						<tr>
 					</table>
-					<input id="soumettre" name="submit" type="submit" value="Save edite" />
-					</fieldset>
-				</form></td>
-				</tr></table>
+				</fieldset></td>
+
+				
 					<div <!--style="border:1px solid #000; height:220px; display: block;-->">
 					<?php 
 						if(isset($_POST['avatar'])){
@@ -209,4 +199,4 @@
 </body>
 </html>
 
-<?php } ?>
+ <?php } ?> 

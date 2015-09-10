@@ -1,73 +1,64 @@
-/* --------------- STYLE CSS FASSO BARABA ---------------- */
+/* -------------------- PROFILE ---------------------- */
+.image_profile{
+	margin: 5px;
+}
+
+.infoPerson{ position: absolute;
+	top: 40px;
+	right:0;
+	margin: 0;
+	padding: 10px;
+	width: 98.5%;
+	height: 640px;
+	background: rgb(220,220,220);
+}
+
+fieldset{
+	width: 95%;
+	height: 80%;
+}
+.table{
+	width: 90%;
+	position: absolute;
+	margin: 0 auto;
+	margin: 10px;
+	padding: 10px;
+	line-height: 160%;
+}
+
+.table td{
+	border: 1px solid rgb(210,210,210);
+	padding:5px;
+	text-align: center;
+	}
+.textBox{
+	padding: 2px;
+}
+
+#soumettre{
+	font-size: 16px;
+	margin-bottom: 5px;
+}
+
+/*  style of language profile*/
+fieldset p{
+	font-size: 18px;
+	line-height: 100%;	
+}
+
+.lang{
+	margin: 0;
+	padding: 5px;
+	font-size: 14px;
+
+}
+.video{position: absolute;
+	border: 1px solid #000;
+	width: 400px; 
+	margin: 0 auto;
+	height: 300px;
+	}
+
+}
+
 	
-/* -------------------- CONTENU ---------------------- */
-
-#contenu{position: absolute; top:70px; width: 85%; right:0; max-width: 85%; min-width: 640px; margin: 0 auto; 
-	//box-shadow: 0px 0px 1px #000;
-	//border:1px solid #000;
-	height:105%; 
-	} 
-	.rectangle{border-radius: 0 10px 0 10px;}
-
-	.titre_contenu{
-		//border: 1px solid #fff;
-		display: inline-block;
-	}
-	.lesTitres{
-		//border: 1px solid #111;
-		position: absolute;
-		top: 220px;
-	}
-	.image_profile{
-		margin: 0 auto;
-	}
-
-/* Les paragraphes */
-	#paraTitre{top: 0;}
-	#paraTitre h1{position: absolute; right: 50%; top: -5px;
-		font-size: 20px; color: rgb(220,50,50);
-		
-		padding: 0; text-align: center;
-	}
-
-	#paraTexte{position: absolute; top: 40px; width: 100%; max-width:100%; min-width: 470px; 
-		height: 89%; background: #ccc;
-		box-shadow: 0 0 2px #999;}
-		#listDmalon li{list-style-type: disc;}
-		#listDmalon a{text-decoration: none;}
-
-		#intro{
-			position: absolute;
-			width: 95%;
-			line-height: 120%;
-			font-family: Geneva, Ebrima, dejaVu;
-			font-size: 18px;
-			text-indent: inherit;
-			//border:1px solid #000;
-			text-align: justify;
-			margin: 5px; padding: 5px; 
-
-		}
-
-		#intro li{margin: 5px; padding: 0;}
-		#intro a{margin: 0; padding: 0;}
-		#intro p:nth-child(1){text-align: center;}
-
-		.def{
-			font-family: Geneva;
-			font-size: 20px;
-			line-height: 100%;
-			font-style: italic; 
-		}
-
-		.contact_us{text-align: right;}
-		.souhait{text-align: center;}
-
-	footer{position:absolute; width: 99%; bottom: 0; height: 3%;
-		text-align: center; font-style: italic; padding: 0.5%; vertical-align: 3px;}
-		.rondBas{box-shadow: 0 0 3px #999;}
-
-/* --- SLIDER --- */
-#slider{width:1000px; height:250px; overflow: hidden;}
-
-		
