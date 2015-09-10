@@ -25,10 +25,18 @@
 	
 	}else{
 		$user_id = $_SESSION['user_id'];
-	
-		$profile_image = get_djiya_name($user_id, $con);
-		$image_name = $profile_image['djiya'];
+		$profile_info = info_to_profile($user_id, $con);
+		
+		$firstname =  $profile_info['firstName'];
+		$lastname =  $profile_info['lastName'];
+		$userName =  $profile_info['userName'];
+		$email =  $profile_info['email'];
+		$inscri_date =  $profile_info['join_date'];
+		
+		//$profile_image = get_djiya_name($user_id, $con);
+		$image_name = $profile_info['djiya'];
 		$_SESSION['image'] = './user_image/'.$image_name;
+		
 		
 		if(isset($_POST['submit']) && !$_FILES['avatar']['error']) {
 			$firstName = htmlentities($_POST['firstname']);
@@ -133,26 +141,27 @@
 					<table class="table"  cellspacing=0>
 						<tr>
 							<td>Firstname: </td><td>
-							<label class="labaleTable" name="firstname">Firstname</label></td><td>
+							<label class="labaleTable" name="firstname"><?php echo $firstname ?></label></td><td>
 							<input class="textBox" type="text" name="firstname" maxlength="30" autofocus 
 							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required /></td>
 						</tr>
 						<tr>
 							<td>Lastname: </td><td>
-							<label name="lastname">Lastname</label></td><td>
+							<label name="lastname"><?php echo $lastname ?></label></td><td>
 							<input class="textBox" type="text" name="lastname" maxlength="30" 
 							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required /></td>
 						</tr>
 						<tr><td>Username: </td><td>
-							<label name="username">Username</label></td><td>
+							<label name="username"><?php echo $userName ?></label></td><td>
 							<input class="textBox" type="text" name="username" maxlength="20" 
-							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required /></td></tr>
+							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required /></td>
+						</tr>
 						<tr><td>Adressemail: </td><td>
-							<label  name="email">Adressemail</label></td><td>
+							<label  name="email"><?php echo $email ?></label></td><td>
 							<input class="textBox" type="text" name="email" maxlength="60" 
 							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required /></td>
 						</tr>
-						<tr><td>Profile picture: </td><td>photo actuelle</td><td>
+						<tr><td>Profile picture: </td><td><?php echo $image_name ?></td><td>
 							<input class="file" type="file" name="avatar" title="upload image" value="Upload your image"
 							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required /></td>
 						</tr>
@@ -160,7 +169,7 @@
 							<td<input id="soumettre" name="submit" type="submit" value="Save edite" /></td>
 						</tr>
 						<tr><td colspan=2>Registration date: </td>
-							<td><?php ?></td>
+							<td><?php echo $inscri_date; ?></td>
 							</tr>
 						<tr>
 						<tr><td colspan=2>Last update: </td>

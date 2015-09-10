@@ -62,7 +62,7 @@
 								I will help you to anderstand N'ko in small delay.)</p>
 						</li>
 						<li> <a href="//localhost/karanta/computer/index.php">Computer science</a> 
-							<p class="def">(You have a comuter but you can't use it very well,
+							<p class="def">(You have a computer but you can't use it very well,
 								you are welcome to learn the fundamentals about computer.)</p>
 						</li>
 						<li> <a href="//localhost/karanta/game/index.php">Games</a> 

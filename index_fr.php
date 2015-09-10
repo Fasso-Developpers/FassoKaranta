@@ -36,14 +36,15 @@
 			
 			<!-- Paragraphe texte -->
 				<div id="paraTitre" class="rectangle ombre">
-					<h1 class="rectangle">Bienvenue !</h1>
+					<h1 class="rectangle">Bienvenue à l'école de Fasso!</h1>
 				</div>
 			<div id="paraTexte" class="rectangle ombre">
 				<section id="intro">
 					<p style="text-align:center;">
 						Vous êtes dans l’école de Fasso, 
 						à travers N’ko vous allez apprendre beaucoup de chose ici.
-					</p><p>Par exemple</p>
+					</p>
+					<p>Par exemple</p>
 
 					<ul id="listDmalon">
 						<li> <a href="//localhost/karanta/nko/index.php">N'ko</a> 
@@ -54,22 +55,22 @@
 						</li>
 						<li> <a href="//localhost/karanta/computer/index.php">Informatique</a> 
 							<p class="def">(Vous avez probablement un ordinateur, 
-								mais vous ne savez pas l’utiliser comme il faut ; la section informatique 
+								mais vous ne savez pas l’utiliser comme il le faut ; la section informatique 
 								vous permettra d’avoir les bases fondamentales en informatique.)</p>
 						</li>
 						<li> <a href="//localhost/karanta/game/index.php">Jeux</a> 
 							<p class="def">(Actuellement, les jeux informatiques sont très rependus, 
-								il y a certains qui passent beaucoup de temps derniers les appareils pour 
+								il y a certaines personnes qui passent beaucoup de temps derniers les appareils pour 
 								ces jeux. Nous allons mettre à la disposition de la nation mandingue 
 						nos jeux mandingues très éducatifs pour permettre un rapprochement à nous même.)</p>
 						</li>
-						<li> <a href="//localhost/karanta/reading/index.php">Culture</a> 
+						<li> <a href="//localhost/karanta/culutre/index.php">Culture</a> 
 							<p class="def">(La riche culture mandingue sera expliquée dans cette partie. 
 								Cette culture étant très vague, vous allez vous-même nous apporter 
-								certains éléments de celle-ci un accès libre à tous. 
+								certains éléments de celle-ci pour un accès libre à tous. 
 								Vous allez faire cela en LISANT et en ECRIVANT.
 								Vous allez comme ça approfondir vos connaissances en LECTURE et à ECRITURE 
-								en N’ko plus du manière rapide et efficace.</p>
+								en N’ko de manière rapide et efficace.</p>
 						</li>
 					</ul>
 					<p class="contact_us">

@@ -144,6 +144,7 @@ function level_of_user($user_id, $con){
 }
 
 
+/* *************************** PROFILE ************************ */
 
 // update djiya
 //$query = ""; mysqli_query($con, "UPDATE `registred` SET `djiya` = '$image_name' WHERE `userName` = '$userName' ");
@@ -153,6 +154,14 @@ function update_djiya($userName, $con, $image_name){
 
 function get_djiya_name($user_id, $con){
 	$query = "SELECT `djiya` FROM `registred` WHERE `Id_registred` = '$user_id' ";
+	$result = mysqli_query($con, $query);
+	$resultat = mysqli_fetch_assoc($result);
+	return $resultat;
+}
+
+function info_to_profile($user_id, $con){
+	$query = "SELECT `firstName`,`lastName`,`userName`, `email`, `djiya`, `join_date` 
+				FROM `registred` WHERE `Id_registred` = '$user_id' ";
 	$result = mysqli_query($con, $query);
 	$resultat = mysqli_fetch_assoc($result);
 	return $resultat;
