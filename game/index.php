@@ -21,7 +21,7 @@
 	<?php include("../__soronta__/_lowla_/header.php"); ?>
 
 <!-- Cette partie contient le contenu de la page -->
-		<div dir="ltr" id="contenu" class="ombre">
+		<div dir="ltr" class="contenu" class="ombre">
 
 		<!-- Titre -->
 			<div id="titre" class="rectangle ombre">
@@ -69,9 +69,7 @@
 					<p class="souhait">Good reading !</p>
 				</section>
 			</div>
-
-			<footer dir="auto" id="copyrigth" class="rondBas ombre">&copy; ߝߊ߬ߛߏ ߞߍߦߙߐ | ߞߟߊߓߎ ߣߌ߫ ߣߊ߲߬ߝߏ߬ߦߊ &copy;</footer>
-
+			
 		</div>
 
 </body>
