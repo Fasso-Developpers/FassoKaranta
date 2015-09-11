@@ -129,8 +129,23 @@
 				
 				// you can't give your level again
 				'you_have_given_your_level' => "ߌ ߓߘߴߌ ߟߊ߫ ߞߊߓߋ ߦߌ߬ߘߊ߬ ߞߊ߬ߓߊ߲߫",
-				'you_can_update_in_profile' => "ߌ ߘߌ߫ ߛߴߊ߬ ߡߊߝߊ߬ߟߋ߲߬ ߠߊ߫ ߌ ߟߊ߫ ߢߊߞߙߍ ߘߐ߫"
-
+				'you_can_update_in_profile' => "ߌ ߘߌ߫ ߛߴߊ߬ ߡߊߝߊ߬ߟߋ߲߬ ߠߊ߫ ߌ ߟߊ߫ ߢߊߞߙߍ ߘߐ߫",
+				
+				/* *************** TRANSLATION OF ACTIVE ACCOUNT *********** */
+				'account_is_not_activated' => "ߌ ߟߊ߫ ߞߏ߲߬ߘߏ ߡߊ߫  ߘߟߊߞߊ߬ ߝߟߐ߫",
+				'email_and_activation_code_incorrect' => "ߌ ߟߊ߫ ߢߎߡߍߙߋ߲ߞߏ߲ߘߏ ߣߴߌ ߟߊ߫ ߘߟߊߞߊߟߌ ߘߏߞߊ߲ ߓߍ߲߬ߣߍ߲߬ ߕߍ߫",
+				'please_go_to_your_email_and_click' => "ߖߊ߱ߣߌ߲߬ ߥߊ߫ ߌ ߟߊ߫ ߞߏ߲߬ߘߏ ߟߊ߫ ߞߵߊ߬ ߛߐ߲߬ߞߌ߲߫ ߛߘߌ߬ߜߋ߲߬ ߠߊߥߊߣߍ߲ ߞߊ߲߬ ߞߵߌ ߟߊ߫ ߞߏ߲߬ߘߏ ߘߟߊߞߊ߬",
+				'username_given_is_not_registered' => "ߜߊ߲߬ߞߎ߲߬ߕߐ߮ ߘߌߣߍ߲ ߡߊ߫ ߢߌ߲߬",
+				'activation_code_is_incorrect' => "ߌ ߟߊ߫ ߘߟߊߞߊߟߌ ߘߏߞߊ߲ ߡߊ߫ ߢߌ߲߬",
+				'please_check_it_in_your_email' => "ߕߊ߯ ߏ߬ ߡߊߝߟߍ߫ ߌ ߟߊ߫ ߢߎߡߍߙߋ߲ߞߏ߲ߘߏ ߟߊ߫ ߖߊ߰ߣߌ߲߬ ߹ ߺ",
+				'you_can_leave_to_here' => "ߌ ߘߌ߫ ߛߋ߫ ߓߐ߫ ߟߊ߫ ߦߙߐ ߢߌ߲߬ ߘߐ߫ ߦߊ߲߬",
+				'because_account_is_alredy_activated' => "ߓߊ ߌ ߟߊ߫ ߞߏ߲߬ߘߏ ߓߘߊ߫ ߘߟߊߞߊ߬ ߞߊ߬ߓߊ߲߫",
+				'account_is_succes_activated' => "ߌ ߓߘߴߌ ߟߊ߫ ߞߏ߲߬ߘߏ ߘߟߊߞߊ߬ ߞߏߢߊ߬ ߹ ߺ",
+				'you_can_login_now' => "ߌ ߘߌ߫ ߛߴߌ ߜߊ߲߬ߞߎ߲߬ ߠߊ߫ ߡߎ߬ߕߎ߲߬ ߝߛߊߦߌ߫",
+				
+				'problem_to_activate_account' => "ߝߙߋߞߋ ߘߏ߫ ߦߴߊ߲ ߡߊ߬ ߌ ߟߊ߫ ߞߏ߲߬ߘߏ ߘߟߊߞߊ߭ ߘߐ߫",
+				'sorry_please_try_again' => "ߌ ߘߌ߫ ߛߴߌ ߜߊ߲߬ߞߎ߲߬ ߠߊ߫ ߡߎ߬ߕߎ߲߬ ߝߛߊߦߌ߫"
+				
 				);
 	$en = array('direction'=>"ltr",
 				'language'=>"Languages",
@@ -229,7 +244,23 @@
 				
 				// you can't give your level again
 				'you_have_given_your_level' => "You have alredy given your level in nko",
-				'you_can_update_in_profile' => "You can update this in your profile"
+				'you_can_update_in_profile' => "You can update this in your profile",
+				
+				/* *************** TRANSLATION OF ACTIVE ACCOUNT *********** */
+				'account_is_not_activated' => "Your account is not activated",
+				'email_and_activation_code_incorrect' => "Your email and activation code are incorrect",
+				'please_go_to_your_email_and_click' => "Please go to your email, and click on sended link to active it",
+				'username_given_is_not_registered' => "Username given is not registered",
+				'activation_code_is_incorrect' => "Your activation code is incorrect",
+				'please_check_it_in_your_email' => "Please check it in your email !",
+				'you_can_leave_to_here' => "You can leave to here",
+				'because_account_is_alredy_activated' => "because your account is alredy activated",
+				'account_is_succes_activated' => "You are activated your account successfelly !",
+				'you_can_login_now' => "You can login now",
+				
+				'problem_to_activate_account' => "We have a problem to activate your account",
+				'sorry_please_try_again' => "we are very sorry, Please try again!"
+						
 				);
 	$fr = array('direction'=>"ltr",
 				'language'=>"Langues",
@@ -330,6 +361,22 @@
 				
 				// you can't give your level again
 				'you_have_given_your_level' => "Vous avez déjà fourni votre niveau",
-				'you_can_update_in_profile' => "Vous pouvez le mettre à jour sur votre profile"
+				'you_can_update_in_profile' => "Vous pouvez le mettre à jour sur votre profile",
+				
+				/* *************** TRANSLATION OF ACTIVE ACCOUNT *********** */
+				'account_is_not_activated' => "Votre compte est pas activé",
+				'email_and_activation_code_incorrect' => "Votre email et code d'activation sont incorrects",
+				'please_go_to_your_email_and_click' => "Veillez cliquer sur le lien envoyé à votre email,  pour activer votre compte",
+				'username_given_is_not_registered' => "Le nom d'utilisateur est incorrect",
+				'activation_code_is_incorrect' => "Votre code d'activation est incorrect",
+				'please_check_it_in_your_email' => "Veillez le verifiez dans votre email",
+				'you_can_leave_to_here' => "Vous pouvez quitter ici",
+				'account_is_succes_activated' => "Vous avez activez votre compte avec succes !",
+				'because_account_is_alredy_activated' => "car votre compte est déjà activé",
+				'you_can_login_now' => "Vous pouvez vous connecter maintenant",
+				
+				'problem_to_activate_account' => "Nous avons un problème pour activer votre compte",
+				'sorry_please_try_again' => "Nous sommes vraiment désolé, veillez refaire plutard!"
+					
 				);
 ?>

@@ -4,37 +4,47 @@
 	
 	$error = "";
 	$succes = "";
-	/*if (isset($_GET['success']) === true && empty($_GET['success']) === TRUE) {
-		echo "<h2>Thanks, we've activated your account...</h2>";
-		echo "<p>Your are free to log in !</p>";
-	}*/
+
 	if(empty($_GET['userName']) || empty($_GET['active_code'])){
-		$error = "<h1>Your account is not activated</h1>";
-		$message = "<h3>Your email and activation code are incorrect </h3>";
-		$message .= "<p>Please go to your email to active it </p>";
+		$error = "<h1>". trad_lang('account_is_not_activated'). "</h1>";
+
+		$message = "<h3>". trad_lang('email_and_activation_code_incorrect'). "</h3>";
+
+		$message .= "<p>". trad_lang('please_go_to_your_email_and_click'). "</p>";
+		
 	}elseif(isset($_GET['userName'], $_GET['active_code']) === true){
 		$userName = trim($_GET['userName']);
-		$active_code = trim($_GET['active_code']);	
+		$active_code = trim($_GET['active_code']);
+		$lang = trim($_GET['lang']);
 		//echo 'set';
 		if(!username_exists($userName, $con) ){
-			$error = "<h1>Usernamen given is not registered</h1>";
-			$message = '<p>Please go to registration page to <a href="regist.php">Sign up</a> </p>';
+			$error = "<h1>". trad_lang('username_given_is_not_registered'). "</h1>";
+			
 		}elseif(!active_code_exists($userName, $active_code, $con)){
-			$error = "<h1>Your activation code is incorrect</h1>";
-			$message = '<p>Please check it in your email !</p>';
+			$error = "<h1>". trad_lang('activation_code_is_incorrect'). "</h1>";
+			
+			$message = "<p>". trad_lang('please_check_it_in_your_email'). "</p>";
+			
 		}elseif(active_code_exists($userName, $active_code, $con)){
 			//$succes = "<h1>Your activation code is correct</h1>";
 			
 			if(user_is_activated($userName, $con)) {
-				$message = "<h3>You can leave to here</h3>";
-				$message .= "<p>because your account is alredy activated</p>";
+				$message = "<h3>". trad_lang('you_can_leave_to_here'). "</h3>";
+				
+				$message .= "<p>". trad_lang('because_account_is_alredy_activated'). "</p>";
 				header("Refresh: 5; URL=login.php");
 			}elseif(activate($userName, $active_code, $con)){
 				active_account($userName, $con);
-				$succes = "<h1>ߌ ߓߘߴߌ ߟߊ߫ ߞߏ߲߬ߘߏ ߘߟߊߞߊ߬ ߞߏߢߊ߬ ߹ ߺ</h1>";
-				$succes .= "<h1>You are activated your account successfelly !</h1>";
-				$succes .= "<h1>Vous avez activez votre compte avec succes!</h1>";
-				$message = '<p>Please go to <a href="login.php">Login</a> page </p>';
+				if(empty($_GET['lang'])){
+					$succes = "<h1>ߌ ߓߘߴߌ ߟߊ߫ ߞߏ߲߬ߘߏ ߘߟߊߞߊ߬ ߞߏߢߊ߬ ߹ ߺ</h1>";
+					$succes .= "<h1>You are activated your account successfelly !</h1>";
+					$succes .= "<h1>Vous avez activez votre compte avec succes!</h1>";
+					$message = '<p><a href="login.php">ߜߊ߲߬ߞߎ߲߬ߠߌ Login Connexion</a></p>';
+				}else{
+					$succes = "<h1>". trad_lang('account_is_succes_activated') ."</h1>";
+					$message = '<p>'.trad_lang('you_can_login_now').' 
+						<a href="login.php">'.trad_lang("login").'</a> </p>';
+				}
 				echo '
 					<meta charset="UTF-8" />
 					<head><title>Fasso | Activation</title>
@@ -48,9 +58,8 @@
 				header("Refresh: 20; URL = login.php");
 				exit();
 			}else{
-				//print_r(activate($userName, $active_code, $con));
-				$error = '<h1>We had problems to activate your account</h1>';
-				$error .= '<p>we are very sorry, Please try again!';
+				$error = "<h1>".trad_lang('problem_to_activate_account') ."</h1>";
+				$error .= "<p>".trad_lang('sorry_please_try_again') ."<p>";
 			}
 		}
 	}

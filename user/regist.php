@@ -89,10 +89,10 @@
 								trad_lang('confirm_message_body_1')."<br>".
 								trad_lang('confirm_message_body_2')."<br>".
 								trad_lang('confirm_message_body_3')."<br>"."<br>".
-								'<a href="'.'http://fasso.org/karanta/user/activate.php?userName='.$userName.'&active_code='.$active_code.'">
+								'<a href="'.'http://fasso.org/karanta/user/activate.php?userName='.$userName.'&active_code='.$active_code.'&lang='.$lang.'">
 									'.trad_lang("this_link").'
 								</a>'."<br>".
-								"<br> http://fasso.org/karanta/user/activate.php?userName=".$userName."&active_code=".$active_code
+								"<br> http://fasso.org/karanta/user/activate.php?userName=".$userName."&active_code=".$active_code."&lang=".$lang
 							 	."<br>"."<br>".trad_lang('forget_this_email')."<br>"
 							 );
 		
