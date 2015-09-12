@@ -94,6 +94,15 @@
 		mysqli_query($con, $disconnectQuery);
 	}	
 	
+	//  ------- Get cours info for user to apply coloration -----
+	function get_cours_info($user_id, $con){
+		$query = "SELECT `level_in`, `chapitre_in`, `lesson_in` FROM `nqo_cours` WHERE `user_id` = '$user_id' ";
+		$result = mysqli_query($con, $query);
+		$resultat = mysqli_fetch_assoc($result);
+		return $resultat;
+	}
+	
+	
 	/* ***************  Verify if is login or logout ************* */
 	function is_not_login(){
 		if(logged_in() === FALSE){

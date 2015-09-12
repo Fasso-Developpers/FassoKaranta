@@ -1,13 +1,14 @@
 <?php
 	
 	include_once("../__soronta__/flo.php");
-	//include_once("../user/index.php");
 	is_not_login();
 	$error = "";
 	$succes = "";
 	define("MAIN_PAGE", "nko_index");
 	define("CHAPITRE", "");
-	
+	// include the content menu
+	include('_index_title_.php');
+
 ?>
 
 <!doctype html >
@@ -33,56 +34,32 @@
 		<!-- Titre -->
 			<div id="titre" class="rectangle ombre">
 				<h1 id="hautTitreH1">Menu contenu</h1>
-				<h1 class="titreH1"><a class="h1Liens" href="alphabet.php">Alphabet</a></h1>
-				<ul class="lesTitres lesTitres1">
-					<li>Lecture</li>
-					<li>Ecriture</li>
-					<li>Ecrire son nom</li>
-					<li>Ressemblance</li>
-					<li>Exercices</li>
-					<li>Controles</li>
-				</ul>
-				<h1 class="titreH1"><a class="h1Liens" href="#">Syllabe</a></h1>
-				<ul class="lesTitres lesTitres2">
-					<li>Introduction</li>
-					<li>Monosyllabe</li>
-					<li>Disyllabe</li>
-					<li>Plurisillabe</li>
-					<li>Syllabe et Mot</li>
-					<li>Ecrire les mots</li>
-				</ul>
-				<h1 class="titreH1"><a class="h1Liens" href="#">Accent</a></h1>
-				<ul class="lesTitres lesTitres2">
-					<li>Introduction</li>
-					<li>Diphtone</li>
-					<li>Voyelles</li>
-					<li>Consonnes</li>
-					<li>Chiffres</li>
-					<li>Conclusion</li>
-				</ul>
-				<h1 class="titreH1"><a class="h1Liens" href="#">Grammaire</a></h1>
-				<ul class="lesTitres lesTitres2">
-					<li>Introduction</li>
-					<li>Diphtone</li>
-					<li>Voyelles</li>
-					<li>Consonnes</li>
-					<li>Chiffres</li>
-					<li>Conclusion</li>
-				</ul>
-				<h1 class="titreH1"><a class="h1Liens" href="#">Orthographe</a></h1>
-				<ul class="lesTitres lesTitres2">
-					<li>Introduction</li>
-					<li>Diphtone</li>
-					<li>Voyelles</li>
-					<li>Consonnes</li>
-					<li>Chiffres</li>
-					<li>Conclusion</li>
-				</ul>
+				<!-- Make content title --> 
+				<?php 
+					// Make The differents chapiters of N'ko
+					for ($i = 1; $i <= 5; $i++) {
+						echo '<h1 '.chapitre_Title_color($level_in, $i) . '>';
+						echo '<a class="h1Liens" href="'.$chap_link[$i].'">'.$chapiters[$i].'</a>';
+						echo '</h1>';
+						echo '<ul '.chapitre_content_color($chapitre_in, $i). '>';
+						
+						// Make The differents lessons the chapiters
+						for ($j = 1; $j <= 6; $j++) {
+						echo '<li '.chapitre_lesson_color($chapitre_in, $i, $lesson_in, $j).' >'.$chp_lessons[$i][$j].'</li>';
+						}
+						
+						echo '</ul>';
+					}
+				?>
+				
 			</div>
 
 		<!-- Paragraphe texte -->
 				<div id="paraTitre" class="rectangle ombre">
 					<h1 class="rectangle">Welcome | Bienvenue | ߌ ߣߌ߫ ߛߣߍ߫</h1>
+					<!--<?php
+					echo '<br>' .$level_in .$level['1'] ;
+					?>-->
 				</div>
 			<div id="paraTexte" class="rectangle ombre">
 				<section id="intro">

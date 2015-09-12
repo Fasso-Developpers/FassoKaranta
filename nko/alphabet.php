@@ -5,6 +5,8 @@
 	$succes = "";
 	define("MAIN_PAGE", "nko_index");
 	define("CHAPITRE", "alphabet");
+	// include the content menu
+	include('_alphabet_title_.php');
 ?>
 
 <!doctype html >
@@ -29,49 +31,23 @@
 	<!-- Titre -->
 		<div id="titre" >
 			<h1 id="hautTitreH1">Menu contenu</h1>
-			<h1 class="titreH1">Lecture</h1>
-			<ul class="lesTitres1">
-				<li><a href="#">Introduction</a>
-				<li><a href="#">Diphtone</a>
-				<li><a href="#">Voyelles</a>
-				<li><a href="#">Consonnes</a>
-				<li><a href="#">Chiffres</a>
-				<li><a href="#">Conclusion</a>
-			</ul>
-			<h1 class="titreH1">Ecriture</h1>
-			<ul class="lesTitres2">
-				<li><a href="#">Introduction</a>
-				<li><a href="#">Diphtone</a>
-				<li><a href="#">Voyelles</a>
-				<li><a href="#">Consonnes</a>
-				<li><a href="#">Chiffres</a>
-				<li><a href="#">Conclusion</a>
-			</ul>
-			<h1 class="titreH1">Ecrire son nom</h1>
-			<ul class="lesTitres2">
-				<li><a href="#">Introduction</a>
-				<li><a href="#">Nos noms</a>
-			</ul>
-			<h1 class="titreH1">Ressemblance</h1>
-			<ul class="lesTitres2">
-				<li><a href="#">Entre voyelle</a>
-				<li><a href="#">Entre consonne</a>
-				<li><a href="#">Entre chiffre</a>
-				<li><a href="#">Entre tous</a>
-			</ul>
-			<h1 class="titreH1">Exercices</h1>
-			<ul class="lesTitres2">
-				<li><a href="#">Exercices</a>
-				<li><a href="#">Exercices 1</a>
-				<li><a href="#">Exercices 2</a>
-				<li><a href="#">Exercices 3</a>
-			</ul>
-			<h1 class="titreH1">Controle</h1>
-			<ul class="lesTitres2">
-				<li><a href="#">Conditions</a>
-				<li><a href="#">Controle 1</a>
-				<li><a href="#">Controle 2</a>
-			</ul>
+			<!-- Make content title --> 
+				<?php 
+					// Make The differents chapiters of N'ko
+					for ($i = 1; $i <= 5; $i++) {
+						echo '<h1 '.chapitre_Title_color($chapitre_in, $i) . '>'.$chapiters[$i].'</h1>';
+						echo '<ul '.chapitre_content_color($chapitre_in, $i). '>';
+						
+						// Make The differents lessons the chapiters
+						for ($j = 1; $j <= 6; $j++) {
+						echo '<li '.chapitre_lesson_color($chapitre_in, $i, $lesson_in, $j).' >';
+						echo '<a href="'.$lesson_link[$i][$j].'">'.$lesson_name[$i][$j].'</a>'; ;
+						echo '</li>';
+						}
+						
+						echo '</ul>';
+					}
+				?>
 		</div>
 		
 		<!-- les titres à fermer -->

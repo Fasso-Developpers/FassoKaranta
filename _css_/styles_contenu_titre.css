@@ -23,12 +23,11 @@
 	//border: 3px solid rgb(50,100,150);
 	//position: absolute;
 	margin: 0 auto;
-	padding: 10px;
+	padding: 0;
 }
 #titre li{
 	list-style-type: none;
-	margin: 5px;
-	//top: 0;
+	margin: 1px 0 0 0;
 	text-align: center;
 	line-height: 140%;
 	font-size: 23px;
