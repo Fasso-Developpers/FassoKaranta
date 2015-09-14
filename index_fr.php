@@ -11,9 +11,12 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Fasso Ecole</title>
-	<link rel="icon" href="images/fassoIcone.ico" type="image/x-icon">
-
+	<link rel="icon" href="http://www.fasso.org/karanta/_djiya_/fassoIcone.ico" type="image/x-icon">
+	<!--[if IE]><link rel="shortcut icon" type="image/x-icon" 
+		href="http://www.fasso.org/karanta/_djiya_/fassoIcone.ico" /><![endif]-->
+	
 	<link rel="stylesheet" href="_css_/styles_header.css" />
+	<link rel="stylesheet" href="_css_/styles_subtitle.css" />
 	<link rel="stylesheet" href="_css_/styles_contenu_full.css" />
 	<link rel="stylesheet" href="_css_/styles_contenu_titre.css" />
 	<link rel="stylesheet" href="_css_/styles_contenu_para.css" />
@@ -73,13 +76,14 @@
 								en N’ko de manière rapide et efficace.</p>
 						</li>
 					</ul>
+					<!--
 					<p class="contact_us">
 						Si vous avez une question sur ces sections, contacter l’administrateur de fasso.
 					</p>
-					<p class="souhait">Good reading !</p>
+					-->
+					<p class="souhait">Bonne lecture !</p>
 				</section>
 			</div>
 		</div>
-	<footer dir="auto" id="copyrigth" class="rondBas ombre">&copy; ߝߊ߬ߛߏ ߞߍߦߙߐ | ߞߟߊߓߎ ߣߌ߫ ߣߊ߲߬ߝߏ߬ߦߊ &copy;</footer>
 </body>
 </html>

@@ -57,25 +57,25 @@
 					</p>
 
 					<ul id="listDmalon">
-						<li> <a href="//localhost/karanta/nko/index.php">N'ko</a> 
+						<li> <a href="nko/index.php">N'ko</a> 
 							<p class="def">(This part explain n'ko, if you are never learn n'ko, it is not bad because 
 								I will help you to anderstand N'ko in small delay.)</p>
 						</li>
-						<li> <a href="//localhost/karanta/computer/index.php">Computer science</a> 
+						<li> <a href="computer/index.php">Computer science</a> 
 							<p class="def">(You have a computer but you can't use it very well,
 								you are welcome to learn the fundamentals about computer.)</p>
 						</li>
-						<li> <a href="//localhost/karanta/game/index.php">Games</a> 
+						<li> <a href="game/index.php">Games</a> 
 							<p class="def">(How many game do you know in Manden, if you don't know anyone, 
 								this section will learn very much.)</p>
 						</li>
-						<li> <a href="//localhost/karanta/culture/index.php">Reading</a> 
+						<li> <a href="culture/index.php">Reading</a> 
 							<p class="def">(After know the basic notion in N'ko, you must pratice to anderstand,
 								in this section, you will be the excellent reader I hope.</p>
 						</li>
 					</ul>
 					<p class="contact_us">
-						If you have any question about anyone of these section, please contact fasso administrator.
+						If you have any question about anything of these section, please contact fasso administrator.
 					</p>
 					<p class="souhait">Good reading !</p>
 				</section>

@@ -5,9 +5,9 @@ function addEv(elt, ev, h){
 		elt.attachEvent('on'+ ev,h);
 	}
 }
-var link = document.querySelectorAll('li.article')
+var link = document.querySelectorAll('li.article');
 var element = null;
-var = panier = document.querySelector('#panier');
+var panier = document.querySelector('#panier');
 
 for (var i = 0; i<link.length; i++){
 	element = link[i];
@@ -30,13 +30,13 @@ addEv(panier, 'drop', function (e){
 	var h=new Date();
 	var plusId=h.getTime();
 
-	var = element = document.getElementById(e.dataTransfer.getData('text/plain'));
+	var element = document.getElementById(e.dataTransfer.getData('text/plain'));
 	var clone=element.cloneNode(true);
 
 	clone.id=element.id+plusId;
 		document.getElementById('panier').appendChild(clone);
 		clone.className='';
-		clone.className="achete"
+		clone.className="achete";
 
 	
 	// Gestion de la corbeille
@@ -49,8 +49,8 @@ addEv(panier, 'drop', function (e){
 	
 	addEv(elASuppr,'click', function(){
 		document.getElementById('corbeille').appendChild(this);
-			this.className = ''
-			this.className="article"		
-	})
+			this.className = '';
+			this.className="article";		
+	});
 	}
-})
+});

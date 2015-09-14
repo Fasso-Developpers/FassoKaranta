@@ -37,10 +37,10 @@
 	/* --- the link of lessons --- */
 	$lesson_link = array(
 		    1 => array(
-				'1' => '#',
-				'2' => '#',
-				'3' => '#',
-				'4' => '#',
+				'1' => 'TQgLauO5SxQ',
+				'2' => 'AYNdiI7O3ag',
+				'3' => 'OK2kZ3ERqoY',
+				'4' => '9wENyo4sQL0',
 				'5' => '#',
 				'6' => '#'
 				),

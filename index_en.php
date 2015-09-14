@@ -11,9 +11,12 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Fasso school</title>
-	<link rel="icon" href="images/fassoIcone.ico" type="image/x-icon">
-
+	<link rel="icon" href="http://www.fasso.org/karanta/_djiya_/fassoIcone.ico" type="image/x-icon">
+	<!--[if IE]><link rel="shortcut icon" type="image/x-icon" 
+		href="http://www.fasso.org/karanta/_djiya_/fassoIcone.ico" /><![endif]-->
+	
 	<link rel="stylesheet" href="_css_/styles_header.css" />
+	<link rel="stylesheet" href="_css_/styles_subtitle.css" />
 	<link rel="stylesheet" href="_css_/styles_contenu_full.css" />
 	<link rel="stylesheet" href="_css_/styles_contenu_titre.css" />
 	<link rel="stylesheet" href="_css_/styles_contenu_para.css" />
@@ -62,14 +65,15 @@
 								in this section, you will be the excellent reader I hope.</p>
 						</li>
 					</ul>
+					<!--
 					<p class="contact_us">
 						If you have any question about these sections, 
 						please contact fasso administrator.
 					</p>
+					-->
 					<p class="souhait">Good reading !</p>
 				</section>
 			</div>
 		</div>
-	<footer dir="auto" id="copyrigth" class="rondBas ombre">&copy; ߝߊ߬ߛߏ ߞߍߦߙߐ | ߞߟߊߓߎ ߣߌ߫ ߣߊ߲߬ߝߏ߬ߦߊ &copy;</footer>
 </body>
 </html>

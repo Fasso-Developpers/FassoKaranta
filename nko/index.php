@@ -67,20 +67,20 @@
 					<p>
 						 Do you want to learn N'ko, very well, we are here for you.
 						 You can learn N'ko in 3 languages: N'ko, English and French.<br>
-						 Choose one of these languages in your prifile after start your courses.<br>
+						 Choose one of these languages in your profile after start your courses.<br>
 					</p>
 
 					<h3>Bienvenue aux cours N'ko</h3>
 					<p>
 						 Vous voulez surment apprendre le N'ko, félicitation, nous sommes à votre disposition.
 						 Ici vous pouvez apprendre N'ko en 3 langues: N'ko, Anglais et Français.
-						 Choisisez une de ces langues dans votre profile pour commenter vos cours.
+						 Choisisez une de ces langues dans votre profile pour commencer vos cours.
 					</p>
 
 					<h3 dir="rtl">ߊߟߎ߫ ߣߌ߫ ߛߣߍ߫ ߒߞߏ ߥߟߊ߬ߘߊ ߟߎ߬ ߘߐ߫</h3>
 					<p dir="rtl">
 						 ߊ߲ ߓߘߊ߫ ߟߐ߲ ߊߟߎ߫ ߟߊ߫ ߦߊ߲߭ ߣߊ߬ߟߌ ߡߊ߬ ߞߏ߫ ߒߞߏ ߞߊߙߊ߲ߟߐ߮ ߦߴߊߟߎ߫ ߟߊ߫߸ ߊߟߎ߫ ߞߎߟߎ߲ߖߋ߫ ߏ߬ ߟߊ߫ ߸
-						 ߊ߲ ߝߣߊ߫ ߊߟߎ߫ ߟߊߓߌ߬ߟߊ ߘߐ߫. ߊߟߎ߫ ߘߌ߫ ߛߋ߫ ߒߞߏ ߞߊ߬ߙߊ߲߬ ߠߊ߫ ߞߊ߲߫ ߛߓߊ߬ ߘߐ߫ ߦߊ߲߬: ߒߞߏ߸ ߊ߲߬ߜߌߟߋ ߣߌ߫ ߝߊ߬ߙߊ߲߬ߛߌ.
+						 ߊ߲ ߝߣߊ߫ ߊߟߎ߫ ߟߊ߫ ߓߌ߬ߟߊ ߘߐ߫. ߊߟߎ߫ ߘߌ߫ ߛߋ߫ ߒߞߏ ߞߊ߬ߙߊ߲߬ ߠߊ߫ ߞߊ߲߫ ߛߓߊ߬ ߘߐ߫ ߦߊ߲߬: ߒߞߏ߸ ߊ߲߬ߜߌߟߋ ߣߌ߫ ߝߊ߬ߙߊ߲߬ߛߌ.
 						 ߊߟߎ߫ ߦߋ߫ ߞߊ߲ ߏ߬ ߟߎ߬ ߘߏߘߐ߫ ߞߋߟߋ߲߫ ߕߊ߬ ߞߊ߬ ߥߟߊ߬ߘߊ ߟߎ߬ ߘߊߡߌ߬ߣߊ߬.
 					</p>
 
