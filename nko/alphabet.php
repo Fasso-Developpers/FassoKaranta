@@ -7,6 +7,7 @@
 	define("CHAPITRE", "alphabet");
 	// include the content menu
 	include('_alphabet_title_.php');
+	$link_to_movie = "";
 ?>
 
 <!doctype html >
@@ -15,7 +16,8 @@
 	<meta charset="utf-8" />
 	<title>Fasso school|N'ko</title>
 	<?php include('../__soronta__/_lowla_/head_sm.php'); ?>
-	<link rel="stylesheet" href="css/titre_lesson.css" />
+	<link rel="stylesheet" href="_css_/titre_lesson.css" />
+	<script src="_js_/chargePage.js"></script>
 </head>
 
 <body dir="auto">
@@ -40,9 +42,25 @@
 						
 						// Make The differents lessons the chapiters
 						for ($j = 1; $j <= 6; $j++) {
-						echo '<li '.chapitre_lesson_color($chapitre_in, $i, $lesson_in, $j).' >';
-						echo '<a href="'.$lesson_link[$i][$j].'">'.$lesson_name[$i][$j].'</a>'; ;
-						echo '</li>';
+							if(is_array($lesson_link[$i][$j])){
+								echo '<h1 '.sub_chap_Title_color($lesson_in, $j) . '>'.$lesson_name[$i][$j].'</h1>';
+								echo '<ul '.sub_chap_lesson_color($chapitre_in, $i, $lesson_in, $j). '>';
+								foreach ($lesson_link[$i][$j] as $key => $value) {
+									echo '<li '.chapitre_lesson_color($chapitre_in, $i, $lesson_in, $j).' >';
+									//echo '<a href="'.$value.'">'.$lesson_name[$i][$j].' '. $key .'</a>';
+									echo '<a href="_kogbei_/page.php?link='.$value.'&titre='.$lesson_name[$i][$j].' '. $key.'">'.
+									$lesson_name[$i][$j].' '. $key .'</a>';
+									echo '</li>';
+								}
+								echo '</ul>';
+							}else{
+								echo '<li '.chapitre_lesson_color($chapitre_in, $i, $lesson_in, $j).' >';
+								echo '<a href="_kogbei_/page.php?link='.$lesson_link[$i][$j].'&titre='.$lesson_name[$i][$j].'">'.
+								$lesson_name[$i][$j].'</a>'; ;
+								//echo '<a href="'.$lesson_link[$i][$j].'">'.$lesson_name[$i][$j].'</a>'; ;
+								echo '</li>';
+							}
+						
 						}
 						
 						echo '</ul>';
@@ -56,43 +74,24 @@
 
 	<!-- Paragraphe texte -->
 		<div id="paraTitre" class="rectangle ombre">
-			<h1 class="rectangle">L'Alphabet N'ko</h1>
+			<h1 class="rectangle">Partie 1: Alphabet N'ko</h1>
 		</div>
-		<!--
-		<div id="paraTexte" class="rectangle ombre">
+		
+		<div id="paraTexte" >
 			<section id="intro">
+				<!-- Insert Title here -->
+				<h3><?php  ?></h3>
 				
-				<h3>Welcome to N'ko courses!</h3>
-				<p>
-					 Do you want to learn N'ko, very well, we are here for you.
-					 You can learn N'ko in 3 languages: N'ko, English and French.<br>
-					 Choose one of these languages in your prifile after start your courses.<br>
-				</p>
-
-				<h3>Bienvenue aux cours N'ko</h3>
-				<p>
-					 Vous voulez surment apprendre le N'ko, félicitation, nous sommes à votre disposition.
-					 Ici vous pouvez apprendre N'ko en 3 langues: N'ko, Anglais et Français.<br>
-					 Choisisez une de ces langues dans votre profile pour commenter vos cours.
-				</p>
-
-				<h3 dir="rtl">ߊߟߎ߫ ߣߌ߫ ߛߣߍ߫ ߒߞߏ ߥߟߊ߬ߘߊ ߟߎ߬ ߘߐ߫</h3>
-				<p dir="rtl">
-					 ߊ߲ ߓߘߊ߫ ߟߐ߲ ߊߟߎ߫ ߟߊ߫ ߦߊ߲߭ ߣߊ߬ߟߌ ߡߊ߬ ߞߏ߫ ߒߞߏ ߞߊߙߊ߲ߟߐ߮ ߦߴߊߟߎ߫ ߟߊ߫߸ ߊߟߎ߫ ߞߎߟߎ߲ߖߋ߫ ߏ߬ ߟߊ߫ ߸
-					 ߊ߲ ߝߣߊ߫ ߊߟߎ߫ ߟߊߓߌ߬ߟߊ ߘߐ߫. ߊߟߎ߫ ߘߌ߫ ߛߋ߫ ߒߞߏ ߞߊ߬ߙߊ߲߬ ߠߊ߫ ߞߊ߲߫ ߛߓߊ߬ ߘߐ߫ ߦߊ߲߬: ߒߞߏ߸ ߊ߲߬ߜߌߟߋ ߣߌ߫ ߝߊ߬ߙߊ߲߬ߛߌ.
-					 ߊߟߎ߫ ߦߋ߫ ߞߊ߲ ߏ߬ ߟߎ߬ ߘߏߘߐ߫ ߞߋߟߋ߲߫ ߕߊ߬ ߞߊ߬ ߥߟߊ߬ߘߊ ߟߎ߬ ߘߊߡߌ߬ߣߊ߬.
-				</p>
-
-				<p>
-					See below a video for "Introduction to N'ko"
-				</p>
-				<p class="souhait">Good reading !</p>
-				<video controls="controls" class="videoIntro">
-					<source src="//localhost/karanta/nko/sbeisun/sbeisun.mp4" type="video/mp4" /> 
-				</video> 
+				<div id="videoPlace">
+					<!--
+					<iframe width="640" height="390"
+					<?php echo 'src="http://www.youtube.com/embed/'.$link_to_movie.'?rel=0&autoplay=1&origin=http://fasso.org"' ?>
+				  	frameborder="0" allowfullscreen />
+				 	-->
+				</div>
 				
 			</section>
-		</div> -->
+		</div> 
 	</div>
 </body>
 	<!--

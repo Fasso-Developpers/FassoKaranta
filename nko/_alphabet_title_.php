@@ -39,9 +39,23 @@
 		    1 => array(
 				'1' => 'TQgLauO5SxQ',
 				'2' => 'AYNdiI7O3ag',
-				'3' => 'OK2kZ3ERqoY',
-				'4' => '9wENyo4sQL0',
-				'5' => '#',
+				'3' => array(
+						1 => 'OK2kZ3ERqoY',
+						2 => '9wENyo4sQL0',
+							),
+				'4' => array(
+						1 => '2wy64b0PlcY',
+						2 => 'T8r-GT3k3vs',
+						3 => 'Kr501AJ1M60',
+						4 => 'u5hmw5NkXcI',
+						5 => 'MUeUy995DFE',
+						6 => 'd1B4PSYTtF4',
+							),
+				'5' => array(
+						1 => 'txIDmJiuGhA',
+						2 => 'uSWDKO8DaB8',
+						3 => 'Vlxbo8SRBB4',
+							),
 				'6' => '#'
 				),
 		    2 => array(
@@ -90,7 +104,7 @@
 	$lesson_name = array(
 		    1 => array(
 				'1' => 'Introduction',
-				'2' => 'Diphtone',
+				'2' => 'Intermédiaire',
 				'3' => 'Voyelles',
 				'4' => 'Consonnes',
 				'5' => 'Chiffres',
@@ -156,13 +170,29 @@
 		}else{
 			return ' class=" lesTitres lesTitres_off lesTitres2 " ';}
 	}
-	// function apply coloration on lesson
+	// function apply coloration on simple lesson
 	function chapitre_lesson_color($chapitre_in, $rang1, $lesson_in, $rang2){
 		global $chapitre_in, $chap, $lesson_in, $lesson;
 		if($chapitre_in == $chap[$rang1] && $lesson_in == $lesson[$rang2]){
-			return ' class=" lesLiens lesson_in " ';
+			return ' class=" lesLiens lesson_in " lesTitres1';
 		}else{
-			return ' class=" lesLiens lesson_off " ';}
+			return ' class=" lesLiens lesson_off " lesTitres2';}
+	}
+
+	function sub_chap_Title_color($lesson_in, $rang){
+		global $lesson_in, $chap;
+		if($lesson_in == $chap[$rang]){
+			return ' class="titreH1 titreH1_in " ';}
+		else{
+			return ' class="titreH1 titreH1_off " ';} 
+	}
+	// function apply coloration on sub chapiter lesson
+	function sub_chap_lesson_color($chapitre_in, $rang1, $lesson_in, $rang2){
+		global $chapitre_in, $chap, $lesson_in, $lesson;
+		if($chapitre_in == $chap[$rang1] && $lesson_in == $lesson[$rang2]){
+			return ' class=" lesTitres lesTitres_in lesTitres1 " ';
+		}else{
+			return ' class=" lesTitres lesTitres_off lesTitres2 " ';}
 	}
 	
 ?>

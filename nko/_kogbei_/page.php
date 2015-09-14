@@ -1,12 +1,14 @@
-<?php
-    phpinfo();
-?>
 
 <!doctype html>
 <html>
-
-	<iframe id="ytplayer" type="text/html" width="640" height="390"
-  src="http://www.youtube.com/embed/". $link. "?autoplay=1&origin=http://fasso.org"
-  frameborder="0"/>
-
+	<iframe  
+		<?php 
+			$link_to_movie = $_GET['link'];
+			echo 'src="http://www.youtube.com/embed/'.
+				$link_to_movie
+				.'?rel=0&autoplay=1&modestbranding=1&showinfo=0&origin=http://fasso.org"'; 
+		?>
+		
+	  	 allowfullscreen />
 </html>
+
