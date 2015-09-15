@@ -1,0 +1,83 @@
+
+form{
+	width: 97%;
+	margin: 0;
+}
+fieldset{margin:0; padding:0}
+#form p{padding-bottom: 5px;}
+
+#LastStudy{display: visible;}
+/*
+#form #LastStudy label{
+	float: right;
+	text-align: right;
+}
+*/
+#form #LastStudy input{
+	width: 200px;
+	margin-bottom: 0;
+}
+
+ul{list-style-type: none;}
+
+.descLevel{
+	text-align: right;
+	font-weight: 100;
+	font-style: normal;
+	position: absolute;
+	font-size: 16px;
+	padding: 5px;
+}
+
+.questionYN{padding: 0 3px 0 3px;}
+.reponse{padding: 0 3px 0 3px; font-size: 20px;}
+
+#aboutLast{text-align: center; font-size: 13px; font-style: italic; display: inline-block;}
+
+optgroup{background: rgb(220,220,220);}
+
+.descTexarea{ font-style: normal;}
+option{
+	text-align: left;
+	font-size: 20px;
+	background: rgb(200,200,200);
+	cursor: pointer;
+}
+
+option:hover{background: #eee;}
+
+optgroup:hover{
+	background: rgb(150,150,150);
+	color: #fff;
+	-moz-transition:2s;
+	-webkit-transition:2s;
+	-o-transition:2s;
+	transition:2s;
+}
+select{
+	cursor: pointer;
+	text-align: center;
+	font-size: 20px; color: #fff;
+	background: rgb(150,150,150);
+}
+select:hover{
+	background: rgb(150,150,150);
+	color: rgb(120,120,120);
+	-moz-transition:1s;
+	-webkit-transition:1s;
+	-o-transition:1s;
+	transition:1s;
+}
+
+#anoterInfo{
+	width: 97%; max-width: 97%; min-width: 400px;
+	height: 20%; max-height: 560px; min-height: 20%;
+}
+
+#soumettre{ position: relative; 
+	font-size: 18px;
+	margin-top: 2px;
+	text-align: center;
+	cursor: pointer;
+}
+p{margin:0; padding:0;}

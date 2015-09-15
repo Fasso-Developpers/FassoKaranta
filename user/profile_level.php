@@ -2,19 +2,17 @@
 		
 	include("../__soronta__/flo.php");
 	include("traduction.php");
-	
-	// this page contstant
-	define('THIS_PAGE', "afterRegist");
+	is_not_login();
+
+	define("MAIN_PAGE", "profile");
+	define('PAGE', "profile_level");
 
 	$error = "";
 	$succes = "";
 	
-	if(empty($_COOKIE['user_id'])){
-		$error = "Your cookies are empty, we don't who are you, <br>";
-		$error .= "Go to your profile to update your level <br>";
-	}elseif(isset($_POST['submit_level'])){
+	if(isset($_POST['submit_level'])){
 		
-		$user_id = $_COOKIE['user_id'];
+		$user_id = $_SESSION['user_id'];
 
 		$nko_level = htmlentities($_POST['nko_level']);
 		
@@ -40,7 +38,7 @@
 		$lastComment = htmlentities($_POST['lastComment']);
 		
 		// la fonction html_entity_decode() permet de decoder, c'est  l'inverse de htmlentities()
-		$nko_level = html_entity_decode($nko_level);
+		/*$nko_level = html_entity_decode($nko_level);
 		$last_nko_student = $last_nko_student;
 		$dontRemenber = $dontRemenber;
 		$lastCountry = html_entity_decode($lastCountry);
@@ -50,7 +48,7 @@
 		$lastDate = html_entity_decode($lastDate);
 		$lastDuration = html_entity_decode($lastDuration);
 		$lastComment = html_entity_decode($lastComment);
-		
+		*/
 		if(username_in_nqo($userName, $con)){
 			$error = trad_lang('you_have_given_your_level').'<br>';
 			$error .= trad_lang('you_can_update_in_profile').'<br>';
@@ -101,6 +99,7 @@
 	<link rel="icon" href="images/fassoIcone.ico" type="image/x-icon">
 	<?php include('../__soronta__/_lowla_/head_sm.php'); ?>
 	<link rel="stylesheet" href="css/styles_profile.css" /> 
+	<link rel="stylesheet" href="css/profile_level.css" />
 
 	<script type="text/javascript">
         function verif ()
@@ -175,10 +174,9 @@
 
 </head>
 
-<body dir="auto" style="font-family:Ebrima">
+<body dir="auto">
 <!-- Entête -->
 	<?php include("../__soronta__/_lowla_/header.php"); ?>
-	<?php include_once("../__soronta__/logout_button.php"); ?>
 	
 <!-- Cette partie contient le contenu de la page -->
 	<div dir="ltr" class="contenu" >
@@ -204,8 +202,7 @@
 				</div>
 				
 			<div class="infoPerson">
-				<form id="form" name="form1" method="post" action='afterRegist.php'>
-				<fieldset><legend><?php echo trad_lang('after_registration_fieldset') ?></legend>
+				<form id="form" name="form1" method="post" action='profile_level.php'>
 					<fieldset><legend><?php echo trad_lang('your_level_in_nko') ?></legend>
 				<ul>
 					<li>
@@ -298,7 +295,6 @@
 					</table>
 				</fieldset>
 				</div>
-			</fieldset>
 
 			<!-- Another information -->
 			<fieldset><legend><?php echo trad_lang('another_information') ?></legend>
