@@ -4,6 +4,17 @@
 	include("../__soronta__/flo.php");
 	$error = "";
 	$succes = "";
+	
+	// GET language of user
+	$user_id = $_SESSION['user_id'];
+	$kan_array = get_kan($user_id, $con);
+	$kan = $kan_array['kan'];
+	if(isset($_POST['submit'])){
+		$kan = $_POST['language'];
+		//echo $kan;
+		update_kan($user_id, $kan, $con);
+	}
+	
 ?>
 
 <!doctype html >
@@ -51,11 +62,11 @@
 					<label>Choise your language: </label>
 						<select class="lang" name="language">
 
-							<option value="en">English</option>
+							<option value="nko" <?php if($kan=="nko")echo 'selected'?>>N'ko</option>
 
-							<option value="fr">Français</option>
+							<option value="en" <?php if($kan=="en")echo 'selected'?>>English</option>
 
-							<option value="nko">N'ko</option>
+							<option value="fr" <?php if($kan=="fr")echo 'selected'?>>Français</option>
 						</select>
 						<input id="soumettre" name="submit" type="submit" value="Save" />
 						<p>This language will be your explanation language for N'ko courses and for your profile</p>

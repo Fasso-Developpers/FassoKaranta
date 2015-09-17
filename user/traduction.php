@@ -144,8 +144,20 @@
 				'you_can_login_now' => "ߌ ߘߌ߫ ߛߴߌ ߜߊ߲߬ߞߎ߲߬ ߠߊ߫ ߡߎ߬ߕߎ߲߬ ߝߛߊߦߌ߫",
 				
 				'problem_to_activate_account' => "ߝߙߋߞߋ ߘߏ߫ ߦߴߊ߲ ߡߊ߬ ߌ ߟߊ߫ ߞߏ߲߬ߘߏ ߘߟߊߞߊ߭ ߘߐ߫",
-				'sorry_please_try_again' => "ߌ ߘߌ߫ ߛߴߌ ߜߊ߲߬ߞߎ߲߬ ߠߊ߫ ߡߎ߬ߕߎ߲߬ ߝߛߊߦߌ߫"
+				'sorry_please_try_again' => "ߊ߬ ߡߊ߫ ߛߊ߬ߦߌ߬ ߌߞߐ߫ ߖߊ߰ߣߌ߲߬߸ ߤߊߞߍ߬ߕߏ߫ ߘߋ߬",
 				
+				/* *************** TRANSLATION OF CONFIRM RESIZING BY TECHNICIAN *********** */
+				'resize_is_not_confirm' => "ߖߌ߬ߦߊ ߟߊߘߏ߯ߦߊ ߡߊ߫ ߛߋ߫ ߟߊߕߍ߰ ߟߊ߫",
+				'user_id_and_confirm_code_incorrect' => "ߞߌ߬ߓߊ߬ߙߏ߬ ߟߊߘߌߣߍ߲ ߠߎ߬ ߡߊ߫ ߢߌ߲߬",
+				'please_confirm_by_email_sended' => "ߖߊ߱ߣߌ߲߬ ߥߊ߫ ߌ ߟߊ߫ ߞߏ߲߬ߘߏ ߟߊ߫ ߞߵߊ߬ ߛߐ߲߬ߞߌ߲߫ ߛߘߌ߬ߜߋ߲߬ ߠߊߥߊߣߍ߲ ߞߊ߲߬ ߞߵߌ ߟߊ߬ߕߍ߰ߟߌ ߘߌ߫",
+				'user_id_given_is_not_registered' => "ߞߌ߬ߓߊ߬ߙߏ ߟߎ߬ ߡߊ߫ ߢߌ߲߬",
+				'confirmation_code_is_incorrect' => "ߌ ߟߊ߫ ߟߊ߬ߕߍ߰ߟߌ߬ ߘߏ߫ ߝߙߍߕߍ ߡߊ߫ ߢߌ߲߬",
+				'thank_you_are_in_late' => "ߌ ߣߌ߫ ߗߋ߫߸ ߒ߬ߞߊ߬ ߓߘߊ߫ ߞߐ߫ ߘߏ߯ߣߌ߲߫",
+				'because_image_is_alredy_resized' => "ߓߊ ߖߌ߬ߦߊ ߏ߬ ߓߘߊ߫ ߓߊ߲߫ ߟߊߘߐ߯ߦߊ߫ ߟߊ߫",
+				'image_is_succes_resized' => "ߌ ߓߘߴߌ ߟߊ߫ ߟߊ߬ߕߍ߰ߟߌ ߞߍ߫ ߞߏ߫ ߢߊ߬߸ ߌ ߣߌ߫ ߞߏ߲߫ ߹ ",
+				
+				'problem_to_confirm_resize' => "ߝߙߋߞߋ ߘߏ߫ ߦߴߊ߲ ߡߊ߬ ߌ ߟߊ߫ ߞߏ߲߬ߘߏ ߟߊ߬ߕߍ߰ߟߌ ߞߍ ߘߐ߫",
+						
 				);
 	$en = array('direction'=>"ltr",
 				'language'=>"Languages",
@@ -259,7 +271,19 @@
 				'you_can_login_now' => "You can login now",
 				
 				'problem_to_activate_account' => "We have a problem to activate your account",
-				'sorry_please_try_again' => "we are very sorry, Please try again!"
+				'sorry_please_try_again' => "we are very sorry, Please try again!",
+				
+				/* *************** TRANSLATION OF CONFIRM RESIZING BY TECHNICIAN *********** */
+				'resize_is_not_confirm' => "Image resizing is not confirm",
+				'user_id_and_confirm_code_incorrect' => "The given informations are incorrect",
+				'please_confirm_by_email_sended' => "Please go to your email, and click on sended link to confirm it",
+				'user_id_given_is_not_registered' => "Information is incorrect",
+				'confirmation_code_is_incorrect' => "Your confirmation code is incorrect",
+				'thank_you_are_in_late' => "Thanks, you are late",
+				'because_image_is_alredy_resized' => "this image is alredy resized",
+				'image_is_succes_resized' => "You are confirm your resizing successfelly !",
+				
+				'problem_to_confirm_resize' => "We have a problem to confirm your resizing",
 						
 				);
 	$fr = array('direction'=>"ltr",
@@ -376,7 +400,19 @@
 				'you_can_login_now' => "Vous pouvez vous connecter maintenant",
 				
 				'problem_to_activate_account' => "Nous avons un problème pour activer votre compte",
-				'sorry_please_try_again' => "Nous sommes vraiment désolé, veillez refaire plutard!"
+				'sorry_please_try_again' => "Nous sommes vraiment désolé, veillez refaire plutard!",
+				
+				/* *************** TRANSLATION OF CONFIRM RESIZING BY TECHNICIAN *********** */
+				'resize_is_not_confirm' => "La redimension de l'image n'est pas confirmée",
+				'user_id_and_confirm_code_incorrect' => "Les informations fournis sont incorrectes",
+				'please_confirm_by_email_sended' => "Veillez cliquer sur le lien envoyé à votre email,  pour confirmer",
+				'user_id_given_is_not_registered' => "L'information est incorrecte",
+				'confirmation_code_is_incorrect' => "Votre code de confirmation est incorrect",
+				'thank_you_are_in_late' => "Merci, vous êtes un peu en retard",
+				'because_image_is_alredy_resized' => "parce que l'image est déjà redimensionnée",
+				'image_is_succes_resized' => "Vous avez confirmé la redimension avec succes!",
+				
+				'problem_to_confirm_resize' => "Nous avons un problème pour confirmer la redimension",
 					
 				);
 ?>

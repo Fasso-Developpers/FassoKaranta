@@ -155,12 +155,78 @@ function get_djiya_name($user_id, $con){
 }
 
 function info_to_profile($user_id, $con){
-	$query = "SELECT `firstName`,`lastName`,`userName`, `email`, `djiya`, `join_date` 
+	$query = "SELECT `firstName`,`lastName`,`userName`, `email`, `kan`, `djiya`, `join_date` 
 				FROM `registred` WHERE `Id_registred` = '$user_id' ";
 	$result = mysqli_query($con, $query);
 	$resultat = mysqli_fetch_assoc($result);
 	return $resultat;
 }
+
+// ++++++++++++++++ GREAT PROFILE IMAGE +++++++++++++++++
+function have_great_img($user_id, $img_name, $confirm_code, $con){
+	$query = "INSERT INTO `great_img` (`user_id`, `img_name`, `confirm_code`)
+							VALUE('$user_id', '$img_name', '$confirm_code')";
+	mysqli_query($con, $query);
+}
+
+function tech_informed($user_id, $con){
+	$query = "UPDATE `great_img` SET `t_inform` = '1' WHERE `user_id` = '$user_id' ";
+	mysqli_query($con, $query);
+}
+
+// Verify if user_id exists in great_img table
+function user_id_exists($user_id, $con){
+		$query = "SELECT `user_id` FROM `great_img` WHERE `user_id` = '$user_id' ";
+		$result = mysqli_query($con, $query);
+		if (mysqli_num_rows($result) >= 1)
+		{
+			return true; 
+		}else{
+			return false;
+		}
+	}
+
+// Verify if confirm_code exists in great_img table
+function confirm_code_exists($user_id, $confirm_code, $con){
+	$query = "SELECT `user_id` FROM `great_img` WHERE user_id = '$user_id' AND confirm_code = '$confirm_code'";
+	$result = mysqli_query($con, $query); 
+		
+		if (mysqli_num_rows($result) == 1)
+		{
+			return true; 
+		}else{
+			return false;
+		}
+}
+
+// Verify if another technician has not resize great image
+function img_is_resized($user_id, $con){
+	$query = "SELECT `user_id` FROM `great_img` WHERE `user_id` = '$user_id' AND `resized` = '1'";
+	$result = mysqli_query($con, $query); 
+		if (mysqli_num_rows($result) >= 1)
+		{
+			return true; 
+		}else{
+			return false;
+		}
+}
+
+function must_activate($user_id, $confirm_code, $con){
+	$query = "SELECT `user_id` FROM `great_img` WHERE `user_id` = '$user_id' AND `confirm_code` = '$confirm_code' AND `resized` = '0' ";
+		$result = mysqli_query($con, $query);
+		if (mysqli_num_rows($result) == 1)
+		{	
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+function confirm_resize($user_id, $con){
+		// query update account of user to active this
+		$query = "UPDATE `great_img` SET `resized` = 1 WHERE `user_id` = '$user_id'";
+		mysqli_query($con, $query);
+	}
 
 
 /* ***************** GET SOME INFO TO SESSION ************* */
@@ -179,6 +245,14 @@ function get_kan($user_id, $con){
 	return $resultat;
 }
 
+function update_kan($user_id, $kan, $con){
+	$query = "UPDATE `registred` SET `kan` = '$kan' WHERE `Id_registred` = '$user_id'";
+	$result = mysqli_query($con, $query);
+	$resultat = mysqli_fetch_assoc($result);
+	return $resultat;
+}
+
+
 // ------------  SEND A CONFIRMATION MAIL -----------
 	$header_mail 	= "From: karanta@fasso.org"."\r\n";
 	$header_mail 	.= "Reply-To: karanta@fasso.org"."\r\n";
@@ -188,6 +262,7 @@ function get_kan($user_id, $con){
 	function send_email($to, $subject, $body){
 		global $header_mail;
 		mail($to, $subject, $body, $header_mail);
+		return true;
 	}
 	
 

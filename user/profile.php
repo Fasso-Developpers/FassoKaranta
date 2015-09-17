@@ -6,15 +6,15 @@
 	include ("traduction.php");
 	$error = "";
 	$succes = "";
-
+	$user_id = $_SESSION['user_id'];
+	
 	//$image_name = $_FILES['avatar']['name'];
-	if(is_not_login()){ // If not connected, say you must login
+	if(!isset($_SESSION['user_id'])){ // If not connected, say you must login
 		echo '<!doctype html>';
 		echo '<html>';
 		echo '<head>';
 		echo '<meta charset="utf-8">';
 		echo '<title>Profile</title>';
-		include("../__soronta__/_lowla_/header.php");
 		echo '<body>';
 		echo '<h1>You are not connected</h1>';
 		echo '<p>You must be connected to access your profile</p>';
@@ -24,7 +24,6 @@
 		echo '</html>';
 	
 	}else{
-		$user_id = $_SESSION['user_id'];
 		$profile_info = info_to_profile($user_id, $con);
 		
 		$firstname =  $profile_info['firstName'];
@@ -32,14 +31,26 @@
 		$userName =  $profile_info['userName'];
 		$email =  $profile_info['email'];
 		$inscri_date =  $profile_info['join_date'];
-		
+		$lang = $profile_info['kan'];
 		/* ********** USER PROFILE IMAGE ********* */
 		//$profile_image = get_djiya_name($user_id, $con);
 		$image_name = $profile_info['djiya'];
-		$_SESSION['image'] = './user_image/'.$image_name;
-		// change image name to show for user
-		$img_name_array = explode('--', $image_name);
-		$image_show = $img_name_array[1];
+		if(empty($image_name)){
+			$error = 'Hi '.$userName.', '."You have not upload your profile image";
+		}else{
+			//get image information;
+			$size_imag_temp = $_SERVER['DOCUMENT_ROOT'].'karanta/user/user_image/'.$image_name;
+			$size_imag_array = getimagesize($size_imag_temp);
+			if($size_imag_array[0]<=200 && $size_imag_array[1]<=200){
+				$_SESSION['image'] = './user_image/'.$image_name;
+				// change image name to show for user
+				$img_name_array = explode('--', $image_name);
+				$image_show = $img_name_array[1];
+			}else{
+				$error = 'Hi '.$userName.', '."your profile image have not correct dimension";
+				$error .= 'It must be 200px * 200px or less';
+			}
+		}
 		
 		if(isset($_POST['submit']) && !$_FILES['avatar']['error']) {
 			$firstName = htmlentities($_POST['firstname']);
@@ -90,14 +101,35 @@
 							}
 						}else{
 							if(move_uploaded_file($image['tmp_name'], './user_image/_great_/'.$image_name)){
+								// Regist image info in great_img table
+								$img_name_array = explode('--', $image_name);
+								$img_name = $img_name_array[1];
+								$confirm_code =  md5($user_id + microtime());
+								have_great_img($user_id, $img_name, $confirm_code, $con);
 								$error = 'Image width or height are great than 200px <br>';
 								$error .= "It is saved but it can't be use for your profile image <br>";
 								$error .= "You can resize the image to 200px * 200px to use it<br>";
-								$error .= "Now it dimension is: $verif_imag[0] * $verif_imag[1] <br>";
+								$error .= "Now its dimension is: $verif_imag[0] * $verif_imag[1] <br>";
 								$error .= "Or wait our Technician to do for you ";
+								// send a email to technician to resize the image,
+								$subject = "Resizeable image";
+								$body = "<br>
+									Hi our Fasso technician, we are the images for the user to resize,<br>
+									Please, resize these image for us. Image must have 200px * 200px or less. <br>
+									It will be use for user profile, so please cut this to appear the face of user.
+									<br><br>
+									If you finish to resize click on this link validate the change.".
+									'<a href="'.'http://fasso.org/karanta/user/_tech_confirm.php?user_id='.$user_id.'&confirm_code='.$confirm_code.'&lang='.$lang.'">
+									'.trad_lang("this_link").'
+									</a>'."<br>".
+									"<br> http://fasso.org/karanta/user/_tech_confirm.php?user_id=".$user_id."&confirm_code=".$confirm_code."&lang=".$lang.
+									
+									"<br><br>Thanks technician.";
+								if(send_email('kantemou@gmail.com, kskante@fasso.org', $subject, $body)){
+									tech_informed($user_id, $con);
+								}
 								
-								// unset image in variable
-								$verif_imag = "";			
+								
 							}
 						}
 					}else{
@@ -165,26 +197,26 @@
 							<td>Firstname: </td><td>
 							<label class="labaleTable" name="firstname"><?php echo $firstname ?></label></td><td>
 							<input class="textBox" type="text" name="firstname" maxlength="30" autofocus 
-							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required /></td>
+							<?php echo 'value="'.$firstname.'"'; ?> readonly/></td>
 						</tr>
 						<tr>
 							<td>Lastname: </td><td>
 							<label name="lastname"><?php echo $lastname ?></label></td><td>
 							<input class="textBox" type="text" name="lastname" maxlength="30" 
-							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required /></td>
+							<?php echo 'value="'.$lastname .'"'; ?> readonly/></td>
 						</tr>
 						<tr><td>Username: </td><td>
 							<label name="username"><?php echo $userName ?></label></td><td>
 							<input class="textBox" type="text" name="username" maxlength="20" 
-							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required /></td>
+							<?php echo 'value="'.$userName.'"'; ?> readonly/></td>
 						</tr>
 						<tr><td>Adressemail: </td><td>
 							<label  name="email"><?php echo $email ?></label></td><td>
 							<input class="textBox" type="text" name="email" maxlength="60" 
-							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required /></td>
+							<?php echo 'value="'.$email.'"'; ?> readonly/></td>
 						</tr>
 						<tr><td>Profile picture: </td><td><?php echo $image_show ?></td><td>
-							<input type="file" name="avatar" /></td>
+							<input type="file" title="Load image" name="avatar" required value="Load image" /></td>
 						</tr>
 						<tr><td colspan=2>Registration date: </td>
 							<td><?php echo $inscri_date; ?></td>
@@ -196,36 +228,17 @@
 							<td> <input id="soumettre" name="submit" type="submit" value="Save edite" /></td>
 						</tr>
 						<tr>
-							<td colspan=3> <?php echo $error; ?></td>
+							<td colspan=3> 
+								<?php 
+								//echo $size_imag_array;
+								//print_r($size_imag_array) .'<br>';
+								echo ' '. $error; ?>
+							</td>
 						</tr>
 					</table>
-					<?php 
-						/*
-						print_r($_FILES['avatar']);
-						if(isset($_POST['avatar'])){
-							var_dump($_FILES['avatar']);
-						}
-						*/
-					?>
+					
 				</fieldset></td>
 
-				
-					<div ">
-					<?php 
-						/*print_r($_FILES['avatar']);
-						if(isset($_POST['avatar'])){
-							var_dump($_FILES['avatar']);
-							print_r($_FILES['avatar']);
-							echo $error;
-						}
-						
-						if(isset($taille)){
-							echo $taille;
-						}
-						if(isset($_SESSION['image'])){
-						}*/
-					?>
-					</div>
 				</div></form>	
 			</div>
 		</div>
