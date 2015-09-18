@@ -8,11 +8,13 @@
 	// GET language of user
 	$user_id = $_SESSION['user_id'];
 	$kan_array = get_kan($user_id, $con);
-	$kan = $kan_array['kan'];
+	$f_kan = $kan_array['f_kan'];
+	$y_kan = $kan_array['y_kan'];
 	if(isset($_POST['submit'])){
-		$kan = $_POST['language'];
+		$f_kan = $_POST['e_language'];
+		$y_kan = $_POST['d_language'];
 		//echo $kan;
-		update_kan($user_id, $kan, $con);
+		update_kan($user_id, $f_kan, $y_kan, $con);
 	}
 	
 ?>
@@ -57,20 +59,36 @@
 				<!-- Update more information -->
 				<form class="infoPerson" action="#" method="post">
 					<fieldset >
-					<legend>My explanation language</legend>
-					
-					<label>Choise your language: </label>
-						<select class="lang" name="language">
+						<legend>My languages (choose your language)</legend>
+						
+						<label>Explanation language: </label>
+						<select class="lang" name="e_language">
 
-							<option value="nko" <?php if($kan=="nko")echo 'selected'?>>N'ko</option>
+							<option value="nko" <?php if($f_kan=="nko")echo 'selected'?>>N'ko</option>
 
-							<option value="en" <?php if($kan=="en")echo 'selected'?>>English</option>
+							<option value="en" <?php if($f_kan=="en")echo 'selected'?>>English</option>
 
-							<option value="fr" <?php if($kan=="fr")echo 'selected'?>>Français</option>
+							<option value="fr" <?php if($f_kan=="fr")echo 'selected'?>>Français</option>
+						</select>
+						<label>Display language: </label>
+						<select class="lang" name="d_language">
+
+							<option value="nko" <?php if($y_kan=="nko")echo 'selected'?>>N'ko</option>
+
+							<option value="en" <?php if($y_kan=="en")echo 'selected'?>>English</option>
+
+							<option value="fr" <?php if($y_kan=="fr")echo 'selected'?>>Français</option>
 						</select>
 						<input id="soumettre" name="submit" type="submit" value="Save" />
-						<p>This language will be your explanation language for N'ko courses and for your profile</p>
-						<p>If your will pas to high level in courses, can change that to N'ko language to pratice N'ko courses.</p>
+						<p>Explanation language will use for N'ko courses</p>
+						
+						
+						
+						<p>Display language will use to every page in Fasso karanta and your profile</p>
+						
+						
+						<p>If you pass to high level in N'ko courses, we recommand you to choose N'ko for all,
+							to pratice your N'ko courses.</p>
 						<p>See the demonstration below!</p>
 						
 						<div class="video">

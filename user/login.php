@@ -63,25 +63,17 @@
 						//echo $level_in;
 						 
 						$lang_array = get_kan($user_id, $con);
-						$lang = $lang_array['kan'];
+						$f_kan = $lang_array['f_kan'];
+						$y_kan = $lang_array['y_kan'];
 						//echo '<br>'.$lang;
-						connect_user($user_id, $level_in, $lang , $con);
-						//echo '<br>'.$lang, '<br>'.$level_in, '<br>'.$user_id;
-						//if(connect_user($user_id, $level_in, $lang , $con)){
-							$error = 'You are connected';
-							echo "You are connected now !";
+						connect_user($user_id, $level_in, $f_kan, $y_kan , $con);
+							//$error = 'You are connected';
 							
 							$_SESSION['user_id'] = $user_id;
-							//$_COOKIE['user_id'] = $user_id;
-							
-							$_SESSION['userName'] = $userName;
-							//$_COOKIE['userName'] = $userName;
-			
-							//echo $_SESSION['userName'].' '.$_COOKIE['userName'];
 							
 							if($checkbox == "on")
 							{
-								setcookie("userName",$userName, time()+3600);
+								setcookie("user_id",$user_id, time()+3600);
 							}
 							header("Location: ../index.php");
 							exit();
@@ -213,26 +205,6 @@
 					<td <?php echo align_by_nko() ?>>
 						<?php if (!isset($_GET['lang'])){ echo trad_nko('password');} ?> </td>
 				</tr>
-
-				<tr><td <?php echo align_by_lang() ?> >
-					<?php echo trad_lang('my_language'); ?> 
-				</td><td>
-					<select id="langues_selected" name ="lang">
-						<?php 
-							foreach ($langues as $key => $value) {
-								echo '<option value="'.$key.'"';
-								if ($key == LABEL_LANG){
-									echo 'selected="selected"';
-								}
-								echo '>'.$value.'</option>';
-							}
-						?>
-						</select>
-				</td>
-					<td <?php echo align_by_nko() ?>>
-						<?php if (!isset($_GET['lang'])){ echo trad_nko('my_language');} ?> </td>
-				</tr>
-
 				<tr><td></td><td>
 					<?php echo '<span class="checkbox">'. trad_lang('remember_me').' </span>'?>
 					

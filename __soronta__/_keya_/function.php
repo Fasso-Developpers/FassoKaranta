@@ -79,10 +79,10 @@
 	/* ******************* CONNEXION FUNCTIONS **********************  */
 	
 	// Connect user if arguments are ok
-	function connect_user($user_id, $level_in, $lang , $con){
+	function connect_user($user_id, $level_in, $f_kan, $y_kan , $con){
 		// query update account of user to active this
-		$connectQuery = "INSERT INTO session (user_id, level_in, kan, login)
-										VALUE('$user_id', '$level_in', '$lang', 1)";
+		$connectQuery = "INSERT INTO session (user_id, level_in, f_kan, y_kan, login)
+										VALUE('$user_id', '$level_in', '$f_kan', '$y_kan', 1)";
 		mysqli_query($con, $connectQuery);
 		//mysqli_query($con, "UPDATE `session` SET `login` = 1 WHERE `user_id` = '$user_id'");
 	}	
@@ -155,7 +155,7 @@ function get_djiya_name($user_id, $con){
 }
 
 function info_to_profile($user_id, $con){
-	$query = "SELECT `firstName`,`lastName`,`userName`, `email`, `kan`, `djiya`, `join_date` 
+	$query = "SELECT `firstName`,`lastName`,`userName`, `email`, `f_kan`, `y_kan`, `djiya`, `join_date` 
 				FROM `registred` WHERE `Id_registred` = '$user_id' ";
 	$result = mysqli_query($con, $query);
 	$resultat = mysqli_fetch_assoc($result);
@@ -239,14 +239,14 @@ function get_nko_level($user_id, $con){
 }
 
 function get_kan($user_id, $con){
-	$query = "SELECT `kan` FROM `registred` WHERE `Id_registred` = '$user_id' ";
+	$query = "SELECT `f_kan`, `y_kan` FROM `registred` WHERE `Id_registred` = '$user_id' ";
 	$result = mysqli_query($con, $query);
 	$resultat = mysqli_fetch_assoc($result);
 	return $resultat;
 }
 
-function update_kan($user_id, $kan, $con){
-	$query = "UPDATE `registred` SET `kan` = '$kan' WHERE `Id_registred` = '$user_id'";
+function update_kan($user_id, $f_kan, $y_kan, $con){
+	$query = "UPDATE `registred` SET `f_kan` = '$f_kan', `y_kan` = '$y_kan' WHERE `Id_registred` = '$user_id'";
 	$result = mysqli_query($con, $query);
 	$resultat = mysqli_fetch_assoc($result);
 	return $resultat;

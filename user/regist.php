@@ -69,8 +69,8 @@
 				if (username_exists($userName, $con)) {
 					$error = trad_double_lang('sorry_username_exists_1', $userName, 'sorry_username_exists_2');
 				} else {
-					$registerQuery = "INSERT INTO registred (firstName, lastName, userName, email, kan)
-										VALUE('$firstName', '$lastName', '$userName', '$email', '$lang')";
+					$registerQuery = "INSERT INTO registred (firstName, lastName, userName, email, f_kan, y_kan)
+										VALUE('$firstName', '$lastName', '$userName', '$email', '$lang', '$lang')";
 
 					if (mysqli_query($con, $registerQuery)) {
 						// Get user_id by $userName
@@ -298,8 +298,12 @@
 						<?php
 						foreach ($langues as $key => $value) {
 							echo '<option value="' . $key . '"';
-							if ($key == LABEL_LANG) {
+							if(empty($_GET['lang']) && $key == 'nko'){
 								echo 'selected="selected"';
+							}else{
+								if (isset($_GET['lang']) && $key == LABEL_LANG) {
+									echo 'selected="selected"';
+								}
 							}
 							echo '>' . $value . '</option>';
 						}

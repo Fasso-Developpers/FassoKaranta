@@ -52,7 +52,7 @@ fieldset p{
 	font-size: 14px;
 
 }
-.video{position: absolute;
+.video{
 	border: 1px solid #000;
 	width: 400px; 
 	margin: 0 auto;
