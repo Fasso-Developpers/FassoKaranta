@@ -19,16 +19,10 @@
 				'2' => 'chapitre_2',
 				'3' => 'chapitre_3',
 				'4' => 'chapitre_4',
-				'5' => 'chapitre_5'
+				'5' => 'chapitre_5',
+				'6' => 'chapitre_6'
 				);
-	$lesson = array(
-				'1' => 'lesson_1',
-				'2' => 'lesson_2',
-				'3' => 'lesson_3',
-				'4' => 'lesson_4',
-				'5' => 'lesson_5',
-				'6' => 'lesson_6'
-				);
+
 	
 	/* ---- The lessons of chapiter ---- */
 	$chapiters = array(
@@ -101,17 +95,17 @@
 			return ' class="titreH1 titreH1_off " ';} 
 	}
 	// function apply coloration on chapitre
-	function chapitre_content_color($chapitre_in, $rang){
-		global $chapitre_in, $chap;
-		if($chapitre_in == $chap[$rang]){
+	function chapitre_content_color($level_in, $rang){
+		global $level_in, $level;
+		if($level_in == $level[$rang]){
 			return ' class=" lesTitres lesTitres_in lesTitres1 " ';
 		}else{
 			return ' class=" lesTitres lesTitres_off lesTitres2 " ';}
 	}
 	// function apply coloration on lesson
-	function chapitre_lesson_color($chapitre_in, $rang1, $lesson_in, $rang2){
-		global $chapitre_in, $chap, $lesson_in, $lesson;
-		if($chapitre_in == $chap[$rang1] && $lesson_in == $lesson[$rang2]){
+	function chapitre_lesson_color($level_in, $chapitre_in, $rang1, $rang2){
+		global $level_in, $chapitre_in, $level, $chap;
+		if($level_in == $level[$rang1] && $chapitre_in == $chap[$rang2] ){
 			return ' class=" lesLiens lesson_in " ';
 		}else{
 			return ' class=" lesLiens lesson_off " ';}

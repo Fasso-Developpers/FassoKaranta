@@ -1,6 +1,6 @@
 <?php
 	define("MAIN_PAGE", "profile");
-	define("PAGE", "profile_more");
+	define("PAGE", "profile_kambolon");
 	include("../__soronta__/flo.php");
 	$error = "";
 	$succes = "";
@@ -49,32 +49,21 @@
 				<!-- Update more information -->
 				<form class="infoPerson" action="#" method="post">
 					<fieldset >
-					<legend>Edit more Information</legend>
+					<legend>Your manden language</legend>
 					<table class="table">
-						<tr><td>Djamun: </td><td>
-							<input class="textBox" type="text" name="djamun" maxlength="30" autofocus 
+						<tr><td>Native dialete: </td><td>
+							<input class="textBox" type="text" name="native_dialete" maxlength="60" 
 							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required /></td></tr>
-						<tr><td>Sanankun: </td><td>
-							<input class="textBox" type="text" name="sanankun" maxlength="30" 
+						<tr><td>Number dialete speaken: </td><td>
+							<input class="textBox" type="text" name="number_dialete_speaken" maxlength="60" 
 							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required /></td></tr>
-						<tr><td>Age: </td><td>
-							<input class="textBox" type="text" name="age" maxlength="20" 
+						<tr><td>Visited place: </td><td>
+							<input class="textBox" type="text" name="visited_place" maxlength="60" 
 							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required /></td></tr>
-						<tr><td>Sexe: </td><td>
-							<input class="textBox" type="text" name="sexe" maxlength="60" 
+						<tr><td>Visited place: </td><td>
+							<input class="textBox" type="text" name="visited_place" maxlength="60" 
 							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required /></td></tr>
-						<tr><td>Tel. : </td><td>
-							<input class="textBox" type="text" name="tel" maxlength="60" 
-							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required /></td></tr>
-						<tr><td>Country: </td><td>
-							<input class="textBox" type="text" name="my_country" maxlength="60" 
-							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required /></td></tr>
-						<tr><td>City: </td><td>
-							<input class="textBox" type="text" name="my_city" maxlength="60" 
-							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required /></td></tr>
-						<tr><td>Country of manden: </td><td>
-							<input class="textBox" type="text" name="manden_country" maxlength="60" 
-							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required /></td></tr>
+						
 
 						<tr><td></td><td>
 							<input id="soumettre" name="submit" type="submit" value="Save" /></td></tr>

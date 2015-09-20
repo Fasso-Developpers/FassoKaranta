@@ -19,9 +19,19 @@ body{
 	padding: 5px;
 }
 
+.sub_titreH1{
+	color: rgb(200,200,200);
+	cursor: cell;
+	font-size: 18px;
+	padding: 5px;
+}
 /* --- For level_in and level_off--- */
 
 /* H1 STYLE */
+.titreH1_pass{
+	border: 3px solid rgb(50,150,150);
+	background: rgb(50,150,150);
+}
 .titreH1_in{
 	border: 3px solid rgb(50,100,150);
 	background: rgb(50,100,150);
@@ -32,6 +42,9 @@ body{
 }
 
 /* UL STYLE */
+.lesTitres_pass{
+	background: rgb(50,150,150);
+}
 .lesTitres_in{
 	border: 3px solid rgb(50,100,150);
 }

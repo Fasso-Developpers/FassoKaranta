@@ -7,6 +7,11 @@
 	$chapitre_in = $cours_info['chapitre_in'];
 	$lesson_in = $cours_info['lesson_in'];
 	
+	// status passed
+	$status_array = get_status_info($user_id, $con);
+	$status = $status_array['status'];
+	
+	
 	/* --- variable provide of database --- */
 	$chap = array(
 				'1' => 'chapitre_1',
@@ -158,13 +163,13 @@
 	function chapitre_Title_color($chapitre_in, $rang){
 		global $chapitre_in, $chap;
 		if($chapitre_in == $chap[$rang]){
-			return ' class="titreH1 titreH1_in " ';}
-		else{
+			return ' class="titreH1 titreH1_in " ';
+		}else{
 			return ' class="titreH1 titreH1_off " ';} 
 	}
 	// function apply coloration on chapitre
 	function chapitre_content_color($chapitre_in, $rang){
-		global $chapitre_in, $chap;
+		global $chapitre_in, $chap, $status;
 		if($chapitre_in == $chap[$rang]){
 			return ' class=" lesTitres lesTitres_in lesTitres1 " ';
 		}else{
@@ -172,7 +177,7 @@
 	}
 	// function apply coloration on simple lesson
 	function chapitre_lesson_color($chapitre_in, $rang1, $lesson_in, $rang2){
-		global $chapitre_in, $chap, $lesson_in, $lesson;
+		global $chapitre_in, $chap, $lesson_in, $lesson, $status;
 		if($chapitre_in == $chap[$rang1] && $lesson_in == $lesson[$rang2]){
 			return ' class=" lesLiens lesson_in " lesTitres1';
 		}else{
@@ -180,20 +185,20 @@
 	}
 
 	function sub_chap_Title_color($lesson_in, $rang){
-		global $lesson_in, $chap;
+		global $lesson_in, $chap, $status;
 		if($lesson_in == $chap[$rang]){
-			return ' class="titreH1 titreH1_in " ';}
-		else{
-			return ' class="titreH1 titreH1_off " ';} 
+			return ' class="sub_titreH1 titreH1_in " ';
+		}else{
+			return ' class="sub_titreH1 titreH1_off " ';} 
 	}
+	
 	// function apply coloration on sub chapiter lesson
 	function sub_chap_lesson_color($chapitre_in, $rang1, $lesson_in, $rang2){
-		global $chapitre_in, $chap, $lesson_in, $lesson;
+		global $chapitre_in, $chap, $lesson_in, $lesson, $status;
 		if($chapitre_in == $chap[$rang1] && $lesson_in == $lesson[$rang2]){
 			return ' class=" lesTitres lesTitres_in lesTitres1 " ';
 		}else{
 			return ' class=" lesTitres lesTitres_off lesTitres2 " ';}
 	}
 	
-?>
 ?>

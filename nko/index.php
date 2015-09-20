@@ -41,11 +41,11 @@
 						echo '<h1 '.chapitre_Title_color($level_in, $i) . '>';
 						echo '<a class="h1Liens" href="'.$chap_link[$i].'">'.$chapiters[$i].'</a>';
 						echo '</h1>';
-						echo '<ul '.chapitre_content_color($chapitre_in, $i). '>';
+						echo '<ul '.chapitre_content_color($level_in, $i). '>';
 						
 						// Make The differents lessons the chapiters
 						for ($j = 1; $j <= 6; $j++) {
-						echo '<li '.chapitre_lesson_color($chapitre_in, $i, $lesson_in, $j).' >'.$chp_lessons[$i][$j].'</li>';
+						echo '<li '.chapitre_lesson_color($level_in, $chapitre_in, $i, $j).' >'.$chp_lessons[$i][$j].'</li>';
 						}
 						
 						echo '</ul>';
@@ -66,7 +66,7 @@
 					
 					<h3 dir="rtl">ߊߟߎ߫ ߣߌ߫ ߛߣߍ߫ ߒߞߏ ߥߟߊ߬ߘߊ ߟߎ߬ ߘߐ߫</h3>
 					<p dir="rtl">
-						 ߊ߲ ߓߘߊ߫ ߟߐ߲߫ ߊߟߎ߫ ߟߊ߫ ߦߊ߲߭ ߣߊ߬ߟߌ ߡߊ߬ ߞߏ߫ ߒߞߏ ߞߊߙߊ߲ߟߐ߮ ߦߴߊߟߎ߫ ߟߊ߫߸ ߊߟߎ߫ ߞߎߟߎ߲ߖߋ߫ ߏ߬ ߟߊ߫ ߸
+						 ߊ߲ ߓߘߴߊ߬ ߟߐ߲߫ ߊߟߎ߫ ߟߊ߫ ߦߊ߲߭ ߣߊ߬ߟߌ ߡߊ߬ ߞߏ߫ ߒߞߏ ߞߊߙߊ߲ߟߐ߮ ߦߴߊߟߎ߫ ߟߊ߫߸ ߊߟߎ߫ ߞߎߟߎ߲ߖߋ߫ ߏ߬ ߟߊ߫ ߸
 						 ߊ߲ ߝߣߊ߫ ߊߟߎ߫ ߟߊ߫ ߓߌ߬ߟߊ ߘߐ߫. ߊߟߎ߫ ߘߌ߫ ߛߋ߫ ߒߞߏ ߞߊ߬ߙߊ߲߬ ߠߊ߫ ߞߊ߲߫ ߛߓߊ߬ ߘߐ߫ ߦߊ߲߬: ߒߞߏ߸ ߊ߲߬ߜߌߟߋ ߣߌ߫ ߝߊ߬ߙߊ߲߬ߛߌ.
 						 ߊߟߎ߫ ߦߋ߫ ߞߊ߲ ߏ߬ ߟߎ߬ ߘߏ߫ ߘߐ߫ ߞߋߟߋ߲߫ ߕߊ߬ ߊߟߎ߫ ߟߊ߫ ߢߊߞߙߍ ߟߊ߫ ߞߊ߬ ߥߟߊ߬ߘߊ ߟߎ߬ ߘߊߡߌ߬ߣߊ߬.
 					</p>

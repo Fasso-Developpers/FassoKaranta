@@ -1,6 +1,6 @@
 <?php
 	define("MAIN_PAGE", "profile");
-	define("PAGE", "profile_more");
+	define("PAGE", "profile_parents");
 	include("../__soronta__/flo.php");
 	$error = "";
 	$succes = "";
@@ -49,31 +49,34 @@
 				<!-- Update more information -->
 				<form class="infoPerson" action="#" method="post">
 					<fieldset >
-					<legend>Edit more Information</legend>
+					<legend>Information of my parents</legend>
 					<table class="table">
-						<tr><td>Djamun: </td><td>
-							<input class="textBox" type="text" name="djamun" maxlength="30" autofocus 
+						<tr><td>First Name of Mother: </td><td>
+							<input class="textBox" type="text" name="mother_firstname" maxlength="60" 
 							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required /></td></tr>
-						<tr><td>Sanankun: </td><td>
-							<input class="textBox" type="text" name="sanankun" maxlength="30" 
+						<tr><td>Last Name of your Mother: </td><td>
+							<input class="textBox" type="text" name="mother_lastname" maxlength="60" 
 							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required /></td></tr>
-						<tr><td>Age: </td><td>
-							<input class="textBox" type="text" name="age" maxlength="20" 
+						<tr><td>Native village of Mother: </td><td>
+							<input class="textBox" type="text" name="mother_place" maxlength="60" 
 							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required /></td></tr>
-						<tr><td>Sexe: </td><td>
-							<input class="textBox" type="text" name="sexe" maxlength="60" 
+						<tr><td>Number children of Mother: </td><td>
+							<input class="textBox" type="text" name="mother_children" maxlength="60" 
 							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required /></td></tr>
-						<tr><td>Tel. : </td><td>
-							<input class="textBox" type="text" name="tel" maxlength="60" 
+						<tr><td>Place in manden: </td><td>
+							<input class="textBox" type="text" name="mother_manden_place" maxlength="60" 
 							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required /></td></tr>
-						<tr><td>Country: </td><td>
-							<input class="textBox" type="text" name="my_country" maxlength="60" 
+						<tr><td>First name of your Father: </td><td>
+							<input class="textBox" type="text" name="father_firstname" maxlength="60" 
 							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required /></td></tr>
-						<tr><td>City: </td><td>
-							<input class="textBox" type="text" name="my_city" maxlength="60" 
+						<tr><td>Native village of Father: </td><td>
+							<input class="textBox" type="text" name="father_place" maxlength="60" 
 							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required /></td></tr>
-						<tr><td>Country of manden: </td><td>
-							<input class="textBox" type="text" name="manden_country" maxlength="60" 
+						<tr><td>Number children of Father: </td><td>
+							<input class="textBox" type="text" name="father_children" maxlength="60" 
+							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required /></td></tr>
+						<tr><td>Place in manden: </td><td>
+							<input class="textBox" type="text" name="father_manden_place" maxlength="60" 
 							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required /></td></tr>
 
 						<tr><td></td><td>
