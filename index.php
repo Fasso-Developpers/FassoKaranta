@@ -2,11 +2,6 @@
 	include_once("__soronta__/flo.php");
 	is_not_login();
 	
-	// Information to translate the page for user
-	$user_id = $_SESSION['user_id'];
-	$kan_array = get_kan($user_id, $con);
-	$_POST['lang'] = $kan_array['y_kan'];
-	
 	include_once("_main_index_translate_.php");
 	define("MAIN_PAGE", "main_index");
 	define("CHAPITRE", "");

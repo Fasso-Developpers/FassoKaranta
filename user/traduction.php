@@ -84,12 +84,6 @@
 				'submit_login' => "ߒ ߜߊ߲߬ߞߎ߲߬",
 
 				// Traduction of my level in nko
-				'successfully_registred' => "ߒ ߜߊ߲߬ߞߎ߲߬",
-				'submit_login' => "ߒ ߜߊ߲߬ߞߎ߲߬",
-				'submit_login' => "ߒ ߜߊ߲߬ߞߎ߲߬",
-				'submit_login' => "ߒ ߜߊ߲߬ߞߎ߲߬",
-
-				// Traduction of my level in nko
 				'successfully_registred' => "ߏ߬ ߓߘߊ߫ ߓߍ߲߬߸ ߌ ߓߘߴߌ ߕߐ߮ ߛߓߍ߫ ߞߏߢߊ߬ ߝߊ߬ߛߏ ߟߊ߫",
 				'plaese_give_your_level' => "ߖߊ߱ߣߌ߲߬߸ ߌ ߟߊ߫ ߒߞߏ ߟߐ߲ ߞߊ߬ߓߋ ߦߌ߬ߘߊ߫ ߊ߲ ߠߊ߫ ߦߊ߲߬",
 				'after_registration_fieldset' => "ߕߐ߯ ߛߓߍߟߌ ߞߐ߫",
@@ -157,6 +151,70 @@
 				'image_is_succes_resized' => "ߌ ߓߘߴߌ ߟߊ߫ ߟߊ߬ߕߍ߰ߟߌ ߞߍ߫ ߞߏ߫ ߢߊ߬߸ ߌ ߣߌ߫ ߞߏ߲߫ ߹ ",
 				
 				'problem_to_confirm_resize' => "ߝߙߋߞߋ ߘߏ߫ ߦߴߊ߲ ߡߊ߬ ߌ ߟߊ߫ ߞߏ߲߬ߘߏ ߟߊ߬ߕߍ߰ߟߌ ߞߍ ߘߐ߫",
+				
+				/*  ******************** TRANSLATION OF PROFILE INFORAMTION ************ */
+				
+				//title of page
+				'title_of_profile'=>"ߝߊ߬ߛߏ - ߢߊߞߙߍ",
+				
+				// content title
+				'content_title'=>"ߢߊߞߙߍ ߞߌ߬ߓߊ߬ߙߏ",
+				// link name
+				
+				// +++++++++++++   page of profile +++++++++++++
+				'profile_page' => "ߞߌ߬ߓߊ߬ߙߏ",
+				// para profile
+				'my_profile' => "ߒ ߠߊ߫ ߢߊߞߙߍ",
+				
+				'registration_info' => "ߒ ߠߊ߫ ߞߌ߬ߓߊ߬ߙߏ߬ ߟߊߘߏ߲߬ߣߍ߲",
+				'my_firstname'=>"ߒ ߕߐ߮",
+				'my_lastname'=>"ߒ ߛߌ",
+				'my_username'=>"ߒ ߜߊ߲߬ߞߎ߲߬ߕߐ߮",
+				
+				'profile_image' => "ߢߊߞߙߍ ߖߌ߬ߦߊ",
+				'register_date' => "ߌ ߕߐ߮ ߛߓߍ߫ ߟߏ߲",
+				'last_update' => "ߟߏ߲ߘߐߦߊߟߌ߫ ߟߊߓߊ߲",
+				'save_edit' => "ߊ߬ ߟߊߞߎ߲߬ߘߎ߬",
+				
+				'greeting_hi' => "ߌ ߣߌ߫ ߕߎ߬ߡߊ߬",
+				'comma' => "߸",
+				'you_have_not_profile_image' => "ߌ ߡߴߌ ߟߊ߫ ߢߊߞߙߌ ߖߌ߬ߦߊ ߓߌ߬ߟߊ߬ ߝߟߐ߫",
+				
+				
+				// +++++++++++++ profile More information ++++++++++
+				'profile_more_info' => "ߞߌ߬ߓߊ߬ߙߏ߬ ߜߘߍ߫",
+				
+				'my_djamun'=>"ߒ ߖߊ߬ߡߎ߲",
+				'my_sanankun'=>"ߒ ߛߊ߬ߣߊ߲߬ߞߎ߲",
+				'my_age'=>"ߒ ߛߊ߲߭",
+				'my_sexe'=>"ߒ ߖߊ߲߬ߓߘߍ",
+				'my_phone'=>"ߒ ߠߊ߫ ߜߋߟߋ߲ߜߋߟߋ߲",
+				'my_country'=>"ߒ ߠߊ߫ ߖߡߊ߬ߣߊ",
+				'my_manden_country'=>"ߒ ߠߊ߫ ߡߊ߲߬ߘߋ߲߬ ߖߡߊߣߊ",
+				'my_city'=>"ߒ ߠߊ߫ ߛߏ",
+				
+				// +++++++++++++++++ profile  language page ++++++++++++++++
+				'profile_languages_page'=>"ߞߊ߲",
+				'my_languages'=>"ߒ ߠߊ߫ ߞߊ߲ ߠߎ߬",
+				'choose_your_language'=>"ߌ ߟߊ߫ ߞߊ߲ ߠߎ߬ ߛߎߥߊ߲ߘߌ߫",
+				'my_explanation'=>"ߢߊߝߐߟߌ߫ ߞߊ߲",
+				'my_display'=>"ߦߌ߬ߘߊ߬ߟߌ߬ ߞߊ߲߬",
+				'explanation_importance'=>"ߝߊ߬ߛߏ ߞߊ߬ߙߊ߲߬ߕߊ ߥߟߊ߬ߘߊ ߟߎ߬ ߓߍ߯ ߞߍߕߐ߫ ߢߊߝߐߟߌ ߞߊ߲ ߠߋ߬ ߘߐ߫",
+				'display_importance'=>"ߝߊ߬ߛߏ ߞߊ߬ߙߊ߲߬ߕߊ ߞߐߜߍ ߟߎ߫ ߦߌ߬ߘߊ߬ߕߐ߫ ߦߌ߬ߘߊ߬ߟߌ߬ ߞߊ߲ ߠߋ߬ ߘߐ߫",
+				'high_level_languages'=>"ߣߴߊߟߎ߫ ߛߋ߫ ߘߊ߫ ߒߞߏ ߥߟߊߘߊ ߛߊ߲ߘߐ߫ ߞߊߓߋ ߟߎ߬ ߘߐ߫߸ ߊ߲ ߧߴߊߟߎ߫ ߟߊߟߌ߫ ߟߊ߫ ߒߞߏ ߕߊ߭ ߘߐ߫߸ ߖߐ߲߰ߛߊ߫ ߊߟߎ߫ ߘߴߊߟߎ߫ ߟߊ߫ ߒߞߏ ߥߟߊߘߊ ߟߎ߬ ߓߟߏߦߊ߫",
+				'see_demo_below'=>"ߊ߬ ߢߍߛߐ߲ ߘߏ߫ ߝߟߍ߫ ߘߎ߰ߟߊ߬ ߓߊ߫߹ ",
+				
+				// +++++++++++++ profile about level +++++++++++++
+				'profile_level'=>"ߞߊߓߋ",
+				
+				// +++++++++++++ profile about parents +++++++++++++
+				'profile_parents'=>"ߡߏߦߌߓߊ߮",
+				
+				// +++++++++++++ profile about mothers +++++++++++++
+				'profile_mothers'=>"ߣߊߟߞߊ",
+				
+				// +++++++++++++ profile about fathers +++++++++++++
+				'profile_fathers'=>"ߝߊ߬ߟߞߊ",
 						
 				);
 	$en = array('direction'=>"ltr",
@@ -284,7 +342,73 @@
 				'image_is_succes_resized' => "You are confirm your resizing successfelly !",
 				
 				'problem_to_confirm_resize' => "We have a problem to confirm your resizing",
-						
+				
+				/*  ******************** TRANSLATION OF PROFILE INFORAMTION ************ */
+				
+				/* ************ main_page = profile *************** */
+				
+				//title of page
+				'title_of_profile'=>"Fasso - Profile",
+				
+				// content title
+				'content_title'=>"Profile info",
+				// link name
+				
+				/* +++++++++++++++ profile page +++++++++++++ */
+				'profile_page' => "Profile",
+				
+				// para profile
+				'my_profile' => "My profile",
+				'registration_info' => "Registration info",
+				'my_firstname'=>"My first name",
+				'my_lastname'=>"My last name",
+				'my_username'=>"My username",
+				
+				'profile_image' => "Profile picture",
+				'register_date' => "Registration date",
+				'last_update' => "Last update",
+				'save_edit' => "Save",
+				
+				'greeting_hi' => "Hi",
+				'comma' => ",",
+				'you_have_not_profile_image' => "You have not upload your profile image",
+				
+				// +++++++++++++ profile More information ++++++++++
+				'profile_more_info' => "More info",
+				
+				'my_djamun'=>"My djamun",
+				'my_sanankun'=>"My sanankun",
+				'my_age'=>"My age",
+				'my_sexe'=>"Sexe",
+				'my_phone'=>"My phone",
+				'my_country'=>"My country",
+				'my_manden_country'=>"My manden country",
+				'my_city'=>"My city",
+				
+				// profile about language
+				'profile_languages_page'=>"Language",
+				'my_languages'=>"My languages",
+				'choose_your_language'=>"choose your languages",
+				'my_explanation'=>"Explanation language",
+				'my_display'=>"Display language",
+				'explanation_importance'=>"Explanation language will use for explain the courses in Fasso Karanta",
+				'display_importance'=>"Display language will use for display the page in Fasso Karanta",
+				'high_level_languages'=>"If you pass to high level in N'ko courses, we recommand you to choose N'ko, 
+											to pratice your N'ko courses",
+				'see_demo_below'=>"See demonstration below !",
+				
+				// +++++++++++++ profile about language +++++++++++++
+				'profile_level'=>"Level",
+				
+				// +++++++++++++ profile about parents +++++++++++++
+				'profile_parents'=>"Parents",
+				
+				// +++++++++++++ profile about mothers +++++++++++++
+				'profile_mothers'=>"Mothers",
+				
+				// +++++++++++++ profile about fathers +++++++++++++
+				'profile_fathers'=>"Fathers",
+					
 				);
 	$fr = array('direction'=>"ltr",
 				'language'=>"Langues",
@@ -365,8 +489,8 @@
 				// fieldsset Last N'ko study
 				'old_nko_student' => "Ancien élève en N'ko",
 				'old_nko_student_question' => "Etes vous un ancien élève en N'ko?",
-				'yes' => "Yes",
-				'no' => "No",
+				'yes' => "Oui",
+				'no' => "Non",
 				'dont_remember_this_info' => "Je ne me rappelle pas",
 				'last_nko_study' => "Ancien cours en N'ko",
 				'informations_about_study' => "informations concernant ces derniers cours",
@@ -413,6 +537,69 @@
 				'image_is_succes_resized' => "Vous avez confirmé la redimension avec succes!",
 				
 				'problem_to_confirm_resize' => "Nous avons un problème pour confirmer la redimension",
-					
+				
+				/*  ******************** TRANSLATION OF PROFILE INFORAMTION ************ */
+				//title of page
+				'title_of_profile'=>"Fasso - Profile",
+				
+				// content title
+				'content_title'=>"Profile info",
+				// link name
+				'profile_page' => "Info",
+				
+				// para profile
+				'my_profile' => "Mon profile",
+				
+				'registration_info' => "Infos d'inscription",
+				'my_firstname'=>"Mon prénom",
+				'my_lastname'=>"Mon nom",
+				'my_username'=>"Mon nom d'utilisateur",
+				
+				'profile_image' => "Image de profile",
+				'register_date' => "Date d'inscription",
+				'last_update' => "Dernier mise à jour",
+				'save_edit' => "Enregistrer",
+				
+				'greeting_hi' => "Salut",
+				'comma' => ",",
+				'you_have_not_profile_image' => "Vous n'avez pas charger votre image de profile d'abord",
+				
+				
+				// +++++++++++++ profile More information ++++++++++
+				'profile_more_info' => "Plus d'info",
+				
+				'my_djamun'=>"Mon djamun",
+				'my_sanankun'=>"Mon sanankun",
+				'my_age'=>"Mon âge",
+				'my_sexe'=>"Sexe",
+				'my_phone'=>"Mon téléphone",
+				'my_country'=>"Mon pays",
+				'my_manden_country'=>"Mom pays manding",
+				'my_city'=>"Ma ville",
+				
+				// +++++++++++++ profile about language +++++++++++++
+				'profile_languages_page'=>"Langue",
+				'my_languages'=>"Mes langues",
+				'choose_your_language'=>"Choisissez vos langues",
+				'my_explanation'=>"Langue d'explication",
+				'my_display'=>"Langue d'affichage",
+				'explanation_importance'=>"La langue sera utilisée pour l'explication des cours sur Fasso Karanta",
+				'display_importance'=>"La langue d'affichage sera utilisée pour l'affichage des pages de Fasso Karanta",
+				'high_level_languages'=>"Si vous passez à un niveau avancé en N'ko, nous vous recommandons de prendre N'ko, 
+											pour pratiquer vos cours de N'ko",
+				'see_demo_below'=>"Voici la demonstration !",
+				
+				// +++++++++++++ profile about language +++++++++++++
+				'profile_level'=>"Niveau",
+				
+				// +++++++++++++ profile about parents +++++++++++++
+				'profile_parents'=>"Parents",
+				
+				// +++++++++++++ profile about mothers +++++++++++++
+				'profile_mothers'=>"Maternels",
+				
+				// +++++++++++++ profile about fathers +++++++++++++
+				'profile_fathers'=>"Paternels",
+						
 				);
 ?>

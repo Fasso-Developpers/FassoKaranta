@@ -3,7 +3,8 @@
 	define("MAIN_PAGE", "profile");
 	define("PAGE", "profile");
 	include("../__soronta__/flo.php");
-	include ("traduction.php");
+	include_once ("traduction.php");
+	
 	$error = "";
 	$succes = "";
 	$user_id = $_SESSION['user_id'];
@@ -31,12 +32,14 @@
 		$userName =  $profile_info['userName'];
 		$email =  $profile_info['email'];
 		$inscri_date =  $profile_info['join_date'];
-		$lang = $profile_info['kan'];
+		$lang = $profile_info['y_kan'];
+		$_POST['lang'] = $profile_info['y_kan'];
+		
 		/* ********** USER PROFILE IMAGE ********* */
 		//$profile_image = get_djiya_name($user_id, $con);
 		$image_name = $profile_info['djiya'];
 		if(empty($image_name)){
-			$error = 'Hi '.$userName.', '."You have not upload your profile image";
+			$error = trad_lang('greeting_hi'). ' ' .$userName . trad_lang('comma') . ' ' . trad_lang('you_have_not_profile_image');
 		}else{
 			//get image information;
 			$size_imag_temp = $_SERVER['DOCUMENT_ROOT'].'karanta/user/user_image/'.$image_name;
@@ -145,24 +148,26 @@
 
 
 <!doctype html >
-<html dir="auto">
+<html <?php align_by_lang('right','left'); ?>>
 <head>
 	<meta charset="utf-8" />
-	<title>Fasso | Profile </title>
+	<title><?php echo trad_lang('title_of_profile');?></title>
 	<?php include('../__soronta__/_lowla_/head_sm.php'); ?>
 	 <link rel="stylesheet" href="css/styles_profile.css" /> 
 </head>
 
-<body dir="auto">
+<body <?php align_by_lang('right','left'); ?>>
 <!-- Entête -->
 	<?php include("../__soronta__/_lowla_/header.php"); ?>
+	<?php include("subtitle_profile.php"); ?>
+	
 	<?php include_once("../__soronta__/logout_button.php"); ?>
 <!-- Cette partie contient le contenu de la page -->
-		<div dir="ltr" class="contenu" >
+		<div <?php echo dir_lang('direction'); ?> class="contenu" >
 					
 		<!-- Titre -->
 			<div id="titre" class="ombre">
-				<h1 id="hautTitreH1">Profile info</h1>
+				<h1 id="hautTitreH1"><?php echo trad_lang('content_title');?></h1>
 				<div class="titre_contenu">
 					<div><?php
 						if(isset($_SESSION['image'])){
@@ -178,7 +183,7 @@
 		<!-- Paragraphe texte -->
 			<div id="para">
 				<div id="paraTitre" >
-					<h1 class="rectangle">My profile</h1>
+					<h1 class="rectangle"><?php echo trad_lang('my_profile');?></h1>
 				</div>
 				
 				<div >
@@ -190,46 +195,47 @@
 				<form action='profile.php' method="post" enctype="multipart/form-data">
 				<div class="infoPerson">
 				<fieldset >
-					<legend>Registration Infos</legend>
+					<legend><?php echo trad_lang('registration_info');?></legend>
 					<!-- Update information -->
 					<table class="table"  cellspacing=0>
 						<tr>
-							<td>Firstname: </td><td>
+							<td><?php echo trad_lang('my_firstname') .': ';?> </td><td>
 							<label class="labaleTable" name="firstname"><?php echo $firstname ?></label></td><td>
 							<input class="textBox" type="text" name="firstname" maxlength="30" autofocus 
 							<?php echo 'value="'.$firstname.'"'; ?> readonly/></td>
 						</tr>
 						<tr>
-							<td>Lastname: </td><td>
+							<td><?php echo trad_lang('my_lastname') .': ';?> </td><td>
 							<label name="lastname"><?php echo $lastname ?></label></td><td>
 							<input class="textBox" type="text" name="lastname" maxlength="30" 
 							<?php echo 'value="'.$lastname .'"'; ?> readonly/></td>
 						</tr>
-						<tr><td>Username: </td><td>
+						<tr><td><?php echo trad_lang('my_username') .': ';?></td><td>
 							<label name="username"><?php echo $userName ?></label></td><td>
 							<input class="textBox" type="text" name="username" maxlength="20" 
 							<?php echo 'value="'.$userName.'"'; ?> readonly/></td>
 						</tr>
-						<tr><td>Adressemail: </td><td>
+						<tr><td><?php echo trad_lang('adressemail') .': ';?> </td><td>
 							<label  name="email"><?php echo $email ?></label></td><td>
 							<input class="textBox" type="text" name="email" maxlength="60" 
 							<?php echo 'value="'.$email.'"'; ?> readonly/></td>
 						</tr>
-						<tr><td>Profile picture: </td><td><?php echo $image_show ?></td><td>
+						<tr><td><?php echo trad_lang('profile_image') .': ';?></td><td><?php echo $image_show ?></td><td>
 							<input type="file" title="Load image" name="avatar" required value="Load image" /></td>
 						</tr>
-						<tr><td colspan=2>Registration date: </td>
+						<tr><td colspan=2><?php echo trad_lang('register_date') .': ';?></td>
 							<td><?php echo $inscri_date; ?></td>
 						</tr>
-						<tr><td colspan=2>Last update: </td>
+						<tr><td colspan=2><?php echo trad_lang('last_update') .': ';?></td>
 							<td><?php ?></td>
 						</tr>
 						<tr><td></td><td></td>
-							<td> <input id="soumettre" name="submit" type="submit" value="Save edite" /></td>
+							<td> <input id="soumettre" name="submit" type="submit" 
+								<?php echo 'value="'.trad_lang('save_edit') .'": ';?> /></td>
 						</tr>
 						<tr>
 							<td colspan=3> 
-								<?php 
+								<?php
 								//echo $size_imag_array;
 								//print_r($size_imag_array) .'<br>';
 								echo ' '. $error; ?>

@@ -2,6 +2,7 @@
 	define("MAIN_PAGE", "profile");
 	define("PAGE", "profile_lang");
 	include("../__soronta__/flo.php");
+	include_once ("traduction.php");
 	$error = "";
 	$succes = "";
 	
@@ -23,7 +24,7 @@
 <html dir="auto">
 <head>
 	<meta charset="utf-8" />
-	<title>Fasso | Profile</title>
+	<title><?php echo trad_lang('title_of_profile');?></title>
 	<?php include('../__soronta__/_lowla_/head_sm.php'); ?>
 	 <link rel="stylesheet" href="css/styles_profile.css" /> 
 </head>
@@ -32,13 +33,14 @@
 
 <!-- Entête -->
 	<?php include("../__soronta__/_lowla_/header.php"); ?>
-
+	<?php include("subtitle_profile.php"); ?>
+	
 <!-- Cette partie contient le contenu de la page -->
-		<div dir="ltr" class="contenu" class="ombre">
+		<div <?php echo dir_lang('direction'); ?> class="contenu" class="ombre">
 
 		<!-- Titre -->
 			<div id="titre" class="ombre">
-				<h1 id="hautTitreH1">Profile info</h1>
+				<h1 id="hautTitreH1"><?php echo trad_lang('content_title');?></h1>
 				<div class="titre_contenu">
 					<div><?php
 						if(isset($_SESSION['image'])){
@@ -53,47 +55,46 @@
 
 		<!-- Paragraphe texte -->
 				<div id="paraTitre" >
-					<h1 class="rectangle">My profile</h1>
+					<h1 class="rectangle"><?php echo trad_lang('my_profile');?></h1>
 				</div>
 				
 				<!-- Update more information -->
 				<form class="infoPerson" action="#" method="post">
 					<fieldset >
-						<legend>My languages (choose your language)</legend>
+						<legend><?php echo trad_lang('my_languages').' ('. trad_lang('choose_your_language').')';?></legend>
 						
-						<label>Explanation language: </label>
+						<label><?php echo trad_lang('my_explanation').': ';?> </label>
 						<select class="lang" name="e_language">
 
-							<option value="nko" <?php if($f_kan=="nko")echo 'selected'?>>N'ko</option>
+							<option value="nko" <?php if($f_kan=="nko")echo 'selected'?>>ߒߞߏ N'ko</option>
 
-							<option value="en" <?php if($f_kan=="en")echo 'selected'?>>English</option>
+							<option value="en" <?php if($f_kan=="en")echo 'selected'?>>ߊ߲߬ߜ߭ߌߟߋ English</option>
 
-							<option value="fr" <?php if($f_kan=="fr")echo 'selected'?>>Français</option>
+							<option value="fr" <?php if($f_kan=="fr")echo 'selected'?>>ߝߊ߬ߙߊ߲߬ߛߌ Français</option>
 						</select>
-						<label>Display language: </label>
+						<label><?php echo trad_lang('my_display').': ';?> </label>
 						<select class="lang" name="d_language">
 
-							<option value="nko" <?php if($y_kan=="nko")echo 'selected'?>>N'ko</option>
+							<option value="nko" <?php if($y_kan=="nko")echo 'selected'?>>ߒߞߏ N'ko</option>
 
-							<option value="en" <?php if($y_kan=="en")echo 'selected'?>>English</option>
+							<option value="en" <?php if($y_kan=="en")echo 'selected'?>>ߊ߲߬ߜ߭ߌߟߋ English</option>
 
-							<option value="fr" <?php if($y_kan=="fr")echo 'selected'?>>Français</option>
+							<option value="fr" <?php if($y_kan=="fr")echo 'selected'?>>ߝߊ߬ߙߊ߲߬ߛߌ Français</option>
 						</select>
-						<input id="soumettre" name="submit" type="submit" value="Save" />
-						<p>Explanation language will use for N'ko courses</p>
+						<input id="soumettre" name="submit" type="submit" 
+						<?php echo 'value="'. trad_lang('save_edit') .'"';?> />
+						<p><?php echo trad_lang('explanation_importance');?></p>
 						
+						<p><?php echo trad_lang('display_importance');?></p>
 						
+						<p><?php echo trad_lang('high_level_languages');?></p>
 						
-						<p>Display language will use to every page in Fasso karanta and your profile</p>
-						
-						
-						<p>If you pass to high level in N'ko courses, we recommand you to choose N'ko for all,
-							to pratice your N'ko courses.</p>
-						<p>See the demonstration below!</p>
+						<p><?php echo trad_lang('see_demo_below');?></p>
 						
 						<div class="video">
 							
 						</div>
+						
 					</fieldset>
 				</form>
 

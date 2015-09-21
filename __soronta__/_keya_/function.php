@@ -312,5 +312,16 @@ function update_kan($user_id, $f_kan, $y_kan, $con){
 		}
 		return $align;
 	}
-
+		
+	function dir_lang($dir){
+		global $nko, $en, $fr;
+		if (LABEL_LANG == 'nko') {
+			return 'dir="'.$nko[$dir].'"'; 
+		}elseif (LABEL_LANG == 'en'){
+			return 'dir="'.$en[$dir].'"'; 
+		}elseif (LABEL_LANG == 'fr') {
+			return 'dir="'.$fr[$dir].'"'; 
+		}
+	}
+	
 ?>

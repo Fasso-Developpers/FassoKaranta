@@ -2,6 +2,7 @@
 	define("MAIN_PAGE", "profile");
 	define("PAGE", "profile_parents");
 	include("../__soronta__/flo.php");
+	include_once ("traduction.php");
 	$error = "";
 	$succes = "";
 
@@ -20,7 +21,8 @@
 
 <!-- Entête -->
 	<?php include("../__soronta__/_lowla_/header.php"); ?>
-
+	<?php include("subtitle_profile.php"); ?>
+	
 <!-- Cette partie contient le contenu de la page -->
 		<div dir="ltr" class="contenu" class="ombre">
 

@@ -35,19 +35,6 @@
 				</div>
 				');
 
-		}elseif (MAIN_PAGE == "profile"){
-			echo('
-				<div id="menuContenu" class="ombre">
-					<nav>
-						<ul dir="auto" id="subMenu">
-							<li class="active"><a href="profile.php">Profile</a>
-							<li><a href="#">Niveau entrant</a>
-							<li><a href="#">En cours</a>
-							<li><a href="#">Achevés</a>
-						</ul>
-					</nav>
-				</div>
-				');
 		}
 		
 	?>

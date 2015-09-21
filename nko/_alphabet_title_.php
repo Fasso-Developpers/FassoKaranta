@@ -200,5 +200,4 @@
 		}else{
 			return ' class=" lesTitres lesTitres_off lesTitres2 " ';}
 	}
-	
-?>
+?>	

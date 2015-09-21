@@ -95,7 +95,7 @@
 ?>>
 <head>
 	<meta charset="utf-8" />
-	<title>ߝߊ߬ߛߏ | ߒߞߏ ߞߊ߬ߙߊ߲߬ߕߊ</title>
+	<title><?php echo trad_lang('title_of_profile');?></title>
 	<link rel="icon" href="images/fassoIcone.ico" type="image/x-icon">
 	<?php include('../__soronta__/_lowla_/head_sm.php'); ?>
 	<link rel="stylesheet" href="css/styles_profile.css" /> 
@@ -177,12 +177,13 @@
 <body dir="auto">
 <!-- Entête -->
 	<?php include("../__soronta__/_lowla_/header.php"); ?>
+	<?php include("subtitle_profile.php"); ?>
 	
 <!-- Cette partie contient le contenu de la page -->
-	<div dir="ltr" class="contenu" >
+	<div <?php echo dir_lang('direction'); ?> class="contenu" >
 			<!-- Titre -->
 			<div id="titre" class="ombre">
-				<h1 id="hautTitreH1">Profile info</h1>
+				<h1 id="hautTitreH1"><?php echo trad_lang('content_title');?></h1>
 				<div class="titre_contenu">
 					<div><?php
 						if(isset($_SESSION['image'])){
@@ -198,7 +199,7 @@
 					<!-- Paragraphe texte -->
 			<div id="para">
 				<div id="paraTitre" >
-					<h1 class="rectangle">My profile</h1>
+					<h1 class="rectangle"><?php echo trad_lang('my_profile');?></h1>
 				</div>
 				
 			<div class="infoPerson">
@@ -303,7 +304,8 @@
 				</label>
 				<textarea id="anoterInfo" name="lastComment"></textarea>
 			</fieldset>
-			<input id="soumettre" name="submit_level" type="submit"  <?php echo align_by_lang('left','right') ?>
+			<input <?php echo align_by_lang('left', 'right') ?>
+				id="soumettre" name="submit_level" type="submit"  <?php echo align_by_lang('left','right') ?>
 				<?php echo 'value="'.trad_lang('submit_level').'"' ?> />
 		</fieldset>
 		</form>
