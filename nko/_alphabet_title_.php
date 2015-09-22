@@ -34,8 +34,8 @@
 	$chapiters =  array(
 				'1' => 'Lecture',
 				'2' => 'Ecriture',
-				'3' => 'Ecrire son nom',
-				'4' => 'Ressemblance',
+				'3' => 'Ressemblance',
+				'4' => 'Ecrire son nom',
 				'5' => 'Exercices',
 				'6' => 'Controles'
 				);
@@ -64,12 +64,27 @@
 				'6' => '#'
 				),
 		    2 => array(
-	 			'1' => '#',
-				'2' => '#',
-				'3' => '#',
-				'4' => '#',
-				'5' => '#',
-				'6' => '#'
+				'1' => 'iTfGHdmBMt8',
+				'2' => 'Pr73Li5x6-0',
+				'3' => array(
+						1 => 'u-jn9l4gEA0',
+						2 => 'C186ti2pme0',
+							),
+				'4' => array(
+						1 => 'TkCCeoJOJuI',
+						2 => 'T1830LLHf2Y',
+						3 => 'mlLY45BfCpY',
+						4 => 'QqkPrnpVoEI',
+						5 => 'OzUjChOMMCk',
+						6 => 'YPC0gWDSTNc',
+							),
+				'5' => array(
+						1 => 'xzg_L87ZR2s',
+						2 => 'RoSC1HdYOvQ',
+						3 => '9WYHPlrmnGo',
+						4 => '3dKtq1JfJ2w',
+							),
+				'6' => 'Viov6qKuc04'
 				),
 			3 => array(
 				'1' => '#',
@@ -117,7 +132,7 @@
 				),
 		    2 => array(
 	 			'1' => 'Introduction',
-				'2' => 'Diphtone',
+				'2' => 'Intermédiaire',
 				'3' => 'Voyelles',
 				'4' => 'Consonnes',
 				'5' => 'Chiffres',
@@ -125,18 +140,18 @@
 				),
 			3 => array(
 				'1' => 'Introduction',
-				'2' => 'Les prémons',
-				'3' => 'Les noms',
-				'4' => 'Nos noms',
-				'5' => 'Mots simple',
-				'6' => 'Conclusion'
-				),
-			4 => array(
-				'1' => 'Introduction',
 				'2' => 'Entre voyelle',
 				'3' => 'Entre consonne',
 				'4' => 'Entre chiffre',
 				'5' => 'Entre tous',
+				'6' => 'Conclusion'
+				),
+			4 => array(
+				'1' => 'Introduction',
+				'2' => 'Mon prénom',
+				'3' => 'Mon nom',
+				'4' => 'Mon djamun',
+				'5' => 'Mots simple',
 				'6' => 'Conclusion'
 				),
 			5 => array(
