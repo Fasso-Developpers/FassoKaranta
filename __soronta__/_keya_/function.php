@@ -234,7 +234,31 @@ function confirm_resize($user_id, $con){
 		$query = "UPDATE `great_img` SET `resized` = 1 WHERE `user_id` = '$user_id'";
 		mysqli_query($con, $query);
 	}
+/* +++++++++++++++++++++++++ More info +++++++++++++++++++++ */
+function add_moreinfo($user_id, $si, $djamun, $sanankun, $age, $sexe, $phone, $country, $city, $md_country, $con){
+	$query = "INSERT INTO `more_info` 
+					(`user_id`, `si`, `djamun`, `sanankun`, `age`, `sexe`, `phone`, `country`, `city`, `md_country`)
+			VALUE('$user_id', '$si', '$djamun', '$sanankun', '$age', '$sexe', '$phone', '$country', '$city', '$md_country')";
+	
+	mysqli_query($con, $query);
+}
 
+function get_more_info($user_id, $con){
+	$query = "SELECT `djamun`, `sanankun`, `age`, `sexe`, `phone`, `country`, `city`, `md_country`
+				FROM `more_info` WHERE `user_id` = '$user_id' ";
+	
+	$result = mysqli_query($con, $query);
+	$resultat = mysqli_fetch_assoc($result);
+	return $resultat;
+}
+
+function success_insersion($user_id, $con){
+	$query = "SELECT `user_id` FROM `more_info` WHERE `user_id` = '$user_id' ";
+	
+	$result = mysqli_query($con, $query);
+	$resultat = mysqli_fetch_assoc($result);
+	return $resultat;
+	}
 
 /* ***************** GET SOME INFO TO SESSION ************* */
 

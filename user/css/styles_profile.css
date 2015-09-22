@@ -1,4 +1,8 @@
 /* -------------------- PROFILE ---------------------- */
+html{font-family: Ebrima;}
+
+body{font-family: Ebrima;}
+
 .image_profile{
 	margin: 5px;
 }
@@ -6,7 +10,7 @@
 .infoPerson{ position: absolute;
 	top: 40px;
 	right:0;
-	margin: 0;
+	margin: 5px;
 	padding: 10px;
 	width: 98.5%;
 	height: 640px;
@@ -14,6 +18,7 @@
 }
 
 fieldset{
+	margin: 5px;
 	width: 95%;
 	height: 80%;
 }
@@ -26,16 +31,29 @@ fieldset{
 	line-height: 160%;
 }
 
+/* error and succes style */
+#error{
+	color: red;
+	font-size: 20px;
+}
+
+#succes{
+	color: green;
+	font-size: 20px;
+}
+
 .table td{
 	border: 1px solid rgb(210,210,210);
 	padding:5px;
 	text-align: center;
 	}
 .textBox{
+	font-family: Ebrima;
 	padding: 2px;
 }
 
 #soumettre{
+	font-family: Ebrima;
 	font-size: 16px;
 	margin-bottom: 5px;
 }
@@ -43,7 +61,7 @@ fieldset{
 /*  style of language profile*/
 fieldset p{
 	font-size: 18px;
-	line-height: 100%;	
+	line-height: 130%;	
 }
 
 .lang{
@@ -59,6 +77,12 @@ fieldset p{
 	height: 300px;
 	}
 
+/* STYLE OF profile_level */
+#levels{
+	font-family: Ebrima;
+}
+#aboutLast{
+	font-family: Ebrima;
 }
 
 	

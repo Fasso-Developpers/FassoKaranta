@@ -5,7 +5,59 @@
 	include_once ("traduction.php");
 	$error = "";
 	$succes = "";
-
+	$user_id = $_SESSION['user_id'];
+	
+	$profile_info = info_to_profile($user_id, $con);
+	$lastname =  $profile_info['lastName'];
+	
+	// get more info to display
+	$more_info_array = get_more_info($user_id, $con);
+	$djamun =  $more_info_array['djamun'];
+	$sanankun =  $more_info_array['sanankun'];
+	$age =  $more_info_array['age'];
+	$sexe =  $more_info_array['sexe'];
+	$phone =  $more_info_array['phone'];
+	$country =  $more_info_array['country'];
+	$city =  $more_info_array['city'];
+	$md_country =  $more_info_array['md_country'];
+	
+	// Verify if user_id in registered in more_info table
+	$find_user_id_array = success_insersion($user_id, $con);
+	$user_id_finded = $find_user_id_array['user_id'];
+	
+	if( $user_id_finded === $user_id){
+		$succes = trad_lang('alredy_regist_more_info');
+		$succes .= '<br> '. trad_lang('you_can_update_info'); 	
+	}else{
+		$error = trad_lang('not_regist_more_info');
+	}
+	
+	if(isset($_POST['submit'])) {
+			$si = htmlentities($lastname);
+			$djamun = 	htmlentities($_POST['djamun']);
+			$sanankun = htmlentities($_POST['sanankun']);
+			$age = 		htmlentities($_POST['age']);
+			$sexe = 	htmlentities($_POST['sexe']);
+			$phone = 		htmlentities($_POST['tel']);
+			$country = 	htmlentities($_POST['my_country']);
+			$city = 	htmlentities($_POST['my_city']);
+			$md_country = htmlentities($_POST['md_country']);
+			
+			if(empty($_POST['djamun']) && empty($_POST['sanankun'])){
+				$error = trad_lang('must_give_djamun_or_sanankun');
+			}else{
+				//$error =  $djamun .' '. $sanankun.' '.$age.' '. $sexe.' '. $tel.' '. $country.' '. $city.' '. $md_country;
+				
+				//$error = add_moreinfo($user_id, $si, $djamun, $sanankun, $age, $sexe, $phone, $country, $city, $md_country, $con);
+				add_moreinfo($user_id, $si, $djamun, $sanankun, $age, $sexe, $phone, $country, $city, $md_country, $con);
+				
+				// verify if more information is registered
+				if( $user_id_finded === $user_id){
+					$succes = trad_lang('succes_give_more_info');	
+				}
+				
+			}
+	}
 ?>
 
 <!doctype html >
@@ -49,38 +101,69 @@
 				
 
 				<!-- Update more information -->
-				<form class="infoPerson" action="#" method="post">
+				<form class="infoPerson" action="profile_moreInfo.php" method="post">
 					<fieldset >
-					<legend><?php echo trad_lang('more_information');?></legend>
+					<legend><?php echo trad_lang('more_info');?></legend>
 					<table class="table">
+						<!-- error place -->
+						<tr><td colspan=3> 
+							<?php 
+								if($error != "")
+								{
+									echo'<div id="error">'.$error.'</div>';
+								}
+								elseif ($succes != "") {
+									echo'<div id="succes">'.$succes.'</div>';
+								}
+							?>
+						</td></tr>
+						<tr><td><?php echo trad_lang('my_lastname') .': ';?></td><td>
+							<label> <?php echo $lastname; ?></label> </td></tr>
+							
 						<tr><td><?php echo trad_lang('my_djamun') .': ';?></td><td>
 							<input class="textBox" type="text" name="djamun" maxlength="30" autofocus 
-							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required /></td></tr>
+							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required 
+							<?php echo 'value="'.$djamun .'"'; ?> /></td></tr>
+							
 						<tr><td><?php echo trad_lang('my_sanankun') .': ';?></td><td>
 							<input class="textBox" type="text" name="sanankun" maxlength="30" 
-							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required /></td></tr>
+							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required 
+							<?php echo 'value="'.$sanankun .'"'; ?> /></td></tr>
+							
 						<tr><td><?php echo trad_lang('my_age') .': ';?></td><td>
 							<input class="textBox" type="text" name="age" maxlength="20" 
-							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required /></td></tr>
+							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" 
+							<?php echo 'value="'.$age .'"'; ?> /></td></tr>
+							
 						<tr><td><?php echo trad_lang('my_sexe') .': ';?></td><td>
 							<input class="textBox" type="text" name="sexe" maxlength="60" 
-							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required /></td></tr>
+							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required 
+							<?php echo 'value="'.$sexe .'"'; ?> /></td></tr>
+							
 						<tr><td><?php echo trad_lang('my_phone') .': ';?></td><td>
 							<input class="textBox" type="text" name="tel" maxlength="60" 
-							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required /></td></tr>
+							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required 
+							<?php echo 'value="'.$phone .'"'; ?> /></td></tr>
+							
 						<tr><td><?php echo trad_lang('my_country') .': ';?></td><td>
 							<input class="textBox" type="text" name="my_country" maxlength="60" 
-							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required /></td></tr>
+							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" 
+							<?php echo 'value="'.$country .'"'; ?> /></td></tr>
+							
 						<tr><td><?php echo trad_lang('my_city') .': ';?></td><td>
 							<input class="textBox" type="text" name="my_city" maxlength="60" 
-							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required /></td></tr>
+							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required 
+							<?php echo 'value="'.$city .'"'; ?> /></td></tr>
+							
 						<tr><td><?php echo trad_lang('my_manden_country') .': ';?></td><td>
-							<input class="textBox" type="text" name="manden_country" maxlength="60" 
-							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required /></td></tr>
-
+							<input class="textBox" type="text" name="md_country" maxlength="60" 
+							oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" 
+							<?php echo 'value="'.$md_country .'"'; ?> /></td></tr>
+						
 						<tr><td></td><td>
 							<input id="soumettre" name="submit" type="submit" 
 							<?php echo 'value="'. trad_lang('save_edit') .'"';?> /></td></tr>
+							
 					</table>
 					
 					</fieldset>

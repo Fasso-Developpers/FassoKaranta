@@ -100,7 +100,6 @@
 	<?php include('../__soronta__/_lowla_/head_sm.php'); ?>
 	<link rel="stylesheet" href="css/styles_profile.css" /> 
 	<link rel="stylesheet" href="css/profile_level.css" />
-
 	<script type="text/javascript">
         function verif ()
         {

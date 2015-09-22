@@ -184,6 +184,7 @@
 				// +++++++++++++ profile More information ++++++++++
 				'profile_more_info' => "ߞߌ߬ߓߊ߬ߙߏ߬ ߜߘߍ߫",
 				
+				'more_info' => "ߞߌ߬ߓߊ߬ߙߏ߬ ߜߘߍ߫",
 				'my_djamun'=>"ߒ ߖߊ߬ߡߎ߲",
 				'my_sanankun'=>"ߒ ߛߊ߬ߣߊ߲߬ߞߎ߲",
 				'my_age'=>"ߒ ߛߊ߲߭",
@@ -192,6 +193,13 @@
 				'my_country'=>"ߒ ߠߊ߫ ߖߡߊ߬ߣߊ",
 				'my_manden_country'=>"ߒ ߠߊ߫ ߡߊ߲߬ߘߋ߲߬ ߖߡߊߣߊ",
 				'my_city'=>"ߒ ߠߊ߫ ߛߏ",
+				
+				'must_give_djamun_or_sanankun'=> "ߌ ߞߊߞߊ߲߫ ߞߵߌ ߖߊ߬ߡߎ߲ ߣߴߌ ߛߊ߬ߣߊ߲߬ߞߎ߲ ߘߌ߫ ߟߋ߬",
+				'alredy_regist_more_info'=>"ߌ ߓߘߴߌ ߟߊ߫ ߞߌ߬ߓߊ߬ߙߏ ߟߎ߬ ߘߌ߫ ߞߊ߬ߓߊ߲߫",
+				'not_regist_more_info'=> "ߌ ߡߴߌ ߟߊ߫ ߞߌ߬ߓߊ߬ߙߏ ߢߌ߲߬ ߠߎ߬ ߘߌ߫ ߝߟߐ߫",
+				'you_can_update_info'=>"ߌ ߘߌ߫ ߛߴߊ߬ߟߎ߬ ߡߊߦߟߍ߬ߡߊ߲߬ ߠߊ߫",
+				'succes_give_more_info'=>"ߌ ߓߘߴߌ ߟߊ߫ ߞߌ߬ߓߊ߬ߙߏ ߟߎ߬ ߘߌ߫ ߞߏߢߊ߬",
+				
 				
 				// +++++++++++++++++ profile  language page ++++++++++++++++
 				'profile_languages_page'=>"ߞߊ߲",
@@ -376,6 +384,7 @@
 				// +++++++++++++ profile More information ++++++++++
 				'profile_more_info' => "More info",
 				
+				'more_info' => "More information",
 				'my_djamun'=>"My djamun",
 				'my_sanankun'=>"My sanankun",
 				'my_age'=>"My age",
@@ -384,6 +393,13 @@
 				'my_country'=>"My country",
 				'my_manden_country'=>"My manden country",
 				'my_city'=>"My city",
+				
+				'must_give_djamun_or_sanankun'=> "You must give your Djamun and your Sanankun",
+				'alredy_regist_more_info'=>"You have alredy registred your informations",
+				'not_regist_more_info'=> "You have not given these informations",
+				'you_can_update_info'=>"you can update these",
+				'succes_give_more_info'=>"You have given your more info successfully !",
+				
 				
 				// profile about language
 				'profile_languages_page'=>"Language",
@@ -568,6 +584,7 @@
 				// +++++++++++++ profile More information ++++++++++
 				'profile_more_info' => "Plus d'info",
 				
+				'more_info' => "Plus d'information",
 				'my_djamun'=>"Mon djamun",
 				'my_sanankun'=>"Mon sanankun",
 				'my_age'=>"Mon âge",
@@ -576,6 +593,13 @@
 				'my_country'=>"Mon pays",
 				'my_manden_country'=>"Mom pays manding",
 				'my_city'=>"Ma ville",
+				
+				'must_give_djamun_or_sanankun'=> "Vous devez fournir ton Djamoun et ton Sanankoun",
+				'alredy_regist_more_info'=>"Vous avez déjà enregistré vos informations",
+				'not_regist_more_info'=> "Vous n'avez pas encore donné ces informations",
+				'you_can_update_info'=>"vous pouvez les mettre à jour",
+				'succes_give_more_info'=>"Vous avez fourni avec succes vos informations!",
+				
 				
 				// +++++++++++++ profile about language +++++++++++++
 				'profile_languages_page'=>"Langue",
