@@ -36,16 +36,16 @@
 				<h1 id="hautTitreH1">Menu contenu</h1>
 				<!-- Make content title --> 
 				<?php 
-					// Make The differents chapiters of N'ko
+					// Make The differents level of N'ko
 					for ($i = 1; $i <= 5; $i++) {
-						echo '<h1 '.chapitre_Title_color($level_in, $i) . '>';
+						echo '<h1 '.level_Title_color($level_in, $i) . '>';
 						echo '<a class="h1Liens" href="'.$chap_link[$i].'">'.$chapiters[$i].'</a>';
 						echo '</h1>';
-						echo '<ul '.chapitre_content_color($level_in, $i). '>';
+						echo '<ul '.level_content_color($level_in, $i). '>';
 						
-						// Make The differents lessons the chapiters
+						// Make The differents chapiters in level
 						for ($j = 1; $j <= 6; $j++) {
-						echo '<li '.chapitre_lesson_color($level_in, $chapitre_in, $i, $j).' >'.$chp_lessons[$i][$j].'</li>';
+						echo '<li '.chapitre_color($level_in, $chapitre_in, $i, $j).' >'.$chp_lessons[$i][$j].'</li>';
 						}
 						
 						echo '</ul>';

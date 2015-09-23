@@ -27,7 +27,7 @@ body{
 }
 /* --- For level_in and level_off--- */
 
-/* H1 STYLE */
+/* H1 STYLE for title*/
 .titreH1_pass{
 	border: 3px solid rgb(50,150,150);
 	background: rgb(50,150,150);
@@ -41,9 +41,25 @@ body{
 	background: rgb(100,100,100);
 }
 
-/* UL STYLE */
+/* H1 STYLE for sub_chapter*/
+.sub_titreH1_pass{
+	border: 3px solid rgb(40,120,120);
+	background: rgb(40,120,120);
+}
+.sub_titreH1_in{
+	border: 3px solid rgb(40,80,120);
+	background: rgb(40,80,120);
+}
+.sub_titreH1_off{
+	border: 3px solid rgb(100,100,100);
+	background: rgb(100,100,100);
+}
+
+
+/* *********** UL STYLE ************ */ 
+/*  for chapiter * */
 .lesTitres_pass{
-	background: rgb(50,150,150);
+	border: 3px solid rgb(50,150,150);
 }
 .lesTitres_in{
 	border: 3px solid rgb(50,100,150);
@@ -51,6 +67,17 @@ body{
 .lesTitres_off{
 	border: 3px solid rgb(100,100,100);	
 }
+/* UL STYLE for sub_chapiter */
+.sub_Titres_pass{
+	border: 3px solid rgb(40,120,120);
+}
+.sub_lesTitres_in{
+	border: 3px solid rgb(40,80,120);
+}
+.sub_lesTitres_off{
+	border: 3px solid rgb(100,100,100);	
+}
+
 
 /* ----- lesTitres ----- */
 .titreH1>a{color: rgb(220,220,220);}
@@ -77,7 +104,7 @@ body{
 }
 
 .lesson_pass{
-	background: rgb(35,115,115);
+	background: rgb(35,100,100);
 }
 .lesson_in{
 	background: rgb(35,70,115);

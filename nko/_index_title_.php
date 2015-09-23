@@ -45,8 +45,8 @@
 		    1 => array(
 				'1' => 'Lecture',
 				'2' => 'Ecriture',
-				'3' => 'Ecrire son nom',
-				'4' => 'Ressemblance',
+				'3' => 'Ressemblance',
+				'4' => 'Ecrire son nom',
 				'5' => 'Exercices',
 				'6' => 'Controles'
 				),
@@ -84,32 +84,53 @@
 				),
 	);
 
-							
+$level_in_array = explode('_', $level_in);
+$level_id = $level_in_array[1];
+	
+$chap_id_array = explode('_', $chapitre_in);
+$chap_id = $chap_id_array[1];
+
+					
 	/* ******** APPLY COLOR BY USER LEVEL ******* */
-	// function apply coloration on level
-	function chapitre_Title_color($level_in, $rang){
-		global $level_in, $level;
+	// function apply coloration on level title
+	function level_Title_color($level_in, $rang){
+		global $level_in, $level, $level_id;
 		if($level_in == $level[$rang]){
-			return ' class="titreH1 titreH1_in " ';}
-		else{
+			return ' class="titreH1 titreH1_in " ';
+		}elseif($rang < $level_id){
+			return ' class="titreH1 titreH1_pass " ';
+		}elseif($rang > $level_id){
 			return ' class="titreH1 titreH1_off " ';} 
 	}
-	// function apply coloration on chapitre
-	function chapitre_content_color($level_in, $rang){
-		global $level_in, $level;
+	// function apply coloration on level
+	function level_content_color($level_in, $rang){
+		global $level_in, $level, $level_id;
 		if($level_in == $level[$rang]){
 			return ' class=" lesTitres lesTitres_in lesTitres1 " ';
-		}else{
+		}elseif($rang < $level_id){
+			return ' class=" lesTitres lesTitres_pass lesTitres2 " ';
+		}elseif($rang > $level_id){
 			return ' class=" lesTitres lesTitres_off lesTitres2 " ';}
 	}
-	// function apply coloration on lesson
-	function chapitre_lesson_color($level_in, $chapitre_in, $rang1, $rang2){
-		global $level_in, $chapitre_in, $level, $chap;
+	// function apply coloration on chapiter
+	function chapitre_color($level_in, $chapitre_in, $rang1, $rang2){
+		global $level_in, $chapitre_in, $level, $level_id, $chap, $chap_id;
 		if($level_in == $level[$rang1] && $chapitre_in == $chap[$rang2] ){
 			return ' class=" lesLiens lesson_in " ';
-		}else{
-			return ' class=" lesLiens lesson_off " ';}
+		
+		}elseif($rang1 < $level_id){
+			return ' class=" lesLiens lesson_pass " lesTitres2';
+		
+		}elseif($rang1 == $level_id){
+			if( $rang2 < $chap_id){
+				return ' class=" lesLiens lesson_pass " lesTitres2';
+			}elseif( $rang2 > $chap_id){
+				return ' class=" lesLiens lesson_off " lesTitres2';
+			}
+		
+		}elseif($rang1 > $level_id){
+			return ' class=" lesLiens lesson_off " lesTitres2';
+			}
 	}
 	
-?>
 ?>

@@ -43,7 +43,7 @@
 						// Make The differents lessons the chapiters
 						for ($j = 1; $j <= 6; $j++) {
 							if(is_array($lesson_link[$i][$j])){
-								echo '<h1 '.sub_chap_Title_color($lesson_in, $j) . '>'.$lesson_name[$i][$j].'</h1>';
+								echo '<h1 '.sub_chap_Title_color($lesson_in, $i, $j) . '>'.$lesson_name[$i][$j].'</h1>';
 								echo '<ul '.sub_chap_lesson_color($chapitre_in, $i, $lesson_in, $j). '>';
 								foreach ($lesson_link[$i][$j] as $key => $value) {
 									echo '<li '.chapitre_lesson_color($chapitre_in, $i, $lesson_in, $j).' >';

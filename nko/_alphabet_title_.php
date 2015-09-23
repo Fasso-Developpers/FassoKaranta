@@ -7,10 +7,10 @@
 	$chapitre_in = $cours_info['chapitre_in'];
 	$lesson_in = $cours_info['lesson_in'];
 	
-	// status passed
+	/* status passed
 	$status_array = get_status_info($user_id, $con);
 	$status = $status_array['status'];
-	
+	*/
 	
 	/* --- variable provide of database --- */
 	$chap = array(
@@ -172,47 +172,93 @@
 				),
 	);
 
+$chap_in_array = explode('_', $chapitre_in);
+$chap_id = $chap_in_array[1];
+
+$less_in_array = explode('_', $lesson_in);
+$less_id = $less_in_array[1];
 							
 	/* ******** APPLY COLOR BY USER LEVEL ******* */
 	// function apply coloration on level
 	function chapitre_Title_color($chapitre_in, $rang){
-		global $chapitre_in, $chap;
+		global $chapitre_in, $chap, $chap_id;
 		if($chapitre_in == $chap[$rang]){
 			return ' class="titreH1 titreH1_in " ';
-		}else{
+		}elseif($rang < $chap_id){
+			return ' class="titreH1 titreH1_pass " ';
+		}elseif($rang > $chap_id){
 			return ' class="titreH1 titreH1_off " ';} 
 	}
+	
 	// function apply coloration on chapitre
 	function chapitre_content_color($chapitre_in, $rang){
-		global $chapitre_in, $chap, $status;
+		global $chapitre_in, $chap, $chap_id;
 		if($chapitre_in == $chap[$rang]){
 			return ' class=" lesTitres lesTitres_in lesTitres1 " ';
-		}else{
+		}elseif($rang < $chap_id){
+			return ' class=" lesTitres lesTitres_pass lesTitres2 " ';
+		}elseif($rang > $chap_id){
 			return ' class=" lesTitres lesTitres_off lesTitres2 " ';}
 	}
+
 	// function apply coloration on simple lesson
 	function chapitre_lesson_color($chapitre_in, $rang1, $lesson_in, $rang2){
-		global $chapitre_in, $chap, $lesson_in, $lesson, $status;
+		global $chapitre_in, $chap, $lesson_in, $lesson, $chap_id, $less_id;
 		if($chapitre_in == $chap[$rang1] && $lesson_in == $lesson[$rang2]){
 			return ' class=" lesLiens lesson_in " lesTitres1';
-		}else{
-			return ' class=" lesLiens lesson_off " lesTitres2';}
+		
+		}elseif($rang1 < $chap_id){
+			return ' class=" lesLiens lesson_pass " lesTitres2';
+		
+		}elseif($rang1 == $chap_id){
+			if( $rang2 < $less_id){
+				return ' class=" lesLiens lesson_pass " lesTitres2';
+			}elseif( $rang2 > $less_id){
+				return ' class=" lesLiens lesson_off " lesTitres2';
+			}
+		
+		}elseif($rang1 > $chap_id){
+			return ' class=" lesLiens lesson_off " lesTitres2';
+			}
 	}
 
-	function sub_chap_Title_color($lesson_in, $rang){
-		global $lesson_in, $chap, $status;
-		if($lesson_in == $chap[$rang]){
-			return ' class="sub_titreH1 titreH1_in " ';
-		}else{
-			return ' class="sub_titreH1 titreH1_off " ';} 
+	function sub_chap_Title_color($lesson_in, $rang1, $rang2){
+		global $chapitre_in, $chap, $lesson_in, $lesson, $chap_id, $less_id;
+		if( $chapitre_in == $chap[$rang1] && $lesson_in == $lesson[$rang2]){
+			return ' class=" sub_titreH1 sub_titreH1_in " ';
+		
+		}elseif($rang1 < $chap_id){
+			return ' class=" sub_titreH1 sub_titreH1_pass " ';
+		
+		}elseif($rang1 == $chap_id){
+			
+			if($rang2 < $less_id){
+				return ' class=" sub_titreH1 sub_titreH1_pass " ';
+			}elseif($rang2 > $less_id){
+				return ' class=" sub_titreH1 sub_titreH1_off " ';
+			}
+			
+		}elseif($rang1 > $chap_id){
+			return ' class=" sub_titreH1 sub_titreH1_off " ';}
 	}
 	
 	// function apply coloration on sub chapiter lesson
 	function sub_chap_lesson_color($chapitre_in, $rang1, $lesson_in, $rang2){
-		global $chapitre_in, $chap, $lesson_in, $lesson, $status;
+		global $chapitre_in, $chap, $lesson_in, $lesson, $chap_id, $less_id;
 		if($chapitre_in == $chap[$rang1] && $lesson_in == $lesson[$rang2]){
-			return ' class=" lesTitres lesTitres_in lesTitres1 " ';
-		}else{
-			return ' class=" lesTitres lesTitres_off lesTitres2 " ';}
+			return ' class=" lesTitres sub_lesTitres_in lesTitres1 " ';
+		
+		}elseif($rang1 < $chap_id){
+			return ' class=" lesTitres sub_Titres_pass lesTitres2 " ';
+		
+		}elseif($rang1 == $chap_id){
+			if($rang2 < $less_id){
+				return ' class=" lesTitres sub_Titres_pass lesTitres2 " ';
+			}elseif($rang2 > $less_id){
+				return ' class=" lesTitres sub_lesTitres_off lesTitres2 " ';
+			}
+			
+		}elseif($rang1 > $chap_id){
+			return ' class=" lesTitres sub_lesTitres_off lesTitres2 " ';}
 	}
 ?>	
