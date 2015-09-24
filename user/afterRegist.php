@@ -51,31 +51,23 @@
 		$lastDuration = html_entity_decode($lastDuration);
 		$lastComment = html_entity_decode($lastComment);
 		
-		if(username_in_nqo($userName, $con)){
+		if(user_id_in_nqo($user_id, $con)){
 			$error = trad_lang('you_have_given_your_level').'<br>';
 			$error .= trad_lang('you_can_update_in_profile').'<br>';
 			//echo $userName;
 			header("Refresh: 2; URL= profile.php");// Redirection après 2 secondes 
 		}else{
-			$insertQuery = "INSERT INTO nqo_level (user_id, nko_level, last_student, remenber_this,
+			$insertQuery = "INSERT INTO nqo_level (user_id, nko_level, last_student, dontRemenber,
 				lastCountry, lastCity, lastSchool, lastTeacher, lastDate, lastDuration, lastComment)
 			VALUE('$user_id', '$nko_level', '$last_nko_student', '$dontRemenber',
 				'$lastCountry', '$lastCity', '$lastSchool', '$lastTeacher', '$lastDate', '$lastDuration', '$lastComment') ";
 			
 			if(mysqli_query($con, $insertQuery))
 			{
-				$coursQuery = "INSERT INTO nqo_cours (user_id, level_in)
-								VALUE('$user_id', '$nko_level') ";
-	
-				$statusQuery = "INSERT INTO nqo_status (user_id, level_in)
-								VALUE('$user_id', '$nko_level') ";
-				//echo $insertQuery;
-				if(mysqli_query($con, $coursQuery) && mysqli_query($con, $statusQuery))
-				{
-					$succes  = trad_lang('succes_give_your_level');
-					header("Refresh: 2; URL=../index.php");// Redirection après 2 secondes
-				}
-				
+				add_cours_in($user_id, $nko_level, $con);
+				$succes  = trad_lang('succes_give_your_level');
+				header("Refresh: 2; URL=../index.php");// Redirection après 2 secondes
+			
 			}
 		}
 	}

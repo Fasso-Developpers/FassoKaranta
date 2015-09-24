@@ -8,13 +8,14 @@
 	// include the content menu
 	include('_alphabet_title_.php');
 	$link_to_movie = "";
+	$last_movie_title = "";
 ?>
 
 <!doctype html >
 <html dir="auto">
 <head>
 	<meta charset="utf-8" />
-	<title>Fasso school|N'ko</title>
+	<title>Fasso school - N'ko</title>
 	<?php include('../__soronta__/_lowla_/head_sm.php'); ?>
 	<link rel="stylesheet" href="_css_/titre_lesson.css" />
 	<script src="_js_/chargePage.js"></script>
@@ -48,14 +49,14 @@
 								foreach ($lesson_link[$i][$j] as $key => $value) {
 									echo '<li '.chapitre_lesson_color($chapitre_in, $i, $lesson_in, $j).' >';
 									//echo '<a href="'.$value.'">'.$lesson_name[$i][$j].' '. $key .'</a>';
-									echo '<a href="_kogbei_/page.php?link='.$value.'&titre='.$lesson_name[$i][$j].' '. $key.'">'.
+									echo '<a href="_kogbei_/page.php?c='.$i.'&l='.$j.'&link='.$value.'&title='.$lesson_name[$i][$j].' '. $key.'">'.
 									$lesson_name[$i][$j].' '. $key .'</a>';
 									echo '</li>';
 								}
 								echo '</ul>';
 							}else{
 								echo '<li '.chapitre_lesson_color($chapitre_in, $i, $lesson_in, $j).' >';
-								echo '<a href="_kogbei_/page.php?link='.$lesson_link[$i][$j].'&titre='.$lesson_name[$i][$j].'">'.
+								echo '<a href="_kogbei_/page.php?c='.$i.'&l='.$j.'&link='.$lesson_link[$i][$j].'&title='.$lesson_name[$i][$j].'">'.
 								$lesson_name[$i][$j].'</a>'; ;
 								//echo '<a href="'.$lesson_link[$i][$j].'">'.$lesson_name[$i][$j].'</a>'; ;
 								echo '</li>';
@@ -79,9 +80,6 @@
 		
 		<div id="paraTexte" >
 			<section id="intro">
-				<!-- Insert Title here -->
-				<h3><?php  ?></h3>
-				
 				<div id="videoPlace">
 					<!--
 					<iframe width="640" height="390"
@@ -89,7 +87,6 @@
 				  	frameborder="0" allowfullscreen />
 				 	-->
 				</div>
-				
 			</section>
 		</div> 
 	</div>

@@ -15,7 +15,7 @@
 <html dir="auto">
 <head>
 	<meta charset="utf-8" />
-	<title>Fasso - N'ko school</title>
+	<title>Fasso school- N'ko </title>
 	<?php include('../__soronta__/_lowla_/head_sm.php'); ?>
 	<link rel="stylesheet" href="_css_/titre_lesson.css" />
 </head>

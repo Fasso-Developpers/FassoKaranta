@@ -22,19 +22,7 @@
 			return false;
 		}
 	}
-	
-		function username_in_nqo($userName, $con)
-	{
-		// dans la requete il faut prendre '*' et non 'id'
-		$result = mysqli_query($con, "SELECT * FROM nqo_level WHERE userName = '$userName' ");
-		if (mysqli_num_rows($result) == 1)
-		{
-			return true; 
-		}else{
-			return false;
-		}
-	}
-	
+
 	// ******************* Theses function activate user account *******************
 	
 	// ------- This function verify if user account is activate or not -------
@@ -75,6 +63,40 @@
 		mysqli_query($con, "UPDATE `user` SET `active` = 1 WHERE `userName` = '$userName'");
 	}
 	
+	/* ********************************************************************** 
+	 *	------------------- Function of afterRegist -------------------		*
+	 * ******************************************************************** */
+	 
+	 	
+	function user_id_in_nqo($user_id, $con){
+		// dans la requete il faut prendre '*' et non 'id'
+		$result = mysqli_query($con, "SELECT * FROM nqo_level WHERE `user_id` = '$user_id' ");
+		if (mysqli_num_rows($result) == 1){
+			return true; 
+		}else{
+			return false;
+		}
+	}
+		
+	 
+	 function add_cours_in($user_id, $nko_level, $con){
+	 	// get current date in GMT+0
+		$last_date = date("Y-m-d H:i:s");
+		
+		$statusQuery = "INSERT INTO nqo_status (`user_id`, `level_in`, `add_date`)
+						VALUE('$user_id', '$nko_level', '$last_date') ";
+		mysqli_query($con, $statusQuery);
+		
+		$coursQuery = "INSERT INTO nqo_cours (`user_id`, `level_in`, `last_date`)
+								VALUE('$user_id', '$nko_level', '$last_date') ";
+		mysqli_query($con, $coursQuery);
+		
+	 }
+	
+	function level_given($user_id, $con){
+		
+	}
+		
 	
 	/* ******************* CONNEXION FUNCTIONS **********************  */
 	
@@ -87,14 +109,19 @@
 		//mysqli_query($con, "UPDATE `session` SET `login` = 1 WHERE `user_id` = '$user_id'");
 	}	
 	
-	// Disconnect user if logout
-	function disconnect_user($user_id, $con){
-		// delete user in session table
-		$disconnectQuery = "DELETE FROM `session` WHERE `user_id` = '$user_id' ";
-		mysqli_query($con, $disconnectQuery);
-	}	
 	
-	/* ***************** GET COURS INFORMATION OF COLOR *************** */
+	 /* ***************** ***************** ***************** ***************** 
+	 						  GET SOME INFO TO SESSION  
+	 ***************** ***************** ***************** ***************** */
+	
+		function get_kan($user_id, $con){
+		$query = "SELECT `f_kan`, `y_kan` FROM `registred` WHERE `Id_registred` = '$user_id' ";
+		$result = mysqli_query($con, $query);
+		$resultat = mysqli_fetch_assoc($result);
+		return $resultat;
+	}
+		
+	/* *** GET COURS INFORMATION TO COLORATION OF level, chapiter and lesson *** */
 	//  ------- Get cours info for user to apply coloration -----
 	function get_cours_info($user_id, $con){
 		$query = "SELECT `level_in`, `chapitre_in`, `lesson_in` FROM `nqo_cours` WHERE `user_id` = '$user_id' ";
@@ -110,6 +137,59 @@
 		return $resultat;
 	}
 	
+	function get_nko_level($user_id, $con){
+		$query = "SELECT `level_in` FROM `nqo_cours` WHERE `user_id` = '$user_id' ";
+		$result = mysqli_query($con, $query);
+		$resultat = mysqli_fetch_assoc($result);
+		return $resultat;
+	}
+	
+	function lesson_alredy_view($user_id, $level, $chap, $lesson, $con){
+		// dans la requete il faut prendre '*' et non 'id'
+		$query = "SELECT * FROM `nqo_status` WHERE 
+													`user_id` = '$user_id' 
+													AND `level_in` = '$level' 
+													AND `chapitre_in` = '$chap'
+													AND `lesson_in`	= '$lesson' ";
+		$result = mysqli_query($con, $query);
+		if (mysqli_num_rows($result) == 1)
+		{
+			return true; 
+		}else{
+			return false;
+		}
+	}
+	
+	function insert_last_cours($user_id, $level, $chap, $lesson, $con){
+		// get current date in GMT+0
+		$last_date = date("Y-m-d H:i:s");
+		
+		$insert_status = "INSERT INTO `nqo_status` (`user_id`, `level_in`, `chapitre_in`, `lesson_in`, `add_date` )
+											VALUE('$user_id', '$level', '$chap', '$lesson', '$last_date') ";
+		// apply query
+		mysqli_query($con, $insert_status);
+		
+		$update_cours = "UPDATE `nqo_cours` SET 
+								`level_in` = '$level',
+								`chapitre_in` = '$chap',
+								`lesson_in` = '$lesson',
+								`last_date` = '$last_date'
+						WHERE `user_id` = '$user_id'";
+		
+		// apply query
+		mysqli_query($con, $update_cours);
+	}
+	
+	/* *********************************************************  */
+	
+	// Disconnect user if logout
+	function disconnect_user($user_id, $con){
+		// delete user in session table
+		$disconnectQuery = "DELETE FROM `session` WHERE `user_id` = '$user_id' ";
+		mysqli_query($con, $disconnectQuery);
+	}	
+	
+
 	/* ***************  Verify if is login or logout ************* */
 	function is_not_login(){
 		if(logged_in() === FALSE){
@@ -259,22 +339,6 @@ function success_insersion($user_id, $con){
 	$resultat = mysqli_fetch_assoc($result);
 	return $resultat;
 	}
-
-/* ***************** GET SOME INFO TO SESSION ************* */
-
-function get_nko_level($user_id, $con){
-	$query = "SELECT `level_in` FROM `nqo_cours` WHERE `user_id` = '$user_id' ";
-	$result = mysqli_query($con, $query);
-	$resultat = mysqli_fetch_assoc($result);
-	return $resultat;
-}
-
-function get_kan($user_id, $con){
-	$query = "SELECT `f_kan`, `y_kan` FROM `registred` WHERE `Id_registred` = '$user_id' ";
-	$result = mysqli_query($con, $query);
-	$resultat = mysqli_fetch_assoc($result);
-	return $resultat;
-}
 
 function update_kan($user_id, $f_kan, $y_kan, $con){
 	$query = "UPDATE `registred` SET `f_kan` = '$f_kan', `y_kan` = '$y_kan' WHERE `Id_registred` = '$user_id'";

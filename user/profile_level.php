@@ -49,32 +49,24 @@
 		$lastDuration = html_entity_decode($lastDuration);
 		$lastComment = html_entity_decode($lastComment);
 		*/
-		if(username_in_nqo($userName, $con)){
+		if(user_id_in_nqo($user_id, $con)){
 			$error = trad_lang('you_have_given_your_level').'<br>';
 			$error .= trad_lang('you_can_update_in_profile').'<br>';
-			//echo $userName;
-			header("Refresh: 2; URL= profile.php");// Redirection après 2 secondes 
 		}else{
-			$insertQuery = "INSERT INTO nqo_level (user_id, nko_level, last_student, remenber_this,
+			$insertQuery = "INSERT INTO nqo_level (user_id, nko_level, last_student, dontRemenber,
 				lastCountry, lastCity, lastSchool, lastTeacher, lastDate, lastDuration, lastComment)
 			VALUE('$user_id', '$nko_level', '$last_nko_student', '$dontRemenber',
 				'$lastCountry', '$lastCity', '$lastSchool', '$lastTeacher', '$lastDate', '$lastDuration', '$lastComment') ";
+			// insert nko level for user
+			mysqli_query($con, $insertQuery);
 			
-			if(mysqli_query($con, $insertQuery))
-			{
-				$coursQuery = "INSERT INTO nqo_cours (user_id, level_in)
-								VALUE('$user_id', '$nko_level') ";
-	
-				$statusQuery = "INSERT INTO nqo_status (user_id, level_in)
-								VALUE('$user_id', '$nko_level') ";
-				//echo $insertQuery;
-				if(mysqli_query($con, $coursQuery) && mysqli_query($con, $statusQuery))
-				{
-					$succes  = trad_lang('succes_give_your_level');
-					header("Refresh: 2; URL=../index.php");// Redirection après 2 secondes
-				}
-				
+			// Insert info in nqo_status AND nqo_cours
+			if(!lesson_alredy_view($user_id, $nko_level, 'chapitre_1', 'lesson_1', $con)){
+				add_cours_in($user_id, $nko_level, $con);
 			}
+			
+			$succes  = trad_lang('succes_give_your_level');
+		
 		}
 	}
 ?>
@@ -196,121 +188,124 @@
 			</div>
 			
 					<!-- Paragraphe texte -->
-			<div id="para">
-				<div id="paraTitre" >
-					<h1 class="rectangle"><?php echo trad_lang('my_profile');?></h1>
-				</div>
-				
-			<div class="infoPerson">
-				<form id="form" name="form1" method="post" action='profile_level.php'>
-					<fieldset><legend><?php echo trad_lang('your_level_in_nko') ?></legend>
-				<ul>
-					<li>
-						<label><?php echo trad_lang('choise_your_level_in_nko') ?> : </label>
-						<select id="levels" name="nko_level">
-							<OPTGROUP class="descLevel" <?php echo 'label="'.trad_lang('description_of_level_1').'"' ?>>
-							<option value="level_1"><?php echo trad_lang('nko_level_1') ?></option>
-							</OPTGROUP>
-							<OPTGROUP class="descLevel" <?php echo 'label="'.trad_lang('description_of_level_2').'"' ?>>
-							<option value="level_2"><?php echo trad_lang('nko_level_2') ?></option>
-							</OPTGROUP>
-							<OPTGROUP class="descLevel" <?php echo 'label="'.trad_lang('description_of_level_3').'"'?>>
-							<option value="level_3"><?php echo trad_lang('nko_level_3') ?></option>
-							</OPTGROUP>
-							<OPTGROUP class="descLevel" <?php echo 'label="'.trad_lang('description_of_level_4').'"'?>>
-							<option value="level_4"><?php echo trad_lang('nko_level_4') ?></option>
-							</OPTGROUP>
-							<OPTGROUP class="descLevel" <?php echo 'label="'.trad_lang('description_of_level_5').'"'?>>
-							<option value="level_5"><?php echo trad_lang('nko_level_5') ?></option>
-							</OPTGROUP>
-						</select>
-					</li>
-				</ul>
-			</fieldset>
-
-
-			<fieldset id="ancienEleve">
-				<legend><?php echo trad_lang('old_nko_student') ?></legend>
-				
-				<p class="questionYN" <?php echo align_by_lang('right','left') ?>><?php echo trad_lang('old_nko_student_question') ?></p>
-				<p class="reponse" <?php echo align_by_lang('right','left') ?>>
-				<label id="yes"><?php echo trad_lang('yes') ?></label>
-				<input type="radio" name="last_nko_student" id="radiobuton" class="radiobuton" onChange="verif();" value="yes" />
-
-				<label id="no"><?php echo trad_lang('no') ?></label>
-				<input type="radio" name="last_nko_student" id="radiobuton" class="radiobuton" onChange="verif();" value="no" />
-				</p>
-				
-				<div id="last" class="on">
-				 <p <?php echo align_by_lang('right','left') ?>>
-				 	<label><?php echo trad_lang('dont_remember_this_info') ?></label>
-				<input type="checkbox" id="check" name="dontRemenber" onChange="verif();"  /></p>
-				
-				<fieldset id="LastStudy" class="on">
-					<legend><?php echo trad_lang('last_nko_study') ?><pre id="aboutLast"> ...<?php echo trad_lang('informations_about_study') ?>... </pre></legend>
+				<div id="para">
+					<div id="paraTitre" >
+						<h1 class="rectangle"><?php echo trad_lang('my_profile');?></h1>
+					</div>
 					
-					<table>
-
-						<tr <?php echo align_by_lang() ?>><td >
-						<label id="lastCountry"><?php echo trad_lang('last_country') ?> :</label>
-						</td>
-						<td>
-						<input type="text" name="lastCountry" id="lastCountry" />
-						</td></tr>
-
-						<tr><td <?php echo align_by_lang() ?>>
-						<label id="lastCity"><?php echo trad_lang('last_city') ?> :</label>
-						</td>
-						<td>
-						<input type="text" name="lastCity" id="lastCity" />
-						</td></tr>
-
-						<tr><td <?php echo align_by_lang() ?>>
-						<label id="lastSchool"><?php echo trad_lang('last_school_name') ?>:</label>
-						</td>
-						<td>
-						<input type="text" name="lastSchool" id="lastSchool" />
-						</td></tr>
-
-						<tr><td <?php echo align_by_lang() ?>>
-						<label id="lastTeacher"><?php echo trad_lang('last_teacher_name') ?> :</label>
-						</td>
-						<td>
-						<input type="text" name="lastTeacher" id="lastTeacher" />
-						</td></tr>
-
-						<tr><td <?php echo align_by_lang() ?>>
-						<label id="lastDate"><?php echo trad_lang('last_begin_date') ?> :</label>
-						</td>
-						<td>
-						<input type="text" name="lastDate" id="lastDate" />
-						</td></tr>
-
-						<tr><td <?php echo align_by_lang() ?>>
-						<label id="lastDuration"><?php echo trad_lang('last_duration') ?> :</label>
-						</td>
-						<td>
-						<input type="text" name="lastDuration" id="lastDuration" />
-						</td></tr>
-					</table>
+					<div class="infoPerson">
+						<form id="form" name="form1" method="post" action='profile_level.php'>
+							<fieldset><legend><?php echo trad_lang('your_level_in_nko') ?></legend>
+						<ul>
+							<li>
+								<label><?php echo trad_lang('choise_your_level_in_nko') ?> : </label>
+								<select id="levels" name="nko_level">
+									<OPTGROUP class="descLevel" <?php echo 'label="'.trad_lang('description_of_level_1').'"' ?>>
+									<option value="level_1"><?php echo trad_lang('nko_level_1') ?></option>
+									</OPTGROUP>
+									<OPTGROUP class="descLevel" <?php echo 'label="'.trad_lang('description_of_level_2').'"' ?>>
+									<option value="level_2"><?php echo trad_lang('nko_level_2') ?></option>
+									</OPTGROUP>
+									<OPTGROUP class="descLevel" <?php echo 'label="'.trad_lang('description_of_level_3').'"'?>>
+									<option value="level_3"><?php echo trad_lang('nko_level_3') ?></option>
+									</OPTGROUP>
+									<OPTGROUP class="descLevel" <?php echo 'label="'.trad_lang('description_of_level_4').'"'?>>
+									<option value="level_4"><?php echo trad_lang('nko_level_4') ?></option>
+									</OPTGROUP>
+									<OPTGROUP class="descLevel" <?php echo 'label="'.trad_lang('description_of_level_5').'"'?>>
+									<option value="level_5"><?php echo trad_lang('nko_level_5') ?></option>
+									</OPTGROUP>
+								</select>
+							</li>
+						</ul>
+					</fieldset>
+		
+		
+					<fieldset id="ancienEleve">
+						<legend><?php echo trad_lang('old_nko_student') ?></legend>
+						
+						<p class="questionYN" <?php echo align_by_lang('right','left') ?>><?php echo trad_lang('old_nko_student_question') ?></p>
+						<p class="reponse" <?php echo align_by_lang('right','left') ?>>
+						<label id="yes"><?php echo trad_lang('yes') ?></label>
+						<input type="radio" name="last_nko_student" id="radiobuton" class="radiobuton" onChange="verif();" value="yes" />
+		
+						<label id="no"><?php echo trad_lang('no') ?></label>
+						<input type="radio" name="last_nko_student" id="radiobuton" class="radiobuton" onChange="verif();" value="no" />
+						</p>
+						
+						<div id="last" class="on">
+						 <p <?php echo align_by_lang('right','left') ?>>
+						 	<label><?php echo trad_lang('dont_remember_this_info') ?></label>
+						<input type="checkbox" id="check" name="dontRemenber" onChange="verif();"  /></p>
+						
+						<fieldset id="LastStudy" class="on">
+							<legend><?php echo trad_lang('last_nko_study') ?><pre id="aboutLast"> ...<?php echo trad_lang('informations_about_study') ?>... </pre></legend>
+							
+							<table>
+		
+								<tr <?php echo align_by_lang() ?>><td >
+								<label id="lastCountry"><?php echo trad_lang('last_country') ?> :</label>
+								</td>
+								<td>
+								<input type="text" name="lastCountry" id="lastCountry" />
+								</td></tr>
+		
+								<tr><td <?php echo align_by_lang() ?>>
+								<label id="lastCity"><?php echo trad_lang('last_city') ?> :</label>
+								</td>
+								<td>
+								<input type="text" name="lastCity" id="lastCity" />
+								</td></tr>
+		
+								<tr><td <?php echo align_by_lang() ?>>
+								<label id="lastSchool"><?php echo trad_lang('last_school_name') ?>:</label>
+								</td>
+								<td>
+								<input type="text" name="lastSchool" id="lastSchool" />
+								</td></tr>
+		
+								<tr><td <?php echo align_by_lang() ?>>
+								<label id="lastTeacher"><?php echo trad_lang('last_teacher_name') ?> :</label>
+								</td>
+								<td>
+								<input type="text" name="lastTeacher" id="lastTeacher" />
+								</td></tr>
+		
+								<tr><td <?php echo align_by_lang() ?>>
+								<label id="lastDate"><?php echo trad_lang('last_begin_date') ?> :</label>
+								</td>
+								<td>
+								<input type="text" name="lastDate" id="lastDate" />
+								</td></tr>
+		
+								<tr><td <?php echo align_by_lang() ?>>
+								<label id="lastDuration"><?php echo trad_lang('last_duration') ?> :</label>
+								</td>
+								<td>
+								<input type="text" name="lastDuration" id="lastDuration" />
+								</td></tr>
+							</table>
+						</fieldset>
+						</div>
+		
+					<!-- Another information -->
+					<fieldset><legend><?php echo trad_lang('another_information') ?></legend>
+						<label id="anoterInfo">
+							<p class="descTexarea" <?php echo align_by_lang() ?>><?php echo trad_lang('please_write_your_comment') ?></p>
+						</label>
+						<textarea id="anoterInfo" name="lastComment"></textarea>
+					</fieldset>
+					<input <?php echo align_by_lang('left', 'right') ?>
+						id="soumettre" name="submit_level" type="submit"  <?php echo align_by_lang('left','right') ?>
+						<?php echo 'value="'.trad_lang('submit_level').'"' ?> />
 				</fieldset>
-				</div>
-
-			<!-- Another information -->
-			<fieldset><legend><?php echo trad_lang('another_information') ?></legend>
-				<label id="anoterInfo">
-					<p class="descTexarea" <?php echo align_by_lang() ?>><?php echo trad_lang('please_write_your_comment') ?></p>
-				</label>
-				<textarea id="anoterInfo" name="lastComment"></textarea>
-			</fieldset>
-			<input <?php echo align_by_lang('left', 'right') ?>
-				id="soumettre" name="submit_level" type="submit"  <?php echo align_by_lang('left','right') ?>
-				<?php echo 'value="'.trad_lang('submit_level').'"' ?> />
-		</fieldset>
-		</form>
-	</div>
-	</div>
-	</div>			
+				<?php echo $insertQuery ; ?>
+				</form>
+			</div>
+		</div>
+	
+	</div>	
+			
 </body>
 
 </html>

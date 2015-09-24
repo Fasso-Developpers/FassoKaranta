@@ -1,5 +1,6 @@
 <?php
 	ini_set("display_errors",0);error_reporting(0); // hide the errors
+    date_default_timezone_set("GMT+0");
     include("_lontabdo_/connect.php");
 	include("_keya_/function.php");
 	
