@@ -1,8 +1,27 @@
 /* --------------- STYLE CSS FASSO BARABA ---------------- */
-html{font-size:100%; font-family: Ebrima;}
+
+
+/* ad ebrima font hosting in local server */
+@font-face {
+    font-family: "ebrima";
+    src: url('http://www.fasso.org/font/ebrima.ttf');
+}
+@font-face {
+    font-family: "ebrima";
+    font-style: italic;
+    src: url('http://www.fasso.org/font/ebrima.ttf');
+}
+@font-face {
+    font-family: "ebrimabd";
+    font-weight: bold;
+    src: url('http://www.fasso.org/font/ebrimabd.ttf');
+}
+
+
+html{font-size:100%; font-family: ebrima;}
 body{margin:0px; 
 	padding:0px; 
-	font-family: Ebrima; font-size:13; 
+	font-family: ebrima; font-size:13; 
 	color: #la1718;
 	line-height:1;}
 header, nav, aside, footer, figure, section, article{display: block;}
@@ -15,7 +34,7 @@ header, nav, aside, footer, figure, section, article{display: block;}
 		text-decoration:none;
 		font-size: 18px; font-weight: bold;
 		color: #eee;
-		font-family: Ebrima; Tahoma; 
+		font-family: ebrima; Tahoma; 
 		background: rgb(150,150,150); 
 		padding-top: 0;  padding-bottom: 23px; 
 		padding-left: 15px; padding-right: 15px;
@@ -55,7 +74,7 @@ header{height:70px; position:fixed; margin: 0 auto; top:0;
 	
 	#recherche{position:absolute; top:41px; right:0; width: 25%; display: inline;}
 	
-	#recherche input[type="text"] {position: absolute; padding:5px; font-family: Ebrima; 
+	#recherche input[type="text"] {position: absolute; padding:5px; font-family: ebrima; 
 		font-size:14px; font-style:italic; text-align:center;
 		color:#848484; border:1px solid #dedede; left: 0;
 		width:80px; height: 20px; margin: -2px 0 4px 0;

@@ -1,7 +1,7 @@
 /* -------------------- PROFILE ---------------------- */
-html{font-family: Ebrima;}
+html{font-family: ebrima;}
 
-body{font-family: Ebrima;}
+body{font-family: ebrima;}
 
 .image_profile{
 	margin: 5px;
@@ -48,12 +48,12 @@ fieldset{
 	text-align: center;
 	}
 .textBox{
-	font-family: Ebrima;
+	font-family: ebrima;
 	padding: 2px;
 }
 
 #soumettre{
-	font-family: Ebrima;
+	font-family: ebrima;
 	font-size: 16px;
 	margin-bottom: 5px;
 }
@@ -68,7 +68,7 @@ fieldset p{
 	margin: 0;
 	padding: 5px;
 	font-size: 14px;
-
+	font-family: ebrima;
 }
 .video{
 	border: 1px solid #000;
@@ -79,10 +79,10 @@ fieldset p{
 
 /* STYLE OF profile_level */
 #levels{
-	font-family: Ebrima;
+	font-family: ebrima;
 }
 #aboutLast{
-	font-family: Ebrima;
+	font-family: ebrima;
 }
 
 	

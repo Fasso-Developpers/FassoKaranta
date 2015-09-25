@@ -21,7 +21,7 @@
 			position: absolute;
 			width: 100%;
 			line-height: 80%;
-			font-family: Geneva, Ebrima, dejaVu;
+			font-family: Geneva, ebrima, dejaVu;
 			font-size: 18px;
 			text-indent: inherit;
 			//border:1px solid #000;
@@ -40,7 +40,7 @@
 		#intro p{line-height: 150%;}
 
 		.def{
-			font-family: Geneva; Ebrima;
+			font-family: ebrima;
 			font-size: 20px;
 			line-height: 100%;
 		}

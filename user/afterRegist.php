@@ -169,7 +169,7 @@
 
 </head>
 
-<body dir="auto" style="font-family:Ebrima">
+<body dir="auto" style="font-family:ebrima">
 
 <!-- The showing language -->
 	<?php include("menu_of_language.php") ?>
