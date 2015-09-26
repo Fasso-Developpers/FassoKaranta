@@ -31,6 +31,17 @@
 								 ߊ߬ ߘߌ߫ ߛߊߓߎ߫ ߢߌߡߊ߫ ߘߌ߫ ߞߵߊߟߎ߫ ߟߊ߫ ߞߊߓߋ ߟߎ߬ ߡߊߝߙߊ߬ ߞߊ߬ ߛߓߍߟߌ ߣߌ߫ ߘߐ߬ߞߊ߬ߙߊ߲߬ߠߌ ߠߎ߬ ߓߍ߯ ߟߊߖߐߟߐ߲߫ ߏ߬ ߘߐ߫ ߛߍ߬ߣߍ߲߬ ߖߟߐߟߐߟߐ߫.
 								ߊ߲ ߞߊ߬ ߝߋ߲߫ ߺ ߋ ߺ ߝߋ߲߫ ߟߐ߲߫ ߟߐ߲ߠߌߦߊ ߏ߬ ߟߎ߬ ߘߐ߫߸ ߊ߲ ߘߌ߫ ߏ߬ ߓߍ߯ ߟߊߛߋ߫ ߊߟߎ߫ ߡߊ߬ ߣߐ߰ߦߊ ߘߝߊߣߍ߲ ߘߐ߫", 
 				'souhait' 		=> "ߊߟߎ߫ ߣߌ߫ ߘߐ߬ߞߊ߬ߙߊ߲߬ߠߌ ߢߌߡߊ߫ ߹",
+				
+				// Manden nko school information translation
+				'manden_nko_school' 		=> "ߒߞߏ ߞߊߙߊ߲ߕߊ ߟߎ߬",
+				'web_nko_school' 		=> "ߒߞߏ ߓߟߐߟߐ߫ ߟߊ߫ ߞߊߙߊ߲ ߞߊ߫ ߢߌ߲߬ߓߊ ߟߋ߬߸ ߓߊ ߡߐ߱ ߥߟߊ߬ߘߊ ߕߊ߬ ߟߊ߫ ߌ ߘߌߦߊߣߊ߲߫ ߕߎߡߊ ߟߋ߬ ߟߊ߫ ߞߊ߬ ߓߍ߲߬ ߌ ߟߊߝߙߍ߫ ߕߎߡߊ ߟߎ߫ ߡߊ߬.",
+				'nko_shool_in_place' 	=> "ߒ߬ߞߊ߬ ߣߌ߫ ߜߍ߫ ߘߐ߫ ߞߊߙߊ߲ߕߊ ߘߏ߫ ߟߎ߫ ߞߍ߫ ߘߴߌ ߘߊߝߍ߬ ߌ ߟߊ߫ ߛߏ ߟߊ߫ ߥߟߊ߫ ߌ ߟߊ߫ ߞߌ߲߬ߘߊ ߟߊ߫߸ ߌ ߣߌ߫ ߡߐ߰ ߜߘߍ߫ ߟߎ߫ ߦߋ߫ ߢߐ߲߮ ߓߍ߲߬ ߠߊ߫ ߦߙߐ ߡߍ߲߬߸ ߏ߬ ߝߣߊ߫ ߘߌ߫ ߞߊ߬ߙߊ߲ ߘߌߦߊߘߏ߲߬ ߌ ߘߐ߫ ߞߏߛߓߍ߫.",
+				'question_to_info' 		=> "ߊߟߎ߫ ߘߴߊ߬ ߝߐ߫ ߒ ߢߍ߫ ߛߍ߲ ߞߏ߫ ߞߊ߬ߙߊ߲߬ߕߊ ߏ߬ ߟߎ߫ ߞߌ߬ߓߊ߬ߙߏ ߛߐ߬ߘߐ߲߬ߕߐ߫ ߘߌ߬؟",
+				'response_to_info' 		=> "ߐ߲߬ߤߐ߲ ߖߐ߫߸ ߊ߲ ߝߣߊ߫ ߓߘߊ߫ ߊ߲ ߡߙߌ ߏ ߖߋ߬ߓߌ ߡߊ߬ ߊߟߎ߫ ߢߍ߫߸ ߞߐߜߍ ߣߌ߲߫ ߖߍ߬ߘߍ ߛߌ߲ߘߌ߫ ߞߎ߲ ߦߋ߫ ߏ߬ ߟߋ ߘߌ߫.",
+				'will_upload_info_here' 		=> "ߊ߲ ߦߋ߫ ߡߊ߲߬ߘߋ߲߬ ߒߞߏ ߞߊߙߊ߲ߕߊ ߟߎ߫ ߞߌ߬ߓߊ߬ߙߏ ߟߎ߬ ߟߊߦߟߍ߬ߞߏ ߘߐ߫ ߦߙߐ ߢߌ߲߫ ߠߋ߬ ߘߐ߫߸ ߊ߲ ߓߘߊ߫ ߡߍ߲ߣߍ߲ ߛߐ߬ߘߐ߲߬ ߏ߬ ߝߟߍ߫ ߘߎ߰ߟߊ߫ ߣߌ߲߬ ߓߊ߫",
+				'guinea_nze_nko_school' 		=> "ߒߛߙߍߜߘߍ߬ ߒߞߏ ߞߊߙߊ߲ߕߊ ߟߎ߬",
+				'info_provide_by_AB' 		=> "ߒߛߙߍߜߘߍ߬ ߒߞߏ ߞߊߙߊ߲ߕߊ ߡߍ߲ ߠߎ߬ ߞߌ߬ߓߊ߬ߙߏ ߛߐ߲߬ߘߐ߲߬ߣߍ߲߬ ߊ߲ ߓߟߏ߫ ߏ߬ ߟߎ߫ ߟߋ߫ ߘߎ߰ߟߊ߫ ߣߌ߲߬. ߊ߬ߟߎ߬ ߡߊߛߐ߬ߘߐ߲߬ߣߍ߲߫ ߞߊ߬ߙߊ߲߬ߡߐ߰ ߊߡߙߊ߫ ߓߙߋߕߋ߫ ߟߊ߫ ߛߋ߲߬ߠߊ߬ߓߐ ߟߋ߫ ߝߍ߬ ߖߌ߬ߣߍ߬ ߞߣߐ߫ ߂߀߁߅ ߟߊ߫.",
+				
 				);
 	$en = array(
      			'page_title' 	=> "Fasso school", 
@@ -78,6 +89,19 @@
 										Vous allez faire cela en LISANT et en ECRIVANT.
 										Vous allez comme ça approfondir vos connaissances en LECTURE et à ECRITURE 
 										en N’ko de manière rapide et efficace.", 
-				'souhait' 		=> "Bonne lecture !", 						
+				'souhait' 		=> "Bonne lecture !", 
+				
+				// Manden nko school information translation
+				'manden_nko_school' 		=> "Ecole N'ko",
+				'web_nko_school' 		=> "Les cours en ligne sont très appreciés, car l'apprenant prend son cours quand il veut",
+				'nko_shool_in_place' 	=> "Mais s'il y a une école proche de chez vous
+											 Où vous pouvez prendre des cours en presentiel, cela vous encourage de plus.",
+				'question_to_info' 		=> "Vous allez nous dire, comment allons nous avoir l'information sur ces école N'ko.",
+				'response_to_info' 		=> "Exactement ! Nous avons déjà penser à ça, cette page est la une reponse à cette question",
+				'will_upload_info_here' 		=> "Nous allons rassembler les information concernant chaque école N'ko aux Manden et les mettre ici",
+				'guinea_nze_nko_school' 		=> "N'zérékoré",
+				'info_provide_by_AB' 		=> "Les information sur les écoles de N'zérékoré furent rapportées par Karamo Bérété, lors de son sejour en 2015.",
+				'info_provide_by_AB' 		=> "",
+				
 				);
 ?>
