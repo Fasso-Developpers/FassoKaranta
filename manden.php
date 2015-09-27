@@ -47,38 +47,38 @@
 			
 			<!-- Paragraphe texte -->
 				<div id="paraTitre" class="rectangle ombre">
-					<h1 <?php align_by_lang('right','left'); ?>><?php echo trad_lang('main_welcome'); ?></h1>
+					<h1 <?php align_by_lang('right','left'); ?>><?php echo trad_lang('manden_nko_school'); ?></h1>
 				</div>
 			<div id="paraTexte" class="rectangle ombre">
 				<section id="intro">
 					
 					<p style="text-align:center;">
-						<?php echo trad_lang('manden_nko_school'); ?>
+						
 					</p>
 					
 					<!--
 					<p style="margin:0 20px 0 20px;" <?php align_by_lang('right','left'); ?>>
 						<?php echo trad_lang('for_example'); ?></p>
 					-->
-					<p style="text-align:center;">
+					<p ">
 						<?php echo trad_lang('web_nko_school'); ?>
 					</p>
-					<p style="text-align:center;">
+					<p ">
 						<?php echo trad_lang('nko_shool_in_place'); ?>
 					</p>
-					<p style="text-align:center;">
+					<p ">
 						<?php echo trad_lang('question_to_info'); ?>
 					</p>
-					<p style="text-align:center;">
+					<p ">
 						<?php echo trad_lang('response_to_info'); ?>
 					</p>
-					<p style="text-align:center;">
+					<p ">
 						<?php echo trad_lang('will_upload_info_here'); ?>
 					</p>
-					<p style="text-align:center;">
+					<p ">
 						<?php echo trad_lang('guinea_nze_nko_school'); ?>
 					</p>
-					<p style="text-align:center;">
+					<p ">
 						<?php echo trad_lang('info_provide_by_AB'); ?>
 					</p>
 					<!--

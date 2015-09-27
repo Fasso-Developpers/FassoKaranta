@@ -93,12 +93,12 @@
 				
 				// Manden nko school information translation
 				'manden_nko_school' 		=> "Ecole N'ko",
-				'web_nko_school' 		=> "Les cours en ligne sont très appreciés, car l'apprenant prend son cours quand il veut",
+				'web_nko_school' 		=> "Les cours en ligne sont très appreciés, car l'apprenant prend son cours quand il veut.",
 				'nko_shool_in_place' 	=> "Mais s'il y a une école proche de chez vous
 											 Où vous pouvez prendre des cours en presentiel, cela vous encourage de plus.",
 				'question_to_info' 		=> "Vous allez nous dire, comment allons nous avoir l'information sur ces école N'ko.",
-				'response_to_info' 		=> "Exactement ! Nous avons déjà penser à ça, cette page est la une reponse à cette question",
-				'will_upload_info_here' 		=> "Nous allons rassembler les information concernant chaque école N'ko aux Manden et les mettre ici",
+				'response_to_info' 		=> "Exactement ! Nous avons déjà penser à ça, cette page est une reponse à cette question.",
+				'will_upload_info_here' 		=> "Nous allons rassembler les information concernant chaque école N'ko aux Manden et les mettre ici.",
 				'guinea_nze_nko_school' 		=> "N'zérékoré",
 				'info_provide_by_AB' 		=> "Les information sur les écoles de N'zérékoré furent rapportées par Karamo Bérété, lors de son sejour en 2015.",
 				'info_provide_by_AB' 		=> "",
