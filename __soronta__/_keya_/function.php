@@ -412,4 +412,57 @@ function update_kan($user_id, $f_kan, $y_kan, $con){
 		}
 	}
 	
+	
+	/* ******************************************
+	 * 
+	 *  TRANSLATION TABLE CONSTRUCTION 
+	 * 
+	 * **************************************** */
+	
+	// Verify if reference exists in great_img table
+	function reference_exists($reference, $con){
+			$query = "SELECT * FROM `dosre_used` WHERE `reference` = '$reference' ";
+			$result = mysqli_query($con, $query);
+			if (mysqli_num_rows($result) === 1)
+			{
+				return true; 
+			}else{
+				return false;
+			}
+		}
+	
+	
+	function translate_in_table($user_id, $reference, $nko, $en, $fr, $con){
+		$now_date = date("Y-m-d H:i:s");
+		
+		$insert = "INSERT INTO `dosre_used` (`user_id`, `reference`, `nko`, `en`, `fr`, `add_date` )
+											VALUE('$user_id', '$reference', '$nko', '$en', '$fr', '$now_date') ";
+		
+		//return $insert;
+		// apply query
+		mysqli_query($con, $insert);
+	}
+	
+		function nbre_row($con){
+			$query = "SELECT * FROM `dosre_used`";
+			$result = mysqli_query($con, $query);
+			$nb = mysqli_num_rows($result);
+			return $nb;
+		}
+	
+	
+	function translatable_data($row, $con){
+	$query = "SELECT `reference`, `nko`, `en`, `fr` FROM `dosre_used` WHERE `Id` = '$row' ";
+	$result = mysqli_query($con, $query);
+	$resultat = mysqli_fetch_assoc($result);
+	return $resultat;
+	}
+	
+	function get_to_translate($reference, $con){
+	$query = "SELECT `reference`, `nko`, `en`, `fr` FROM `dosre_used` WHERE `reference` = '$reference' ";
+	$result = mysqli_query($con, $query);
+	$resultat = mysqli_fetch_assoc($result);
+	return $resultat;
+	}
+	
 ?>
