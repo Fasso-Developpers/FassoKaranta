@@ -62,7 +62,7 @@
 		<textarea dir="auto" class="zone_texte zone_translate" name="translatable" >
 <?php if(isset($_GET['ref']) || isset($_POST['ref'])){ echo trim($fr_i) ; }else{ echo $fr_pre_info; }; ?>
 		</textarea>
-	
+
 	</div>					
 
 </body>

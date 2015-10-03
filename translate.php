@@ -273,7 +273,7 @@ $(document).ready(function(){
 				  </ul>
 				  
 				</div>
-				<form action="translate.php" method="post" accept-charset="utf-8">
+				<form action="translate.php?ref=".<?php echo $reference;?>.'" method="post" accept-charset="utf-8">
 					  <!-- Translate section -->
 					<p class="status_info">Valider vos données fournies
 					 		<input class="sauver" type="submit" name="sauver" value="Sauver" />
