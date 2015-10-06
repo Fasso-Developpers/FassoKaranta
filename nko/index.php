@@ -4,6 +4,7 @@
 	is_not_login();
 	$error = "";
 	$succes = "";
+	include_once("_index_translate_.php");
 	define("MAIN_PAGE", "nko_index");
 	define("CHAPITRE", "");
 	// include the content menu
@@ -20,7 +21,7 @@
 	<link rel="stylesheet" href="_css_/titre_lesson.css" />
 </head>
 
-<body dir="auto">
+<body <?php echo dir_lang('direction'); ?> >
 
 <!-- Entête -->
 	<?php include_once("../__soronta__/logout_button.php"); ?>
@@ -29,7 +30,7 @@
 	
 	<?php include("subtitle_nko.php"); ?>
 <!-- Cette partie contient le contenu de la page -->
-		<div dir="ltr" class="contenu" class="ombre">
+		<div <?php echo align_by_lang('right','left'); ?>  class="contenu" class="ombre">
 
 		<!-- Titre -->
 			<div id="titre" class="rectangle ombre">
@@ -56,35 +57,26 @@
 
 		<!-- Paragraphe texte -->
 				<div id="paraTitre" class="rectangle ombre">
-					<h1 class="rectangle">Welcome | Bienvenue | ߌ ߣߌ߫ ߛߣߍ߫</h1>
+					<h1 class="rectangle" <?php echo align_by_lang('right','left'); ?>>
+						<?php echo trad_lang('welcome'); ?>
+					</h1>
 					<!--<?php
 					echo '<br>' .$level_in .$level['1'] ;
 					?>-->
 				</div>
-			<div id="paraTexte" class="rectangle ombre">
+			<div id="paraTexte" class="rectangle ombre" style="margin:10px">
 				<section id="intro">
-					
-					<h3 dir="rtl">ߊߟߎ߫ ߣߌ߫ ߛߣߍ߫ ߒߞߏ ߥߟߊ߬ߘߊ ߟߎ߬ ߘߐ߫</h3>
-					<p dir="rtl">
-						 ߊ߲ ߓߘߴߊ߬ ߟߐ߲߫ ߊߟߎ߫ ߟߊ߫ ߦߊ߲߭ ߣߊ߬ߟߌ ߡߊ߬ ߞߏ߫ ߒߞߏ ߞߊߙߊ߲ߟߐ߮ ߦߴߊߟߎ߫ ߟߊ߫߸ ߊߟߎ߫ ߞߎߟߎ߲ߖߋ߫ ߏ߬ ߟߊ߫ ߸
-						 ߊ߲ ߝߣߊ߫ ߊߟߎ߫ ߟߊ߫ ߓߌ߬ߟߊ ߘߐ߫. ߊߟߎ߫ ߘߌ߫ ߛߋ߫ ߒߞߏ ߞߊ߬ߙߊ߲߬ ߠߊ߫ ߞߊ߲߫ ߛߓߊ߬ ߘߐ߫ ߦߊ߲߬: ߒߞߏ߸ ߊ߲߬ߜߌߟߋ ߣߌ߫ ߝߊ߬ߙߊ߲߬ߛߌ.
-						 ߊߟߎ߫ ߦߋ߫ ߞߊ߲ ߏ߬ ߟߎ߬ ߘߏ߫ ߘߐ߫ ߞߋߟߋ߲߫ ߕߊ߬ ߊߟߎ߫ ߟߊ߫ ߢߊߞߙߍ ߟߊ߫ ߞߊ߬ ߥߟߊ߬ߘߊ ߟߎ߬ ߘߊߡߌ߬ߣߊ߬.
-					</p>
-					<h3>Welcome to N'ko courses!</h3>
-					<p>
-						 Do you want to learn N'ko, very well, we are here for you.
-						 You can learn N'ko in 3 languages: N'ko, English and French.<br>
-						 Choose one of these languages in your profile after start your courses.<br>
-					</p>
-
-					<h3>Bienvenue aux cours N'ko</h3>
-					<p>
-						 Vous voulez surment apprendre le N'ko, félicitation, nous sommes à votre disposition.
-						 Ici vous pouvez apprendre N'ko en 3 langues: N'ko, Anglais et Français.
-						 Choisisez une de ces langues dans votre profile pour commencer vos cours.
-					</p>
-
+					<h3 <?php echo align_by_lang('right','left'); ?>><?php echo trad_lang('welcome_title'); ?></h3>
+					<p <?php echo align_by_lang('right','left'); ?>><?php echo trad_lang('welcome_text'); ?></p>
+					<h3 <?php echo align_by_lang('right','left'); ?>><?php echo trad_lang('about_courses_title'); ?></h3>
+					<p <?php echo align_by_lang('right','left'); ?>><?php echo trad_lang('about_courses_text'); ?></p>
+					<p <?php echo align_by_lang('right','left'); ?>><?php echo trad_lang('how_acces_courses'); ?></p>
+					<p <?php echo align_by_lang('right','left'); ?>><?php echo trad_lang('follow_courses_in_order'); ?></p>
+					<p <?php echo align_by_lang('right','left'); ?>><?php echo trad_lang('watch_video_here'); ?></p>
+					<p <?php echo align_by_lang('right','left'); ?>><?php echo trad_lang('about_controler_'); ?></p>
+					<p <?php echo align_by_lang('center','center'); ?>><?php echo trad_lang('problem_ask_admin'); ?></p>
 				</section>
+				
 			</div>
 		</div>
 </body>
