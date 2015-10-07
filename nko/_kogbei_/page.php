@@ -13,9 +13,22 @@
 	$chapitre 	= 'chapitre_'.$last_chapitre;
 	$lesson 	= 'lesson_'.$last_lesson;
 	
-	if(!lesson_alredy_view($user_id, $level_in, $chapitre, $lesson, $con)){
-		insert_last_cours($user_id, $level_in, $chapitre, $lesson, $con);
+	if(user_id_in_nqo($user_id, $con)){
+		if(!alredy_start_cours($user_id, $level_in, $con)){
+			add_cours_in($user_id, $level_in, $chapitre, $lesson, $con);
+		}else{
+			if(!lesson_alredy_view($user_id, $level_in, $chapitre, $lesson, $con)){
+				insert_last_cours($user_id, $level_in, $chapitre, $lesson, $con);
+			}
+		}
+		if(!lesson_alredy_view($user_id, $level_in, $chapitre, $lesson, $con)){
+			insert_last_cours($user_id, $level_in, $chapitre, $lesson, $con);
+		}
 	}
+	
+	// Add info to stat
+	add_to_stat($user_id, $level_in, $chapitre, $lesson, $con);
+
 ?>
 
 <!doctype html>

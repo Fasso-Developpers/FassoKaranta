@@ -87,12 +87,15 @@
 				'6' => 'Viov6qKuc04'
 				),
 			3 => array(
-				'1' => '#',
-				'2' => '#',
-				'3' => '#',
-				'4' => '#',
-				'5' => '#',
-				'6' => '#'
+				'1' => '_MzaaSzxyrU',
+				'2' => 'jZYdI6wTBK0',
+				'3' => array(
+						1 => '9qJePvoAcBw',
+						2 => 'Vh58WNggNEk',
+							),
+				'4' => 'ZCKcUtGBnng',
+				'5' => 'aG7czqbm3Tw',
+				'6' => 'peXOhpDbAJM'
 				),
 			4 => array(
 				'1' => '#',

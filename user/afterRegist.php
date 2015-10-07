@@ -57,14 +57,14 @@
 			//echo $userName;
 			header("Refresh: 2; URL= profile.php");// Redirection après 2 secondes 
 		}else{
-			$insertQuery = "INSERT INTO nqo_level (user_id, nko_level, last_student, dontRemenber,
+			$insertQuery = "INSERT INTO nqo_level (user_id, nko_level, last_student, remenber_this,
 				lastCountry, lastCity, lastSchool, lastTeacher, lastDate, lastDuration, lastComment)
 			VALUE('$user_id', '$nko_level', '$last_nko_student', '$dontRemenber',
 				'$lastCountry', '$lastCity', '$lastSchool', '$lastTeacher', '$lastDate', '$lastDuration', '$lastComment') ";
 			
 			if(mysqli_query($con, $insertQuery))
 			{
-				add_cours_in($user_id, $nko_level, $con);
+				add_cours_in($user_id, $nko_level, 'chapitre_1', 'lesson_1', $con);
 				$succes  = trad_lang('succes_give_your_level');
 				header("Refresh: 2; URL=../index.php");// Redirection après 2 secondes
 			

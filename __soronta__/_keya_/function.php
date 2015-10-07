@@ -77,20 +77,79 @@
 			return false;
 		}
 	}
+
+	function alredy_start_cours($user_id, $level, $con){
+		// dans la requete il faut prendre '*' et non 'id'
+		$query = "SELECT * FROM `nqo_cours` WHERE 
+													`user_id` = '$user_id' 
+													AND `level_in` = '$level' ";
+		$result = mysqli_query($con, $query);
+		if (mysqli_num_rows($result) === 1)
+		{
+			return true; 
+		}else{
+			return false;
+		}
+	}
+	
+	function lesson_alredy_view($user_id, $level, $chap, $lesson, $con){
+		// dans la requete il faut prendre '*' et non 'id'
+		$query = "SELECT * FROM `nqo_status` WHERE 
+													`user_id` = '$user_id' 
+													AND `level_in` = '$level' 
+													AND `chapitre_in` = '$chap'
+													AND `lesson_in`	= '$lesson' ";
+		$result = mysqli_query($con, $query);
+		if (mysqli_num_rows($result) >= 1)
+		{
+			return true; 
+		}else{
+			return false;
+		}
+	}
+	
+
+	function insert_last_cours($user_id, $level, $chap, $lesson, $con){
+		// get current date in GMT+0
+		$last_date = date("Y-m-d H:i:s");
 		
-	 
-	 function add_cours_in($user_id, $nko_level, $con){
+		$insert_status = "INSERT INTO `nqo_status` (`user_id`, `level_in`, `chapitre_in`, `lesson_in`, `add_date` )
+											VALUE('$user_id', '$level', '$chap', '$lesson', '$last_date') ";
+		// apply query
+		mysqli_query($con, $insert_status);
+		
+		$update_cours = "UPDATE `nqo_cours` SET 
+								`level_in` = '$level',
+								`chapitre_in` = '$chap',
+								`lesson_in` = '$lesson',
+								`last_date` = '$last_date'
+						WHERE `user_id` = '$user_id'";
+		// apply query
+		mysqli_query($con, $update_cours);
+	}
+	
+	 function add_cours_in($user_id, $level, $chap, $lesson, $con){
 	 	// get current date in GMT+0
 		$last_date = date("Y-m-d H:i:s");
 		
-		$statusQuery = "INSERT INTO nqo_status (`user_id`, `level_in`, `add_date`)
-						VALUE('$user_id', '$nko_level', '$last_date') ";
+		$statusQuery = "INSERT INTO nqo_status (`user_id`, `level_in`,`chapitre_in`, `lesson_in`, `add_date`)
+						VALUE('$user_id', '$level', '$chap', '$lesson', '$last_date') ";
 		mysqli_query($con, $statusQuery);
 		
-		$coursQuery = "INSERT INTO nqo_cours (`user_id`, `level_in`, `last_date`)
-								VALUE('$user_id', '$nko_level', '$last_date') ";
+		$coursQuery = "INSERT INTO nqo_cours (`user_id`, `level_in`, `chapitre_in`, `lesson_in`, `last_date`)
+								VALUE('$user_id', '$level', '$chap', '$lesson', '$last_date') ";
 		mysqli_query($con, $coursQuery);
 		
+	 }
+	
+	// Add movie after view to statistic information and user most activite
+	 function add_to_stat($user_id, $level, $chap, $lesson, $con){
+	 	// get current date in GMT+0
+		$last_date = date("Y-m-d H:i:s");
+		
+		$statusQuery = "INSERT INTO nqo_cours_stat (`user_id`, `level`,`chapitre`, `lesson`, `add_date`)
+						VALUE('$user_id', '$level', '$chap', '$lesson', '$last_date') ";
+		mysqli_query($con, $statusQuery);
 	 }
 	
 	function level_given($user_id, $con){
@@ -144,42 +203,7 @@
 		return $resultat;
 	}
 	
-	function lesson_alredy_view($user_id, $level, $chap, $lesson, $con){
-		// dans la requete il faut prendre '*' et non 'id'
-		$query = "SELECT * FROM `nqo_status` WHERE 
-													`user_id` = '$user_id' 
-													AND `level_in` = '$level' 
-													AND `chapitre_in` = '$chap'
-													AND `lesson_in`	= '$lesson' ";
-		$result = mysqli_query($con, $query);
-		if (mysqli_num_rows($result) == 1)
-		{
-			return true; 
-		}else{
-			return false;
-		}
-	}
-	
-	function insert_last_cours($user_id, $level, $chap, $lesson, $con){
-		// get current date in GMT+0
-		$last_date = date("Y-m-d H:i:s");
-		
-		$insert_status = "INSERT INTO `nqo_status` (`user_id`, `level_in`, `chapitre_in`, `lesson_in`, `add_date` )
-											VALUE('$user_id', '$level', '$chap', '$lesson', '$last_date') ";
-		// apply query
-		mysqli_query($con, $insert_status);
-		
-		$update_cours = "UPDATE `nqo_cours` SET 
-								`level_in` = '$level',
-								`chapitre_in` = '$chap',
-								`lesson_in` = '$lesson',
-								`last_date` = '$last_date'
-						WHERE `user_id` = '$user_id'";
-		
-		// apply query
-		mysqli_query($con, $update_cours);
-	}
-	
+
 	/* *********************************************************  */
 	
 	// Disconnect user if logout

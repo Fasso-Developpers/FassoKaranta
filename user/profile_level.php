@@ -34,26 +34,13 @@
 		$lastTeacher = htmlentities($_POST['lastTeacher']);
 		$lastDate = htmlentities($_POST['lastDate']);
 		$lastDuration = htmlentities($_POST['lastDuration']);
-		//$level_otherInfo = utf8_decode() ;
 		$lastComment = htmlentities($_POST['lastComment']);
 		
-		// la fonction html_entity_decode() permet de decoder, c'est  l'inverse de htmlentities()
-		/*$nko_level = html_entity_decode($nko_level);
-		$last_nko_student = $last_nko_student;
-		$dontRemenber = $dontRemenber;
-		$lastCountry = html_entity_decode($lastCountry);
-		$lastCity = html_entity_decode($lastCity);
-		$lastSchool = html_entity_decode($lastSchool);
-		$lastTeacher = html_entity_decode($lastTeacher);
-		$lastDate = html_entity_decode($lastDate);
-		$lastDuration = html_entity_decode($lastDuration);
-		$lastComment = html_entity_decode($lastComment);
-		*/
 		if(user_id_in_nqo($user_id, $con)){
 			$error = trad_lang('you_have_given_your_level').'<br>';
 			$error .= trad_lang('you_can_update_in_profile').'<br>';
 		}else{
-			$insertQuery = "INSERT INTO nqo_level (user_id, nko_level, last_student, dontRemenber,
+			$insertQuery = "INSERT INTO nqo_level (user_id, nko_level, last_student, remenber_this,
 				lastCountry, lastCity, lastSchool, lastTeacher, lastDate, lastDuration, lastComment)
 			VALUE('$user_id', '$nko_level', '$last_nko_student', '$dontRemenber',
 				'$lastCountry', '$lastCity', '$lastSchool', '$lastTeacher', '$lastDate', '$lastDuration', '$lastComment') ";
@@ -61,8 +48,8 @@
 			mysqli_query($con, $insertQuery);
 			
 			// Insert info in nqo_status AND nqo_cours
-			if(!lesson_alredy_view($user_id, $nko_level, 'chapitre_1', 'lesson_1', $con)){
-				add_cours_in($user_id, $nko_level, $con);
+			if(!alredy_start_cours($user_id, $nko_level, $con)){
+				add_cours_in($user_id, $nko_level, 'chapitre_1', 'lesson_1', $con);
 			}
 			
 			$succes  = trad_lang('succes_give_your_level');
@@ -299,7 +286,9 @@
 						id="soumettre" name="submit_level" type="submit"  <?php echo align_by_lang('left','right') ?>
 						<?php echo 'value="'.trad_lang('submit_level').'"' ?> />
 				</fieldset>
-				<?php echo $insertQuery ; ?>
+				<!--
+				<?php echo add_cours_in($user_id, $nko_level, 'chapitre_1', 'lesson_1', $con); ?>
+				-->
 				</form>
 			</div>
 		</div>

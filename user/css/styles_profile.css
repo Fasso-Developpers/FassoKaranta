@@ -3,6 +3,9 @@ html{font-family: ebrima;}
 
 body{font-family: ebrima;}
 
+#paraTitre h1{
+	position: absolute;  top: 13px;
+}
 .image_profile{
 	margin: 5px;
 }
