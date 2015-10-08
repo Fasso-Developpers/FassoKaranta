@@ -465,4 +465,19 @@ function update_kan($user_id, $f_kan, $y_kan, $con){
 	return $resultat;
 	}
 	
+	
+	/* ***********************************************
+	 * ************ RECENT PAGE ************
+	 * ***********************************************
+	 */
+	 
+	 function nb_registered($con){
+	 	$result = mysqli_query($con, "SELECT * FROM registred");
+		$nb = mysqli_num_rows($result);
+		return $nb;
+	 }
+	 
+	 
+	 
 ?>
+
