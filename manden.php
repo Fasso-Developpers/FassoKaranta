@@ -36,7 +36,7 @@
 		.table_info th{
 			border:1px solid #999;
 			margin: 5px;
-			padding: 10px;
+			padding: 5px;
 			font-size: 20px;
 			text-align: center;
 		}
@@ -52,14 +52,16 @@
 			margin:5px; 
 			padding:10px; 
 			font-size:18px;
-			line-height: 130%;
 		}
 		
 		/*	give yours */
-		#give_yours{
-			text-align: center; 
-			margin: 10px; 
-			padding: 10px;	
+		.give_yours{
+			margin-top: 10px; 
+			padding: 5px;
+			font-size: 14px;
+		}
+		.legend{
+			font-size: 16px;
 		}
 		/* for nzerekore nko school*/
 		
@@ -231,9 +233,9 @@ div.WordSection1
 					
 					<!-- Nzerekore nko_school -->
 					<?php include 'manden__gui_nze__.php'; ?>
-					<p id="give_yours">
-						ߟߊ߬ߘߛߏ߬ߟߌ ߟߎ߬ ߞߘߐ߫߸ ߝ. (ߝߙߍߕߍ)߸ ߞ. (ߞߊ߬ߙߊ߲߬ߕߊ)
-						</p>
+						<p class="give_yours">ߟߊ߬ߘߛߏ߬ߟߌ ߟߎ߬ ߞߘߐ:</span>
+						<span class="legend">ߝ. (ߝߙߍߕߍ)</span>
+						<span class="legend">ߞ. (ߞߊ߬ߙߊ߲߬ߕߊ)</span>
 				</section>
 			</div>
 		</div>

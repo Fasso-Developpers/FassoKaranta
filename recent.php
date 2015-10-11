@@ -38,7 +38,7 @@
 			border:1px solid #999;
 			margin: 5px;
 			padding: 16px;
-			font-size: 30px;
+			font-size: 24px;
 			text-align: center;
 		}
 		.table_info td{
@@ -98,7 +98,7 @@
 						<tr><td class="desc_ks"><?php echo trad_lang('last_registered'); ?></td>
 							<td class="nb_ks"><?php echo $nb; ?></td>
 						</tr>
-						<tr><td class="desc_ks"><?php echo trad_lang('nb_student_registered'); ?></td>
+						<tr><td class="desc_ks"><?php echo trad_lang('student_login'); ?></td>
 							<td class="nb_ks"><?php echo $nb; ?></td>
 						</tr>
 					</table>
@@ -113,10 +113,10 @@
 							<?php echo trad_lang('nb_courses_today'); ?></td>
 							<td class="nb_ks"><?php echo $nb; ?></td>
 						</tr>
-						<tr><td class="desc_ks"><?php echo trad_lang('most_populaire'); ?></td>
+						<tr><td class="desc_ks"><?php echo trad_lang('chapitre_populaire'); ?></td>
 							<td class="nb_ks"><?php echo $nb; ?></td>
 						</tr>
-						<tr><td class="desc_ks"><?php echo trad_lang('nb_student_registered'); ?></td>
+						<tr><td class="desc_ks"><?php echo trad_lang('lesson_populaire'); ?></td>
 							<td class="nb_ks"><?php echo $nb; ?></td>
 						</tr>
 					</table>

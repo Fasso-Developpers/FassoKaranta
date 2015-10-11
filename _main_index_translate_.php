@@ -55,15 +55,16 @@
 				'actuality_on_fasso' 		=> "ߞߏߢߊ ߡߍ߲ ߠߎ߬ ߕߊ߬ߡߌ߲߬ߛߊ߲ ߦߋ߫ ߝߊ߬ߛߏ ߞߊ߬ߙߊ߲߬ߕߊ ߟߊ߫ ߏ߬ ߟߎ߬ ߝߟߍ߫ ߣߌ߲߬",
 				// registration
 				'on_registration' 		=> "ߞߊ߬ߓߍ߲߬ ߕߐ߯ߛߓߍߟߌ ߡߊ߬",
-				'nb_student_registered' => "ߡߐ߱ ߡߍ߲ ߠߎ߬ ߕߐ߮ ߛߓߍߣߍ߲߫",
-				'nb_today_registered' => "ߡߍ߲ ߠߎ߬ ߕߐ߮ ߛߓߍߣߍ߲߫ ߓߌ߬",
-				'last_registered' => "ߡߍ߲ ߕߐ߮ ߛߓߍߣߍ߲߫ ߟߊ߬ߓߊ߲ ߠߊ߫",
-				'student_registered' => "Actuellement, le nombre inscrit à Fasso école est",
+				'nb_student_registered' => "ߡߐ߱ ߡߍ߲ ߠߎ߬ ߕߐ߮ ߛߓߍߣߍ߲߫ ߕߋ߲߬",
+				'nb_today_registered'	=> "ߡߍ߲ ߠߎ߬ ߕߐ߮ ߛߓߍߣߍ߲߫ ߓߌ߬",
+				'last_registered' 		=> "ߡߍ߲ ߕߐ߮ ߛߓߍߣߍ߲߫ ߟߊ߬ߓߊ߲ ߠߊ߫",
+				'student_login' 	=> "ߡߍ߲ ߠߎ߫ ߜߊ߲߬ߞߎ߲߬ߣߍ߲߫ ߕߋ߲߬",
 				// courses
 				'on_courses' 			=> "ߞߊ߬ߓߍ߲߬ ߥߟߊ߬ߘߊ ߟߎ߫ ߡߊ߬",
 				'nb_follow_courses' 	=> "ߡߍ߲ ߠߎ߰ ߥߟߊ߬ߘߊ߬ ߕߊ ߞߊ߲߬ ߕߋ߲߬",
 				'nb_courses_today' 		=> "ߥߟߊ߬ߘߊ ߖߊ߬ߕߋ ߡߍ߲ ߦߋߣߍ߲߫ ߓߌ߬",
-				'most_populaire' 		=> "ߥߟߊ߬ߘߊ߬ ߟߎ߬ ߘߐ߫ ߛߙߊߡߊ",
+				'chapitre_populaire' 	=> "ߛߌ߰ߘߊ ߟߎ߬ ߘߐ߫ ߛߙߊߡߊ",
+				'lesson_populaire' 		=> "ߥߟߊ߬ߘߊ߬ ߟߎ߬ ߘߐ߫ ߛߙߊߡߊ",
 				
 				);
 	$en = array(
@@ -137,14 +138,14 @@
 				// registration
 				'on_registration' 		=> "Sur l'inscription",
 				'nb_student_registered' => "Le nombre d'inscrit est",
-				'nb_today_registered' => "Les inscrits d'aujourd'hui",
-				'last_registered' => "Le dernier inscrit est",
-				'student_registered' => "Actuellement, le nombre inscrit à Fasso école est",
+				'nb_today_registered' 	=> "Les inscrits d'aujourd'hui",
+				'last_registered' 		=> "Le dernier inscrit est",
+				'student_login' 		=> "Le nombre de connectés",
 				// courses
 				'on_courses' 			=> "Sur les cours",
 				'nb_follow_courses' 	=> "Ceux qui prennent les cours",
 				'nb_courses_today' 		=> "Les cours vus aujourd'hui",
-				'most_populaire' 		=> "Le plus populaire",
-				
+				'chapitre_populaire' 	=> "Le chapitre populaire",
+				'lesson_populaire' 	=> "La lesson populaire",
 				);
 ?>

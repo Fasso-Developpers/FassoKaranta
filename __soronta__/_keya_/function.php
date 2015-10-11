@@ -477,7 +477,11 @@ function update_kan($user_id, $f_kan, $y_kan, $con){
 		return $nb;
 	 }
 	 
-	 
+	 function nb_student_actif($con){
+	 	$result = mysqli_query($con, "SELECT * FROM nqo_status");
+		$nb = mysqli_num_rows($result);
+		return $nb;
+	 }
 	 
 ?>
 
