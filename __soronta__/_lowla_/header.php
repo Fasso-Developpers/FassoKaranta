@@ -17,25 +17,3 @@
 		<input type="text" id="champ-Recherche" class="autoEmpty" value=" ߊ߬ ߢߌߣߌ߲߫ ߦߊ߲߬..." />
 	</form>
 	-->
-
-	<?php
-	
-		// Le MENU de lonko 'MENU LONKO'
-		if (MAIN_PAGE == "main_index"){
-			echo('
-				<div id="menuContenu" class="ombre">
-					<nav>
-						<ul dir="auto" id="subMenu">
-							<li><a href="user/profile.php">Profile</a>
-							<li><a href="#">Mes cours</a>
-							<li><a href="#">Mes niveaux</a>
-							<li><a href="#">Achevés</a>
-						</ul>
-					</nav>
-				</div>
-				');
-
-		}
-		
-	?>
-
