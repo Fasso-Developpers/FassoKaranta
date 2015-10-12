@@ -1,8 +1,18 @@
+
 <?php
 	include_once("__soronta__/flo.php");
 	is_not_login();
 	
 	$nb = nb_registered($con);
+	$nb_r_today = nb_registered_today($con);
+	$nb_login = nb_student_online($con);
+	$last_student = last_registered($con);
+	$last_registered = $last_student['userName'];
+	
+	// about cours
+	$nb_in_school =nb_in_school($con);
+	$nb_in_school_today = nb_in_school_today($con);
+	
 	include_once("_main_index_translate_.php");
 	define("MAIN_PAGE", "main_index");
 	define("CHAPITRE", "recent");
@@ -93,25 +103,24 @@
 						</tr>
 						
 						<tr><td class="desc_ks"><?php echo trad_lang('nb_today_registered'); ?></td>
-							<td class="nb_ks"><?php echo $nb; ?></td>
+							<td class="nb_ks"><?php echo $nb_r_today; ?></td>
 						</tr>
 						<tr><td class="desc_ks"><?php echo trad_lang('last_registered'); ?></td>
-							<td class="nb_ks"><?php echo $nb; ?></td>
+							<td class="nb_ks"><?php echo $last_registered; ?></td>
 						</tr>
 						<tr><td class="desc_ks"><?php echo trad_lang('student_login'); ?></td>
-							<td class="nb_ks"><?php echo $nb; ?></td>
+							<td class="nb_ks"><?php echo $nb_login; ?></td>
 						</tr>
 					</table>
 					
 					<table class="table_info">
 						<th colspan=2><?php echo trad_lang('on_courses'); ?></th>
 						<tr><td class="desc_ks"><?php echo trad_lang('nb_follow_courses')?></td>
-							<td class="nb_ks"><?php echo $nb; ?></td>
+							<td class="nb_ks"><?php echo $nb_in_school; ?></td>
 						</tr>
-						
 						<tr><td class="desc_ks">
 							<?php echo trad_lang('nb_courses_today'); ?></td>
-							<td class="nb_ks"><?php echo $nb; ?></td>
+							<td class="nb_ks"><?php echo $nb_in_school_today; ?></td>
 						</tr>
 						<tr><td class="desc_ks"><?php echo trad_lang('chapitre_populaire'); ?></td>
 							<td class="nb_ks"><?php echo $nb; ?></td>

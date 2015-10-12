@@ -90,6 +90,16 @@
 				'question_to_info' 		=> "Vous allez nous dire, comment allons nous avoir l'information sur ces école N'ko.",
 				'response_to_info' 		=> "Exactement ! Nous avons déjà penser à ça, cette page est une reponse à cette question.",
 				'will_upload_info_here' 		=> "Nous allons rassembler les information concernant chaque école N'ko aux Manden et les mettre ici.",
+				
+				
+				'locality' 		=> "Locality",
+				'recoltor' 		=> "Collector",
+				'givor' 		=> "Informator",
+				'loader' 		=> "Uploador",
+				'guinea_nze' 	=> "N'Zérékoré",
+				'gui_nze_recoltor' 	=> "Mr. Amara KANTE",
+				'gui_nze_givor' 	=> "Mr. Amara BERETE",
+				'gui_nze_loader' 	=> "Lancinè KANTE",
 				'guinea_nze' 		=> "N'zérékoré",
 				'info_provide_by_AB' 		=> "Les information sur les écoles de N'zérékoré furent rapportées par Karamo Bérété, lors de son sejour en 2015.",
 				
@@ -97,11 +107,23 @@
 				'page_title_r' 		=> "Récents",
 				'main_welcome_r' 	=> "Fasso Karanta - Récents",
 				'on_fasso_r' 		=> "See the last activiy in fasso-karanta",
+				// registration
+				'on_registration' 		=> "About registration",
+				'nb_student_registered' => "Registered students",
+				'nb_today_registered' 	=> "Registered today",
+				'last_registered' 		=> "Last registered",
+				'student_login' 		=> "Students On line",
+				// courses
+				'on_courses' 			=> "On courses",
+				'nb_follow_courses' 	=> "Follow courses",
+				'nb_courses_today' 		=> "Courses view today",
+				'chapitre_populaire' 	=> "Popular chapter",
+				'lesson_populaire' 		=> "Popular lesson",
 				);
 	$fr = array(
      			'page_title' 	=> "Fasso Ecole", 
      			'main_welcome' 	=> "Bienvenue à l'école de Fasso !", 
-     			'on_fasso' 	=> "Vous êtes dans l’école de Fasso, travers N’ko vous allez apprendre beaucoup de chose ici", 
+     			'on_fasso' 	=> 	"Vous êtes dans l’école de Fasso, travers N’ko vous allez apprendre beaucoup de chose ici", 
      			'for_example' 	=> "Par exemple", 
      			'nqo' 			=> "N'ko", 
      			'nqo_desc'		=> "Avez-vous vu l’écriture N’ko au paravent, n'est ce pas?. Si non soyez la bienvenue dans la découverte et l’apprentissage de N’ko.  Cette partie vous expliquera dans tout son détail l’écriture N’ko. Tous les niveaux seront abordés depuis l’alphabet jusqu’à l’orthographe.", 
@@ -123,6 +145,13 @@
 				'will_upload_info_here' 		=> "Nous allons rassembler les information concernant chaque école N'ko aux Manden et les mettre ici.",
 				
 				'locality' 		=> "Localité",
+				'recoltor' 		=> "Rassembleur",
+				'givor' 		=> "Inforateur",
+				'loader' 		=> "Chargeur",
+				'guinea_nze' 	=> "N'Zérékoré",
+				'gui_nze_recoltor' 	=> "M. Amara KANTE",
+				'gui_nze_givor' 	=> "M. Amara BERETE",
+				'gui_nze_loader' 	=> "Lancinè KANTE",
 				'guinea_nze' 		=> "N'zérékoré",
 				'info_provide_by_AB' 		=> "Les information sur les écoles de N'zérékoré furent rapportées par Karamo Bérété",
 				
@@ -146,6 +175,6 @@
 				'nb_follow_courses' 	=> "Ceux qui prennent les cours",
 				'nb_courses_today' 		=> "Les cours vus aujourd'hui",
 				'chapitre_populaire' 	=> "Le chapitre populaire",
-				'lesson_populaire' 	=> "La lesson populaire",
+				'lesson_populaire' 	=> "La leçon populaire",
 				);
 ?>

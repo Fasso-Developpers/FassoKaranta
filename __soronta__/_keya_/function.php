@@ -334,8 +334,10 @@ function must_activate($user_id, $confirm_code, $con){
 	}
 
 function confirm_resize($user_id, $con){
-		// query update account of user to active this
-		$query = "UPDATE `great_img` SET `resized` = 1 WHERE `user_id` = '$user_id'";
+		// update great_image info after resize by technician
+		$now_date = date("Y-m-d H:i:s");
+		
+		$query = "UPDATE `great_img` SET `resized` = 1, `up_date` = '$now_date' WHERE `user_id` = '$user_id'";
 		mysqli_query($con, $query);
 	}
 /* +++++++++++++++++++++++++ More info +++++++++++++++++++++ */
@@ -495,8 +497,16 @@ function update_kan($user_id, $f_kan, $y_kan, $con){
 	 * ***********************************************
 	 */
 	 
+	 // About registration
 	 function nb_registered($con){
 	 	$result = mysqli_query($con, "SELECT * FROM registred");
+		$nb = mysqli_num_rows($result);
+		return $nb;
+	 }
+	 
+	 function nb_registered_today($con){
+	 	$result = mysqli_query($con, "SELECT * FROM registred 
+	 				WHERE DATE(`join_date`) = DATE(CURRENT_TIMESTAMP)");
 		$nb = mysqli_num_rows($result);
 		return $nb;
 	 }
@@ -507,5 +517,48 @@ function update_kan($user_id, $f_kan, $y_kan, $con){
 		return $nb;
 	 }
 	 
+	 function nb_student_online($con){
+	 	$result = mysqli_query($con, "SELECT * FROM session");
+		$nb = mysqli_num_rows($result);
+		return $nb;
+	 }
+	 
+	 function last_registered($con){
+	 	$result = mysqli_query($con, "SELECT userName FROM registred ORDER BY join_date DESC LIMIT 1");
+		$resultat = mysqli_fetch_assoc($result);
+		return $resultat;
+	 }
+	 
+	 // About registration
+	 
+	 function nb_in_school($con){
+	 	$result = mysqli_query($con, "SELECT * FROM nqo_cours");
+		$nb = mysqli_num_rows($result);
+		return $nb;
+	 }
+	 
+	  function nb_in_school_today($con){
+	 	$result = mysqli_query($con, "SELECT * FROM nqo_cours WHERE DATE(`last_date`) = DATE(CURRENT_TIMESTAMP)");
+		$nb = mysqli_num_rows($result);
+		return $nb;
+	 }
+	   
+	 function popular_chap($con){
+	 	$result = mysqli_query($con, "SELECT chapitre_in AS chap, CONCAT(level_in, chapitre_in) AS total
+										FROM nqo_cours
+										GROUP BY lesson_in
+										ORDER BY COUNT( chapitre_in ) DESC LIMIT 1");
+		$resultat = mysqli_fetch_assoc($result);
+		return $resultat;
+	 }
+	 
+	 function popular_lesson($con){
+	 	$result = mysqli_query($con, "SELECT lesson_in AS lesson, COUNT(CONCAT(level_in, chapitre_in, lesson_in)) AS total
+										FROM nqo_cours
+										ORDER BY lesson_in
+										ORDER BY COUNT( lesson_in ) DESC LIMIT 1");
+		$resultat = mysqli_fetch_assoc($result);
+		return $resultat;
+	 }    
 ?>
 
