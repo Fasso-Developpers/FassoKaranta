@@ -71,6 +71,7 @@
 					<h3 <?php echo align_by_lang('right','left'); ?>><?php echo trad_lang('about_courses_title'); ?></h3>
 					<p <?php echo align_by_lang('right','left'); ?>><?php echo trad_lang('about_courses_text'); ?></p>
 					<p <?php echo align_by_lang('right','left'); ?>><?php echo trad_lang('how_acces_courses'); ?></p>
+					<p <?php echo align_by_lang('right','left'); ?>><?php echo trad_lang('click_on_left'); ?></p>
 					<p <?php echo align_by_lang('right','left'); ?>><?php echo trad_lang('follow_courses_in_order'); ?></p>
 					<p <?php echo align_by_lang('right','left'); ?>><?php echo trad_lang('watch_video_here'); ?></p>
 					<p <?php echo align_by_lang('right','left'); ?>><?php echo trad_lang('about_controler_'); ?></p>
