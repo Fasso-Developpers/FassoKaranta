@@ -59,16 +59,16 @@
 						<?php echo trad_lang('for_example'); ?></p>
 
 					<ul id="listDmalon" <?php align_by_lang('right','left'); ?>>
-						<li> <a href="nko/index.php"><?php echo trad_lang('nqo'); ?></a> 
+						<li> <a href="#"><?php echo trad_lang('nqo'); ?></a> 
 							<p class="def">(<?php echo trad_lang('nqo_desc'); ?>)</p>
 						</li>
-						<li> <a href="computer/index.php"><?php echo trad_lang('computer'); ?></a> 
+						<li> <a href="#"><?php echo trad_lang('computer'); ?></a> 
 							<p class="def">(<?php echo trad_lang('computer_desc'); ?>)</p>
 						</li>
-						<li> <a href="game/index.php"><?php echo trad_lang('game'); ?></a> 
+						<li> <a href="#"><?php echo trad_lang('game'); ?></a> 
 							<p class="def">(<?php echo trad_lang('game_desc'); ?>)</p>
 						</li>
-						<li> <a href="culture/index.php"><?php echo trad_lang('culture'); ?></a> 
+						<li> <a href="#"><?php echo trad_lang('culture'); ?></a> 
 							<p class="def">(<?php echo trad_lang('culture_desc'); ?></p>
 						</li>
 					</ul>
